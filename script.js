@@ -39,7 +39,7 @@ themeToggle.addEventListener('keydown', (e) => {
 
 
 function connectWebSocket() {
-    window.myVideoSocket = new WebSocket('ws://portofolio-virid-chi.vercel.app/');
+    window.myVideoSocket = new WebSocket('ws://portofolio-virid-chi.vercel.app');
     
     window.myVideoSocket.onopen = () => console.log('Connected!');
 }
