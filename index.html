@@ -4,10 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Adham Sharkawy's portfolio website showcasing skills, projects, and contact information.">
+    <meta name="keywords"
+        content="Adham Sharkawy, portfolio, React developer, frontend developer, projects, skills, contact">
     <title>Adham</title>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"
+        media="print" onload="this.media='all'">
+
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+      media="print" 
+      onload="this.media='all'"><link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+      media="print" 
+      onload="this.media='all'">
 </head>
 
 <body>
@@ -16,7 +36,8 @@
         <div class="nav-bar">
 
             <div class="nav-header">ADHAM</div>
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="sr-only">navbar toggle</label>
+            <input type="checkbox" name="nav-toggle" id="nav-toggle" class="nav-toggle">
             <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
                 <span></span>
             </label>
@@ -29,17 +50,21 @@
             </div>
 
             <div class="social-icons">
-                <a href="https://wa.me/01151921862" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://wa.me/01151921862" target="_blank"><i class="fa-brands fa-whatsapp"><span
+                            class="sr-only">WhatsApp</span></i></a>
                 <a href="https://www.linkedin.com/in/adham-sharkawy-25985333b/" target="_blank"><i
-                        class="fa-brands fa-linkedin"></i></a>
-                <a href="https://github.com/sharkawy89" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="mailto:adhamsharkawy185@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
+                        class="fa-brands fa-linkedin"><span class="sr-only">LinkedIn</span></i></a>
+                <a href="https://github.com/sharkawy89" target="_blank"><i class="fa-brands fa-github"><span
+                            class="sr-only">GitHub</span></i></a>
+                <a href="mailto:adhamsharkawy185@gmail.com" target="_blank"><i class="fa-solid fa-envelope"><span
+                            class="sr-only">Email</span></i></a>
 
             </div>
         </div>
+       <main>
 
-        <div class="main-content">
-            <div class="photo">
+           <div class="main-content">
+               <div class="photo">
                 <img src="images/my photo.webp" alt="Adham Sharkawy">
             </div>
             <div class="info">
@@ -63,29 +88,29 @@
 
                     <p>Through these projects, I discovered my true niche: <span class="highlight">solving the puzzles
                             of responsiveness</span> and user interface integrity. I realized that a powerful system is
-                        only as good as its accessibility, so I dedicated myself to mastering the art of the
+                            only as good as its accessibility, so I dedicated myself to mastering the art of the
                         <strong>"perfect fit."</strong> Whether it’s a stubborn CSS layout or a complex React state
                         issue, I thrive on the challenge of ensuring a flawless user experience across every device.
                     </p>
-
+                    
                     <p>My philosophy as a developer is rooted in <span class="highlight">sustainability</span>. I don’t
                         just write code that works; <strong>I write code that lasts.</strong> I am a firm advocate for
                         clean, well-documented architecture because I believe a project should be as easy to maintain as
                         it was to build. By prioritizing clarity and structure in my React.js and Node.js workflows, I
                         ensure that any developer who steps into the project after me can hit the ground running.</p>
-                </div>
-
-                <div class="about-footer">
-                    <div class="usp-section">
-                        <h3>Why Work With Me?</h3>
+                    </div>
+                    
+                    <div class="about-footer">
+                        <div class="usp-section">
+                            <div class="usp-header">Why Work With Me?</div>
                         <p>While many can build a website, I focus on building <strong>resilient digital
-                                products</strong>. I specialize in eliminating "responsiveness headaches," ensuring your
+                            products</strong>. I specialize in eliminating "responsiveness headaches," ensuring your
                             platform is pixel-perfect from day one. My code is a well-documented asset designed for
                             long-term growth and seamless team collaboration.</p>
                     </div>
-
+                    
                     <div class="cta-container">
-                        <h4>Let’s Build Something Scalable</h4>
+                        <div class="cta-header">Let’s Build Something Scalable</div>
                         <div class="cta-btns">
                             <a href="#projects-section" class="btn-work">View My Projects</a>
                             <a href="#contact" id="btn-contact" class="btn-contact">Get
@@ -115,7 +140,7 @@
                     <i class="fa-solid fa-code"></i>
                     <span>HTML</span>
                 </div>
-
+                
                 <div class="skill-item">
                     <i class="fa-brands fa-node-js"></i>
                     <span>Node.js</span>
@@ -137,25 +162,25 @@
 
                 <div class="skill-item">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                         viewBox="0 0 24 24">
                         <path
-                            d="M11.782 5.72a4.773 4.773 0 0 0-4.8 4.173 3.43 3.43 0 0 1 2.741-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.934-2.865 3.137-3.921-.969 1.379-2.44 2.207-4.259 1.231-1.253-.673-2.19-3.438-5.959-3.318ZM6.8 11.979A4.772 4.772 0 0 0 2 16.151a3.431 3.431 0 0 1 2.745-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.933-2.865 3.137-3.921-.97 1.379-2.44 2.208-4.259 1.231-1.253-.673-2.19-3.443-5.963-3.317Z" />
+                        d="M11.782 5.72a4.773 4.773 0 0 0-4.8 4.173 3.43 3.43 0 0 1 2.741-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.934-2.865 3.137-3.921-.969 1.379-2.44 2.207-4.259 1.231-1.253-.673-2.19-3.438-5.959-3.318ZM6.8 11.979A4.772 4.772 0 0 0 2 16.151a3.431 3.431 0 0 1 2.745-1.687c1.689 0 2.974 1.972 3.758 2.587a5.733 5.733 0 0 0 5.382.935c2-.638 2.933-2.865 3.137-3.921-.97 1.379-2.44 2.208-4.259 1.231-1.253-.673-2.19-3.443-5.963-3.317Z" />
                     </svg>
                     <span>Tailwind CSS</span>
                 </div>
                 <div class="skill-item">
-
+                    
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                        viewBox="0 0 24 24">
-                        <path
-                            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c2.05 0 3.95-.62 5.54-1.67L9.26 9.63v6.5H7.87V7.86h1.74l9.03 11.63A9.97 9.97 0 0 0 22.01 12c0-5.52-4.48-10-10-10Zm4.25 12.13-1.38-1.78V7.86h1.38z" />
-                    </svg>
-                    <span>Next.js</span>
+                    viewBox="0 0 24 24">
+                    <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c2.05 0 3.95-.62 5.54-1.67L9.26 9.63v6.5H7.87V7.86h1.74l9.03 11.63A9.97 9.97 0 0 0 22.01 12c0-5.52-4.48-10-10-10Zm4.25 12.13-1.38-1.78V7.86h1.38z" />
+                </svg>
+                <span>Next.js</span>
                 </div>
             </div>
         </div>
-
+        
         <div id="projects-section" class="projects-section">
             <div class="title">Projects</div>
 
@@ -163,7 +188,7 @@
                 <div class="card">
                     <div class="image-placeholder"><a href="https://your-circuit.vercel.app/login.html"
                             target="_blank"><img src="images/next-circuit img.png" alt="next-circuit"></a></div>
-                    <div class="tags">
+                            <div class="tags">
                         <span class="tag">Nodejs</span>
                         <span class="tag">Express</span>
                         <span class="tag">Firestore</span>
@@ -180,13 +205,13 @@
                         serverless functions.
                     </p>
                     <div class="project-btn"><a href="https://your-circuit.vercel.app/login.html" target="_blank">view
-                            project</a>
+                        project</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div class="image-placeholder"><a href="https://el3eyada-ucr2.vercel.app/" target="_blank"><img
-                                src="images/el3eyada.png" alt="el3eyada"></a></div>
+                        src="images/el3eyada.png" alt="el3eyada"></a></div>
                     <div class="tags">
                         <span class="tag">React Native</span>
                         <span class="tag">Firestore</span>
@@ -203,7 +228,7 @@
                     </p>
                     <div class="project-btn"><a href="https://el3eyada-ucr2.vercel.app/" target="_blank">view
                             project</a>
-                    </div>
+                        </div>
 
                 </div>
 
@@ -211,7 +236,7 @@
                     <div class="image-placeholder">
                         <a href="https://sharkawy89.github.io/restaurant/" target="_blank"><img src="images/zac.png"
                                 alt="zac"></a>
-                    </div>
+                            </div>
                     <div class="tags">
                         <span class="tag">javascript</span>
                         <span class="tag">HTML</span>
@@ -224,7 +249,7 @@
 
                     </p>
                     <div class="project-btn"><a href="https://sharkawy89.github.io/restaurant/" target="_blank">view
-                            project</a>
+                        project</a>
                     </div>
                 </div>
             </div>
@@ -254,37 +279,45 @@
                 </div>
             </div>
         </div>
-
+        
         <div id="contact" class="section contact-section">
             <div class="container">
                 <h2 class="contact-title">Get In Touch</h2>
 
-
+                
                 <form action="mailto:adhamsharkawy185@gmail.com" method="post" enctype="text/plain" class="contact-form"
                     target="_blank">
                     <div class="form-group">
-                        <input type="text" name="name" placeholder="Name" required>
-                        <input type="email" name="email" placeholder="Email" required>
+                        <label for="name" class="sr-only">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Name" required>
+                        <label for="email" class="sr-only">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" name="subject" placeholder="Subject" required>
+                        <label for="subject" class="sr-only">Subject</label>
+                        <input type="text" name="subject" id="subject" placeholder="Subject" required>
                     </div>
                     <div class="form-group">
-                        <textarea name="message" rows="5" placeholder="Message" required></textarea>
+                        <label for="message" class="sr-only">Message</label>
+                        <textarea name="message" id="message" rows="5" placeholder="Message" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary btn-large">Send Message</button>
                 </form>
-
+                
                 <div class="social-icons contact-social-icons">
-                    <a href="https://wa.me/01151921862" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="https://www.linkedin.com/in/adham-sharkawy-25985333b/" target="_blank"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a href="https://github.com/sharkawy89" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="mailto:adhamsharkawy185@gmail.com" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-
-                </div>
+                    <a href="https://wa.me/01151921862" target="_blank"><i class="fa-brands fa-whatsapp"><span
+                        class="sr-only">WhatsApp</span></i></a>
+                        <a href="https://www.linkedin.com/in/adham-sharkawy-25985333b/" target="_blank"><i
+                            class="fa-brands fa-linkedin"><span class="sr-only">LinkedIn</span></i></a>
+                            <a href="https://github.com/sharkawy89" target="_blank"><i class="fa-brands fa-github"><span
+                                class="sr-only">GitHub</span></i></a>
+                    <a href="mailto:adhamsharkawy185@gmail.com" target="_blank"><i class="fa-solid fa-envelope"><span
+                                class="sr-only">Email</span></i></a>
+                                
+                            </div>
             </div>
-
+            
+        </main>
 
             <!-- Footer -->
             <footer>

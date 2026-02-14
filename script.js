@@ -36,3 +36,25 @@ themeToggle.addEventListener('keydown', (e) => {
         themeToggle.click();
     }
 });
+
+
+function connectWebSocket() {
+    window.myVideoSocket = new WebSocket('ws://portofolio-virid-chi.vercel.app/#');
+    
+    window.myVideoSocket.onopen = () => console.log('Connected!');
+}
+
+connectWebSocket();
+
+window.addEventListener('pagehide', () => {
+    if (window.myVideoSocket) {
+        window.myVideoSocket.close();
+    }
+});
+
+window.addEventListener('pageshow', (event) => {
+    if (event.persisted) {
+        console.log('Restored from bfcache! Reconnecting...');
+        connectWebSocket();
+    }
+});
