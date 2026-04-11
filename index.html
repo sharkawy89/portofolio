@@ -1,664 +1,1053 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Adham Sharkawy's portfolio website.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Adham Sharkawy's portfolio website." />
     <title>Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="shortcut icon" href="assets/images/icons8-portfolio-48.webp" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/icons8-portfolio-48.webp"
+      type="image/x-icon"
+    />
+  </head>
 
-<body>
+  <body>
     <div class="container">
+      <div class="nav-bar">
+        <div class="nav-header">ADHAM</div>
+        <label for="nav-toggle" class="sr-only">navbar toggle</label>
+        <input
+          type="checkbox"
+          name="nav-toggle"
+          id="nav-toggle"
+          class="nav-toggle"
+        />
+        <label for="nav-toggle" class="nav-toggle-label">
+          <span></span>
+        </label>
+        <div class="nav-items">
+          <a href="#about-me">about</a>
+          <a href="#skills">skills</a>
+          <a href="#projects-section">projects</a>
+          <a href="#education">education</a>
+          <a href="#contact">contact</a>
+        </div>
 
-        <div class="nav-bar">
+        <div class="social-icons">
+          <a
+            href="https://wa.me/01151921862"
+            target="_blank"
+            aria-label="Contact-me-on-WhatsApp"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path
+                d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"
+              />
+            </svg>
+            <span class="sr-only">WhatsApp</span></a
+          >
 
-            <div class="nav-header">ADHAM</div>
-            <label for="nav-toggle" class="sr-only">navbar toggle</label>
-            <input type="checkbox" name="nav-toggle" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
-                <span></span>
-            </label>
-            <div class="nav-items">
-                <a href="#home">home</a>
-                <a href="#about-me">about me</a>
-                <a href="#skills">skills</a>
-                <a href="#projects-section">projects</a>
-                <a href="#edu">education</a>
-            </div>
-
-            <div class="social-icons">
-                <a href="https://wa.me/01151921862" target="_blank" aria-label="Contact me on WhatsApp"><svg
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                        <path
-                            d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z" />
-                    </svg><span class="sr-only">WhatsApp</span></a>
-                <a href="https://www.linkedin.com/in/adham-sharkawy-25985333b/" target="_blank"
-                    aria-label="Visit my LinkedIn profile"> <svg xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 640 640">
-                        <path d=" M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544
+          <a
+            href="https://www.linkedin.com/in/adham-sharkawy-25985333b/"
+            target="_blank"
+            aria-label="Visit my LinkedIn profile"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path
+                d=" M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544
                         544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165
                         480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7
                         198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9
                         376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1
                         480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8
-                        260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z" />
-                    </svg> <span class="sr-only">LinkedIn</span></a>
-                <a href="https://github.com/sharkawy89" target="_blank" aria-label="Visit my GitHub profile"><svg
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                        <path
-                            d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z" />
-                    </svg><span class="sr-only">GitHub</span></a>
-                <a href="mailto:adhamsharkawy185@gmail.com" target="_blank" aria-label="Send me an email"><svg
-                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                        <path
-                            d="M125.4 128C91.5 128 64 155.5 64 189.4C64 190.3 64 191.1 64.1 192L64 192L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 192L575.9 192C575.9 191.1 576 190.3 576 189.4C576 155.5 548.5 128 514.6 128L125.4 128zM528 256.3L528 448C528 456.8 520.8 464 512 464L128 464C119.2 464 112 456.8 112 448L112 256.3L266.8 373.7C298.2 397.6 341.7 397.6 373.2 373.7L528 256.3zM112 189.4C112 182 118 176 125.4 176L514.6 176C522 176 528 182 528 189.4C528 193.6 526 197.6 522.7 200.1L344.2 335.5C329.9 346.3 310.1 346.3 295.8 335.5L117.3 200.1C114 197.6 112 193.6 112 189.4z" />
-                    </svg><span class="sr-only">Email</span></a>
-
-            </div>
+                        260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"
+              />
+            </svg>
+            <span class="sr-only">LinkedIn</span></a
+          >
+          <a
+            href="https://github.com/sharkawy89"
+            target="_blank"
+            aria-label="Visit my GitHub profile"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path
+                d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z"
+              />
+            </svg>
+            <span class="sr-only">GitHub</span></a
+          >
+          <a
+            href="mailto:adhamsharkawy185@gmail.com"
+            target="_blank"
+            aria-label="Send me an email"
+            ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+              <path
+                d="M125.4 128C91.5 128 64 155.5 64 189.4C64 190.3 64 191.1 64.1 192L64 192L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 192L575.9 192C575.9 191.1 576 190.3 576 189.4C576 155.5 548.5 128 514.6 128L125.4 128zM528 256.3L528 448C528 456.8 520.8 464 512 464L128 464C119.2 464 112 456.8 112 448L112 256.3L266.8 373.7C298.2 397.6 341.7 397.6 373.2 373.7L528 256.3zM112 189.4C112 182 118 176 125.4 176L514.6 176C522 176 528 182 528 189.4C528 193.6 526 197.6 522.7 200.1L344.2 335.5C329.9 346.3 310.1 346.3 295.8 335.5L117.3 200.1C114 197.6 112 193.6 112 189.4z"
+              />
+            </svg>
+            <span class="sr-only">Email</span></a
+          >
         </div>
-        <main>
+      </div>
 
-            <div id="home" class="main-content">
-                <div class="summary">
-                    <div class="info">
-                        <p class="greeting" data-reveal="fade" data-reveal-duration="fast">👋 Hello, I'm Adham Sharkawy
-                        </p>
-                        <h1 class="main-title" data-reveal="slide-up" data-reveal-delay="100">
-                            Turning Complex <br>
-                            <span class="highlight">Logic into Seamless</span> <br>
-                            User Experiences.
-                        </h1>
-                        <p class="description" data-reveal="slide-up" data-reveal-delay="200">
-                            A talented Front-End Developer with a 3-year edge in Advertising. I engineer
-                            high-performance, AI-powered React applications by merging technical mastery with strategic
-                            communication. I don’t just build pixel-perfect interfaces; I create responsive digital
-                            experiences designed to engage and convert.
-                        </p>
-                    </div>
-                    <div class="main-btns" data-reveal="slide-up" data-reveal-delay="300">
-                        <a href="#projects-section" class="blue-btn">View My Work →</a>
-                        <a href="assets/Adham_Sharkawy_Front_end_Developer.pdf" class="outline-btn"
-                            id="downloadResumeBtn" download="Adham-Sharkawy-Resume.pdf">Download Resume</a>
-                    </div>
-                </div>
-
-                <div class="photo" data-reveal="slide-left" data-reveal-delay="200">
-                    <div class="image-wrapper">
-                        <img src="assets/images/photo.webp" alt="Adham Sharkawy" width="350px" height="350px"
-                            loading="lazy">
-                    </div>
-                </div>
+      <div id="home" class="main-content">
+        <div class="summary">
+          <div>
+            <p class="greeting" data-reveal="fade" data-reveal-duration="fast">
+              👋 Hello, I'm Adham Sharkawy
+            </p>
+            <div
+              class="main-title"
+              data-reveal="slide-up"
+              data-reveal-delay="100"
+            >
+              Turning Complex <br />
+              <span class="highlight">Logic into Seamless</span> <br />
+              User Experiences.
             </div>
-            <div id="about-me" class="about-me">
-                <div class="about-header" data-reveal="fade">About me</div>
+            <p
+              class="description"
+              data-reveal="slide-up"
+              data-reveal-delay="200"
+            >
+              A talented Front-End Developer with a 3-year edge in Advertising.
+              I engineer high-performance, AI-powered React applications by
+              merging technical mastery with strategic communication. I don’t
+              just build pixel-perfect interfaces; I create responsive digital
+              experiences designed to engage and convert.
+            </p>
+          </div>
+          <div class="main-btns" data-reveal="slide-up" data-reveal-delay="300">
+            <a href="#projects-section" class="blue-btn">View My Work →</a>
+            <a
+              href="assets/Adham_Sharkawy_Front_end_Developer.pdf"
+              class="outline-btn"
+              id="downloadResumeBtn"
+              download="Adham-Sharkawy-Resume.pdf"
+              >Download Resume</a
+            >
+          </div>
+        </div>
 
-                <div class="about-content">
-                    <div class="about-text" data-reveal="slide-up">
-                        <p>My journey into development began in <span class="highlight">2023</span> as a Computer
-                            Science
-                            student, where I quickly moved from theory to action. I spent my early days architecting
-                            complex
-                            systems—including <strong>E-commerce platforms, Clinic Management systems, and Restaurant
-                                Reservation system.</strong></p>
+        <div class="photo" data-reveal="slide-left" data-reveal-delay="200">
+          <div class="image-wrapper">
+            <img
+              src="assets/images/photo.webp"
+              alt="Adham Sharkawy"
+              width="350"
+              height="350"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+      <div id="about-me" class="about-me about-split">
+        <div class="about-header about-header-top" data-reveal="fade">
+          About me
+        </div>
 
-                        <p>Through these projects, I discovered my true niche: <span class="highlight">solving the
-                                puzzles
-                                of responsiveness</span> and user interface integrity. I realized that a powerful system
-                            is
-                            only as good as its accessibility, so I dedicated myself to mastering the art of the
-                            <strong>"perfect fit."</strong> Whether it’s a stubborn CSS layout or a complex React state
-                            issue, I thrive on the challenge of ensuring a flawless user experience across every device.
-                        </p>
+        <div class="about-split-layout">
+          <div class="about-media" data-reveal="slide-right">
+            <img
+              src="assets/images/about.webp"
+              alt="Workspace with code on a monitor and notebook"
+              loading="lazy"
+              width="1600"
+              height="1600"
+            />
+          </div>
 
-                        <p>My philosophy as a developer is rooted in <span class="highlight">sustainability</span>. I
-                            don’t
-                            just write code that works; <strong>I write code that lasts.</strong> I am a firm advocate
-                            for
-                            clean, well-documented architecture because I believe a project should be as easy to
-                            maintain as
-                            it was to build. By prioritizing clarity and structure in my React.js and Node.js workflows,
-                            I
-                            ensure that any developer who steps into the project after me can hit the ground running.
-                        </p>
-                    </div>
-
-                    <div class="about-footer">
-                        <div class="usp-section" data-reveal="slide-up" data-reveal-delay="100">
-                            <div class="usp-header">Why Work With Me?</div>
-                            <p>While many can build a website, I focus on building <strong>resilient digital
-                                    products</strong>. I specialize in eliminating "responsiveness headaches," ensuring
-                                your
-                                platform is pixel-perfect from day one. My code is a well-documented asset designed for
-                                long-term growth and seamless team collaboration.</p>
-                        </div>
-
-                        <div class="cta-container" data-reveal="slide-up" data-reveal-delay="200">
-                            <div class="cta-header">Let’s Build Something Scalable</div>
-                            <div class="cta-btns">
-                                <a href="#projects-section" class="btn-work">View My Projects</a>
-                                <a href="#contact" id="btn-contact" class="btn-contact">Get
-                                    In Touch</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="skills" class="skills">
-                <div class="skill-header" data-reveal="fade">My Skills</div>
-                <div class="skills-list">
-
-                    <div class="skill-item" data-reveal="slide-up" data-reveal-delay="100">
-                        <div class="skill-info-row">
-                            <div class="skill-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 640 640">
-                                    <path
-                                        d="M482.2 241.2C476.8 239.4 471.4 237.7 466 236.1C466.9 232.4 467.7 228.7 468.5 225C480.8 165.4 472.7 117.5 445.4 101.7C419.1 86.6 376.2 102.3 332.8 140.1C328.5 143.8 324.3 147.7 320.3 151.6C317.6 149 314.8 146.4 312 143.9C266.5 103.5 220.9 86.5 193.6 102.4C167.4 117.6 159.6 162.7 170.6 219.1C171.7 224.7 172.9 230.2 174.3 235.8C167.9 237.6 161.6 239.6 155.7 241.7C102.3 260.2 64 289.4 64 319.6C64 350.8 104.8 382.1 160.3 401.1C164.8 402.6 169.3 404.1 173.9 405.4C172.4 411.4 171.1 417.3 169.9 423.4C159.4 478.9 167.6 522.9 193.8 538C220.8 553.6 266.2 537.6 310.4 498.9C313.9 495.8 317.4 492.6 320.9 489.2C325.3 493.5 329.9 497.6 334.5 501.6C377.3 538.4 419.6 553.3 445.7 538.2C472.7 522.6 481.5 475.3 470.1 417.7C469.2 413.3 468.2 408.8 467.1 404.2C470.3 403.3 473.4 402.3 476.5 401.3C534.2 382.2 576 351.3 576 319.6C576 289.3 536.6 259.9 482.2 241.2zM346.9 156.3C384.1 123.9 418.8 111.2 434.6 120.3C451.5 130 458 169.2 447.4 220.7C446.7 224.1 446 227.4 445.1 230.7C422.9 225.7 400.4 222.1 377.8 220.1C364.8 201.5 350.6 183.7 335.2 167C339.1 163.3 342.9 159.8 346.9 156.3zM231.2 371.5C236.3 380.2 241.5 388.9 247 397.4C231.4 395.7 215.9 393.2 200.6 389.9C205 375.5 210.5 360.6 216.9 345.4C221.5 354.2 226.2 362.9 231.2 371.5zM200.9 251.2C215.3 248 230.6 245.4 246.5 243.4C241.2 251.7 236 260.2 231.1 268.8C226.2 277.3 221.4 286 216.9 294.8C210.6 279.9 205.3 265.3 200.9 251.2zM228.3 320.1C234.9 306.3 242.1 292.8 249.7 279.5C257.3 266.2 265.5 253.3 274.1 240.6C289.1 239.5 304.4 238.9 320 238.9C335.6 238.9 351 239.5 365.9 240.6C374.4 253.2 382.5 266.1 390.2 279.3C397.9 292.5 405.1 306 411.9 319.7C405.2 333.5 398 347.1 390.3 360.5C382.7 373.8 374.6 386.7 366.1 399.5C351.2 400.6 335.7 401.1 320 401.1C304.3 401.1 289.1 400.6 274.4 399.7C265.7 387 257.5 374 249.8 360.7C242.1 347.4 235 333.9 228.3 320.1zM408.9 371.3C414 362.5 418.8 353.6 423.5 344.6C429.9 359.1 435.5 373.8 440.4 388.9C424.9 392.4 409.2 395.1 393.4 396.9C398.8 388.5 403.9 379.9 408.9 371.3zM423.3 294.8C418.6 286 413.8 277.2 408.8 268.6C403.9 260.1 398.8 251.7 393.5 243.4C409.6 245.4 425 248.1 439.4 251.4C434.8 266.2 429.4 280.6 423.3 294.8zM320.2 182.3C330.7 193.7 340.6 205.7 349.8 218.1C330 217.2 310.1 217.2 290.3 218.1C300.1 205.2 310.2 193.2 320.2 182.3zM204.2 121C221 111.2 258.3 125.2 297.6 160C300.1 162.2 302.6 164.6 305.2 167C289.7 183.7 275.4 201.5 262.3 220.1C239.7 222.1 217.3 225.6 195.1 230.5C193.8 225.4 192.7 220.2 191.6 215C182.2 166.6 188.4 130.1 204.2 121zM179.7 384.6C175.5 383.4 171.4 382.1 167.3 380.7C146 374 121.8 363.4 104.3 349.5C94.2 342.5 87.4 331.7 85.5 319.6C85.5 301.3 117.1 277.9 162.7 262C168.4 260 174.2 258.2 180 256.5C186.8 278.2 195 299.5 204.5 320.1C194.9 341 186.6 362.6 179.7 384.6zM296.3 482.6C279.8 497.7 260.7 509.7 239.9 517.9C228.8 523.2 216 523.7 204.6 519.2C188.7 510 182.1 474.7 191.1 427.2C192.2 421.6 193.4 416 194.8 410.5C217.2 415.3 239.8 418.6 262.7 420.3C275.9 439 290.4 456.9 305.9 473.7C302.7 476.8 299.5 479.8 296.3 482.6zM320.8 458.3C310.6 447.3 300.4 435.1 290.5 422C300.1 422.4 310 422.6 320 422.6C330.3 422.6 340.4 422.4 350.4 421.9C341.2 434.6 331.3 446.7 320.8 458.3zM451.5 488.3C450.6 500.5 444.6 511.9 435 519.6C419.1 528.8 385.2 516.8 348.6 485.4C344.4 481.8 340.2 477.9 335.9 473.9C351.2 457 365.3 439.1 378.1 420.3C401 418.4 423.8 414.9 446.3 409.8C447.3 413.9 448.2 418 449 422C453.9 443.6 454.7 466.1 451.5 488.3zM469.7 380.8C466.9 381.7 464.1 382.6 461.2 383.4C454.2 361.6 445.6 340.3 435.7 319.6C445.3 299.2 453.4 278.2 460.2 256.7C465.4 258.2 470.4 259.8 475.2 261.4C521.8 277.4 554.5 301.2 554.5 319.4C554.5 339 519.6 364.3 469.7 380.8zM320 365.8C345.3 365.8 365.8 345.3 365.8 320C365.8 294.7 345.3 274.2 320 274.2C294.7 274.2 274.2 294.7 274.2 320C274.2 345.3 294.7 365.8 320 365.8z" />
-                                </svg>
-                                <span>React JS</span>
-                            </div>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 85%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item" data-reveal="slide-up" data-reveal-delay="200">
-                        <div class="skill-info-row">
-                            <div class="skill-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
-                                    class="bi bi-javascript" viewBox="0 0 16 16">
-                                    <path fill-rule="evenodd"
-                                        d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM9.053 7.596v3.127l-.007 1.752q0 .498-.186.752t-.556.263q-.342 0-.528-.234-.185-.234-.185-.684v-.175H6.37v.185q0 .665.253 1.113.255.45.703.674.44.225 1.016.225.88 0 1.406-.498.527-.498.527-1.485l.007-1.752V7.596zm3.808-.108q-.585 0-1.006.244a1.67 1.67 0 0 0-.634.674 2.1 2.1 0 0 0-.225.996q0 .753.293 1.182.303.42.967.732l.469.215q.438.186.625.43.185.244.185.635 0 .478-.166.703-.156.224-.527.224-.361.001-.547-.244-.186-.243-.205-.752h-1.162q.02.996.498 1.524.479.527 1.386.527.909 0 1.417-.518.507-.517.507-1.484 0-.81-.332-1.289t-1.045-.79l-.449-.196q-.39-.166-.556-.381-.166-.214-.166-.576 0-.4.165-.596.177-.195.508-.195.361 0 .508.234.156.234.176.703h1.123q-.03-.976-.498-1.484-.47-.518-1.309-.518" />
-                                </svg>
-                                <span>JavaScript</span>
-                            </div>
-                            <span class="skill-percentage">90%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 90%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item" data-reveal="slide-up" data-reveal-delay="300">
-                        <div class="skill-info-row">
-                            <div class="skill-label">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                                    <path
-                                        d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-9.64l.213 2.622h9.195l-.396 4.426-2.975.834-2.974-.833-.195-2.187H6.13l.386 4.54 5.46 1.533 5.44-1.533.785-8.826.298-3.374-.158-1.765-.18-1.975z" />
-                                </svg>
-                                <span>CSS</span>
-                            </div>
-                            <span class="skill-percentage">100%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 100%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item" data-reveal="slide-up" data-reveal-delay="400">
-                        <div class="skill-info-row">
-                            <div class="skill-label">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                                    <path
-                                        d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm15.65 13.062l.256-2.735H8.22l-.193-2.15h8.064l.257-2.736H5.213l.58 6.45h8.132l-.29 3.096-2.02.558-2.015-.557-.13-1.436H6.76l.247 2.76 4.59 1.293 4.58-1.293.974-11.025z" />
-                                </svg>
-                                <span>HTML</span>
-                            </div>
-                            <span class="skill-percentage">100%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 100%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item" data-reveal="slide-up" data-reveal-delay="500">
-                        <div class="skill-info-row">
-                            <div class="skill-label">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                                    <path
-                                        d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                                </svg>
-                                <span>GitHub</span>
-                            </div>
-                            <span class="skill-percentage">85%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 85%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item" data-reveal="slide-up" data-reveal-delay="500">
-                        <div class="skill-info-row">
-                            <div class="skill-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="24" height="24">
-                                    <path fill="currentColor"
-                                        d="M365.5 265.4c0-22.1-15.6-34.3-43-34.3l-50.4 0l0 71.2l42.5 0c32.8-.1 50.9-13.3 50.9-36.9zM549 252.6c-9.5-30.9-10.9-68.8-9.8-98.1c1.1-30.5-22.7-58.5-54.7-58.5L155.7 96c-32.1 0-55.8 28.1-54.7 58.5c1.1 29.3-.2 67.2-9.7 98.1c-9.6 31-25.7 50.6-52.2 53.1l0 28.5c26.4 2.5 42.6 22.1 52.2 53.1c9.5 30.9 10.9 68.8 9.8 98.1c-1.1 30.5 22.7 58.5 54.7 58.5l328.7 0c32.1 0 55.8-28.1 54.7-58.5c-1.1-29.3 .2-67.2 9.8-98.1c9.6-31 25.7-50.6 52.1-53.1l0-28.5c-26.3-2.5-42.5-22.1-52-53.1zM332.2 439.1L234.3 439.1L234.3 200.8L331.7 200.8c43.3 0 71.7 23.4 71.7 59.4c0 25.3-19.1 47.9-43.5 51.8l0 1.3c33.2 3.6 55.5 26.6 55.5 58.3c0 42.1-31.3 67.5-83.2 67.5zM322.2 330.4L272.1 330.4l0 78.4l52.3 0c34.2 0 52.3-13.7 52.3-39.5c0-25.7-18.6-38.9-54.5-38.9z" />
-                                </svg>
-                                <span>Bootstrap</span>
-                            </div>
-                            <span class="skill-percentage">75%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 75%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item" data-reveal="slide-up" data-reveal-delay="600">
-                        <div class="skill-info-row">
-                            <div class="skill-label">
-                                <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                                    <path
-                                        d="M17.5 1h-11C5.119 1 4 2.119 4 3.5v17C4 21.881 5.119 23 6.5 23h11c1.381 0 2.5-1.119 2.5-2.5v-17C20 2.119 18.881 1 17.5 1zM18 20.5c0 .276-.224.5-.5.5h-11c-.276 0-.5-.224-.5-.5v-17c0-.276.224-.5.5-.5h11c.276 0 .5.224.5.5v17zM12 18c-1.105 0-2 .895-2 2s.895 2 2 2 2-.895 2-2-.895-2-2-2z" />
-                                </svg>
-                                <span>UI/UX</span>
-                            </div>
-                            <span class="skill-percentage">40%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 40%;"></div>
-                        </div>
-                    </div>
-
-                    <div class="skill-item" data-reveal="slide-up" data-reveal-delay="700">
-                        <div class="skill-info-row">
-                            <div class="skill-label">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="24" height="24">
-                                    <path fill="currentColor"
-                                        d="M184 120c0-30.9 25.1-56 56-56h24c17.7 0 32 14.3 32 32v448c0 17.7-14.3 32-32 32h-32c-29.8 0-54.9-20.4-62-48-0.7 0-1.3 0-2 0-44.2 0-80-35.8-80-80 0-18 6-34.6 16-48-19.4-14.6-32-37.8-32-64 0-30.9 17.6-57.8 43.2-71.1-7.1-12-11.2-26-11.2-40.9 0-44.2 35.8-80 80-80V120zM456 120v24c44.2 0 80 35.8 80 80 0 15-4.1 29-11.2 40.9C550.4 278.2 568 305 568 336c0 26.2-12.6 49.4-32 64 10 13.4 16 30 16 48 0 44.2-35.8 80-80 80-0.7 0-1.3 0-2 0-7.1 27.6-32.2 48-62 48h-32c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32h24c30.9 0 56 25.1 56 56z" />
-                                </svg>
-                                <span>AI</span>
-                            </div>
-                            <span class="skill-percentage">60%</span>
-                        </div>
-                        <div class="progress-bar-container">
-                            <div class="progress-fill" style="width: 60%;"></div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-            <div id="projects-section" class="projects-section">
-                <div class="title" data-reveal="fade">Projects</div>
-
-                <div class="card-container">
-                    <div class="card" data-reveal="zoom-in" data-reveal-delay="100">
-                        <div class="card-image">
-                            <a href="https://next-circuit.vercel.app/" target="_blank">
-                                <img src="assets/images/next-circuit img.webp" alt="next-circuit" loading="lazy">
-                            </a>
-                            <div class="card-icons">
-                                <a href="https://next-circuit.vercel.app/" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                    </svg>
-                                </a>
-                                <a href="https://github.com/sharkawy89/Next-circuit" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="16 18 22 12 16 6"></polyline>
-                                        <polyline points="8 6 2 12 8 18"></polyline>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-category">modern e-commerce</div>
-                            <h3 class="card-title">Next Circuit</h3>
-                            <p class="card-text">
-                                e-commerce application that specializes in selling technology devices, with user
-                                authentication, product catalog, shopping cart, and order management. Backend runs on
-                                Vercel serverless functions.
-                            </p>
-                            <div class="card-footer">
-                                <div class="card-tags">
-                                    <span class="tag">#Nodejs</span>
-                                    <span class="tag">#Express</span>
-                                    <span class="tag">#Firestore</span>
-                                    <span class="tag">#tailwind</span>
-                                </div>
-                                <a href="https://next-circuit.vercel.app/" target="_blank" class="live-link">
-                                    Live
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" fill="currentColor">
-                                        <path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card" data-reveal="zoom-in" data-reveal-delay="200">
-                        <div class="card-image">
-                            <a href="https://el3eyada-ucr2.vercel.app/" target="_blank">
-                                <img src="assets/images/el3eyada.webp" alt="el3eyada" loading="lazy">
-                            </a>
-                            <div class="card-icons">
-                                <a href="https://el3eyada-ucr2.vercel.app/" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                    </svg>
-                                </a>
-                                <a href="https://github.com/sharkawy89/health-dashboard" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="16 18 22 12 16 6"></polyline>
-                                        <polyline points="8 6 2 12 8 18"></polyline>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-category">Healthcare Management</div>
-                            <h3 class="card-title">EL3eyada</h3>
-                            <p class="card-text">
-                                A modern, responsive clinic management system built with React, designed to streamline
-                                healthcare operations and patient management.
-                            </p>
-                            <div class="card-footer">
-                                <div class="card-tags">
-                                    <span class="tag">#React</span>
-                                    <span class="tag">#Firestore</span>
-                                    <span class="tag">#Tailwind CSS</span>
-                                </div>
-                                <a href="https://el3eyada-ucr2.vercel.app/" target="_blank" class="live-link">
-                                    Live
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" fill="currentColor">
-                                        <path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card" data-reveal="zoom-in" data-reveal-delay="300">
-                        <div class="card-image">
-                            <a href="https://sharkawy-store.vercel.app/" target="_blank">
-                                <img src="assets/images/sharkawy-store.webp" alt="sharkawy_store" loading="lazy">
-                            </a>
-                            <div class="card-icons">
-                                <a href="https://sharkawy-store.vercel.app/" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                    </svg>
-                                </a>
-                                <a href="https://github.com/sharkawy89/sharkawy_store" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="16 18 22 12 16 6"></polyline>
-                                        <polyline points="8 6 2 12 8 18"></polyline>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-category">E-Commerce Platform</div>
-                            <h3 class="card-title">Sharkawy Store</h3>
-                            <p class="card-text">
-                                A front-end e-commerce web application that showcases a product catalog and allows users
-                                to browse items, view detailed product information, manage a shopping cart, and complete
-                                a checkout flow.
-                            </p>
-                            <div class="card-footer">
-                                <div class="card-tags">
-                                    <span class="tag">#JavaScript</span>
-                                    <span class="tag">#HTML</span>
-                                    <span class="tag">#CSS</span>
-                                </div>
-                                <a href="https://sharkawy-store.vercel.app/" target="_blank" class="live-link">
-                                    Live
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" fill="currentColor">
-                                        <path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card" data-reveal="zoom-in" data-reveal-delay="100">
-                        <div class="card-image">
-                            <a href="https://next-circuit.vercel.app/" target="_blank">
-                                <img src="assets/images/next-circuit img.webp" alt="next-circuit" loading="lazy">
-                            </a>
-                            <div class="card-icons">
-                                <a href="https://next-circuit.vercel.app/" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                    </svg>
-                                </a>
-                                <a href="https://github.com/sharkawy89/Next-circuit" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="16 18 22 12 16 6"></polyline>
-                                        <polyline points="8 6 2 12 8 18"></polyline>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-category">modern e-commerce</div>
-                            <h3 class="card-title">Next Circuit</h3>
-                            <p class="card-text">
-                                e-commerce application that specializes in selling technology devices, with user
-                                authentication, product catalog, shopping cart, and order management. Backend runs on
-                                Vercel serverless functions.
-                            </p>
-                            <div class="card-footer">
-                                <div class="card-tags">
-                                    <span class="tag">#Nodejs</span>
-                                    <span class="tag">#Express</span>
-                                    <span class="tag">#Firestore</span>
-                                    <span class="tag">#tailwind</span>
-                                </div>
-                                <a href="https://next-circuit.vercel.app/" target="_blank" class="live-link">
-                                    Live
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" fill="currentColor">
-                                        <path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card" data-reveal="zoom-in" data-reveal-delay="200">
-                        <div class="card-image">
-                            <a href="https://el3eyada-ucr2.vercel.app/" target="_blank">
-                                <img src="assets/images/el3eyada.webp" alt="el3eyada" loading="lazy">
-                            </a>
-                            <div class="card-icons">
-                                <a href="https://el3eyada-ucr2.vercel.app/" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                    </svg>
-                                </a>
-                                <a href="https://github.com/sharkawy89/health-dashboard" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="16 18 22 12 16 6"></polyline>
-                                        <polyline points="8 6 2 12 8 18"></polyline>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-category">Healthcare Management</div>
-                            <h3 class="card-title">EL3eyada</h3>
-                            <p class="card-text">
-                                A modern, responsive clinic management system built with React, designed to streamline
-                                healthcare operations and patient management.
-                            </p>
-                            <div class="card-footer">
-                                <div class="card-tags">
-                                    <span class="tag">#React</span>
-                                    <span class="tag">#Firestore</span>
-                                    <span class="tag">#Tailwind CSS</span>
-                                </div>
-                                <a href="https://el3eyada-ucr2.vercel.app/" target="_blank" class="live-link">
-                                    Live
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" fill="currentColor">
-                                        <path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card" data-reveal="zoom-in" data-reveal-delay="700">
-                        <div class="card-image">
-                            <a href="https://sharkawy-store.vercel.app/" target="_blank">
-                                <img src="assets/images/sharkawy-store.webp" alt="sharkawy_store" loading="lazy">
-                            </a>
-                            <div class="card-icons">
-                                <a href="https://sharkawy-store.vercel.app/" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <circle cx="12" cy="12" r="10"></circle>
-                                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                                    </svg>
-                                </a>
-                                <a href="https://github.com/sharkawy89/sharkawy_store" target="_blank" class="icon-btn">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="16 18 22 12 16 6"></polyline>
-                                        <polyline points="8 6 2 12 8 18"></polyline>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="card-content">
-                            <div class="card-category">E-Commerce Platform</div>
-                            <h3 class="card-title">Sharkawy Store</h3>
-                            <p class="card-text">
-                                A front-end e-commerce web application that showcases a product catalog and allows users
-                                to browse items, view detailed product information, manage a shopping cart, and complete
-                                a checkout flow.
-                            </p>
-                            <div class="card-footer">
-                                <div class="card-tags">
-                                    <span class="tag">#JavaScript</span>
-                                    <span class="tag">#HTML</span>
-                                    <span class="tag">#CSS</span>
-                                </div>
-                                <a href="https://sharkawy-store.vercel.app/" target="_blank" class="live-link">
-                                    Live
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="16" height="16" fill="currentColor">
-                                        <path d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div class="about-copy" data-reveal="slide-up">
+            <div class="about-main-title">
+              Building Interfaces That Speak, Not Just Function.
             </div>
 
-            <div id="education" class="education-section">
-                <div class="container">
-                    <h2 class="title" data-reveal="fade">Education & Certificates</h2>
-
-                    <div class="education" data-reveal="slide-up" data-reveal-delay="100">
-                        <div class="edu-item" data-reveal="slide-up" data-reveal-delay="100">
-                            <div class="edu-degree">Bachelor's Degree in Computer Science</div>
-                            <p>Faculty of Computers and Artificial Intelligence, Thebes Academy (2023-2027)</p>
-                        </div>
-                        <div class="edu-item" data-reveal="slide-up" data-reveal-delay="200">
-                            <div class="edu-degree">React Frontend Development</div>
-                            <p>Digital Egypt Pioneers Initiative - DEPI (dec 2025 - Jul 2026)</p>
-                        </div>
-                    </div>
-
-                    <div class="certificates">
-                        <div class="cert-item" data-reveal="zoom-in" data-reveal-delay="100">
-                            <img src="assets/images/html&css.webp" alt="HTML & CSS Certificate" width="350px" height="350px"
-                                loading="lazy">
-                        </div>
-                        <div class="cert-item" data-reveal="zoom-in" data-reveal-delay="200">
-                            <img src="assets/images/python-basics.webp" alt="Python Basics Certificate" width="350px"
-                                height="350px" loading="lazy">
-                        </div>
-                        <div class="cert-item" data-reveal="zoom-in" data-reveal-delay="300">
-                            <img src="assets/images/js_page-0001.webp" alt="JavaScript Certificate" width="350px"
-                                height="350px" loading="lazy">
-                        </div>
-                        <div class="cert-item" data-reveal="zoom-in" data-reveal-delay="400">
-                            <img src="assets/images/freelance.webp" alt="Freelance Certificate" width="350px" height="350px"
-                                loading="lazy">
-                        </div>
-                    </div>
-                </div>
+            <div class="about-body-copy">
+              <p>
+                As a Front-End Developer, I specialize in transforming complex
+                logic into intuitive digital experiences. I leverage modern AI
+                tools to streamline my coding process, allowing me to focus on
+                high-level architecture and pixel-perfect responsiveness. With
+                additional expertise in technical troubleshooting and multimedia
+                editing, I build resilient, cross-platform applications where
+                clean code meets professional design.
+              </p>
             </div>
 
-        
-            <div id="contact" class="section contact-section ">
-                <div class="container">
-                    <h2 class="contact-title" data-reveal="fade">Get In Touch</h2>
-
-                    <div id="form-message" class="form-message" style="display: none;"></div>
-
-                    <form action="https://formspree.io/f/mpqjdzpd" method="POST" class="contact-form" id="contactForm"
-                        data-reveal="slide-up" data-reveal-delay="100">
-                        <div class="form-group">
-                            <label for="name" class="sr-only">full Name</label>
-                            <input type="text" name="name" id="name" placeholder="full Name" required>
-                            <label for="email" class="sr-only">Email</label>
-                            <input type="email" name="email" id="email" placeholder="Email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject" class="sr-only">Subject</label>
-                            <input type="text" name="subject" id="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message" class="sr-only">Message</label>
-                            <textarea name="message" id="message" placeholder="Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-large">Send Message</button>
-                    </form>
-
-                    <div class="social-icons contact-social-icons">
-                        <a href="https://wa.me/01151921862" target="_blank" aria-label="Contact me on WhatsApp"><svg
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                                <path
-                                    d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z" />
-                            </svg><span class="sr-only">WhatsApp</span></a>
-                        <a href="https://www.linkedin.com/in/adham-sharkawy-25985333b/" target="_blank"
-                            aria-label="Visit my LinkedIn profile"><svg xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 640 640">
-                                <path
-                                    d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z" />
-                            </svg><span class="sr-only">LinkedIn</span></a>
-                        <a href="https://github.com/sharkawy89" target="_blank"
-                            aria-label="Visit my GitHub profile"><svg xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 640 640">
-                                <path
-                                    d="M237.9 461.4C237.9 463.4 235.6 465 232.7 465C229.4 465.3 227.1 463.7 227.1 461.4C227.1 459.4 229.4 457.8 232.3 457.8C235.3 457.5 237.9 459.1 237.9 461.4zM206.8 456.9C206.1 458.9 208.1 461.2 211.1 461.8C213.7 462.8 216.7 461.8 217.3 459.8C217.9 457.8 216 455.5 213 454.6C210.4 453.9 207.5 454.9 206.8 456.9zM251 455.2C248.1 455.9 246.1 457.8 246.4 460.1C246.7 462.1 249.3 463.4 252.3 462.7C255.2 462 257.2 460.1 256.9 458.1C256.6 456.2 253.9 454.9 251 455.2zM316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72zM169.2 416.9C167.9 417.9 168.2 420.2 169.9 422.1C171.5 423.7 173.8 424.4 175.1 423.1C176.4 422.1 176.1 419.8 174.4 417.9C172.8 416.3 170.5 415.6 169.2 416.9zM158.4 408.8C157.7 410.1 158.7 411.7 160.7 412.7C162.3 413.7 164.3 413.4 165 412C165.7 410.7 164.7 409.1 162.7 408.1C160.7 407.5 159.1 407.8 158.4 408.8zM190.8 444.4C189.2 445.7 189.8 448.7 192.1 450.6C194.4 452.9 197.3 453.2 198.6 451.6C199.9 450.3 199.3 447.3 197.3 445.4C195.1 443.1 192.1 442.8 190.8 444.4zM179.4 429.7C177.8 430.7 177.8 433.3 179.4 435.6C181 437.9 183.7 438.9 185 437.9C186.6 436.6 186.6 434 185 431.7C183.6 429.4 181 428.4 179.4 429.7z" />
-                            </svg><span class="sr-only">GitHub</span></a>
-                        <a href="mailto:adhamsharkawy185@gmail.com" target="_blank" aria-label="Send me an email"><svg
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-                                <path
-                                    d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z" />
-                            </svg><span class="sr-only">Email</span></a>
-
-                    </div>
+            <div
+              class="about-skill-points"
+              data-reveal="slide-up"
+              data-reveal-delay="100"
+            >
+              <div class="skill-point">
+                <div class="skill-point-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <rect x="3" y="4" width="18" height="14" rx="2"></rect>
+                    <path d="M8 20h8"></path>
+                  </svg>
                 </div>
+                <div>
+                  <span class="skill-point-label">Design</span>
+                  <p class="skill-point-text">
+                    UI/UX Design, Prototyping, AI-assisted Design.
+                  </p>
+                </div>
+              </div>
 
-        </main>
-
-        <!-- Footer -->
-        <footer>
-            <div class=" footer-container">
-                <p>Designed & Built by Adham Sharkawy</p>
-                <p class="copyright">&copy; 2026 Adham Sharkawy. All rights reserved.</p>
+              <div class="skill-point skill-point-offset">
+                <div class="skill-point-icon">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <span class="skill-point-label">Development</span>
+                  <p class="skill-point-text">
+                    React.js, Tailwind CSS, TypeScript
+                  </p>
+                </div>
+              </div>
             </div>
-        </footer>
+          </div>
+        </div>
+      </div>
+      <div id="skills" class="skills">
+        <div class="skill-header" data-reveal="fade">My Skills</div>
+        <div class="skills-list">
+          <div
+            class="skill-item"
+            data-reveal="slide-up"
+            data-reveal-delay="100"
+          >
+            <div class="skill-info-row">
+              <div class="skill-label">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 640 640"
+                >
+                  <path
+                    d="M482.2 241.2C476.8 239.4 471.4 237.7 466 236.1C466.9 232.4 467.7 228.7 468.5 225C480.8 165.4 472.7 117.5 445.4 101.7C419.1 86.6 376.2 102.3 332.8 140.1C328.5 143.8 324.3 147.7 320.3 151.6C317.6 149 314.8 146.4 312 143.9C266.5 103.5 220.9 86.5 193.6 102.4C167.4 117.6 159.6 162.7 170.6 219.1C171.7 224.7 172.9 230.2 174.3 235.8C167.9 237.6 161.6 239.6 155.7 241.7C102.3 260.2 64 289.4 64 319.6C64 350.8 104.8 382.1 160.3 401.1C164.8 402.6 169.3 404.1 173.9 405.4C172.4 411.4 171.1 417.3 169.9 423.4C159.4 478.9 167.6 522.9 193.8 538C220.8 553.6 266.2 537.6 310.4 498.9C313.9 495.8 317.4 492.6 320.9 489.2C325.3 493.5 329.9 497.6 334.5 501.6C377.3 538.4 419.6 553.3 445.7 538.2C472.7 522.6 481.5 475.3 470.1 417.7C469.2 413.3 468.2 408.8 467.1 404.2C470.3 403.3 473.4 402.3 476.5 401.3C534.2 382.2 576 351.3 576 319.6C576 289.3 536.6 259.9 482.2 241.2zM346.9 156.3C384.1 123.9 418.8 111.2 434.6 120.3C451.5 130 458 169.2 447.4 220.7C446.7 224.1 446 227.4 445.1 230.7C422.9 225.7 400.4 222.1 377.8 220.1C364.8 201.5 350.6 183.7 335.2 167C339.1 163.3 342.9 159.8 346.9 156.3zM231.2 371.5C236.3 380.2 241.5 388.9 247 397.4C231.4 395.7 215.9 393.2 200.6 389.9C205 375.5 210.5 360.6 216.9 345.4C221.5 354.2 226.2 362.9 231.2 371.5zM200.9 251.2C215.3 248 230.6 245.4 246.5 243.4C241.2 251.7 236 260.2 231.1 268.8C226.2 277.3 221.4 286 216.9 294.8C210.6 279.9 205.3 265.3 200.9 251.2zM228.3 320.1C234.9 306.3 242.1 292.8 249.7 279.5C257.3 266.2 265.5 253.3 274.1 240.6C289.1 239.5 304.4 238.9 320 238.9C335.6 238.9 351 239.5 365.9 240.6C374.4 253.2 382.5 266.1 390.2 279.3C397.9 292.5 405.1 306 411.9 319.7C405.2 333.5 398 347.1 390.3 360.5C382.7 373.8 374.6 386.7 366.1 399.5C351.2 400.6 335.7 401.1 320 401.1C304.3 401.1 289.1 400.6 274.4 399.7C265.7 387 257.5 374 249.8 360.7C242.1 347.4 235 333.9 228.3 320.1zM408.9 371.3C414 362.5 418.8 353.6 423.5 344.6C429.9 359.1 435.5 373.8 440.4 388.9C424.9 392.4 409.2 395.1 393.4 396.9C398.8 388.5 403.9 379.9 408.9 371.3zM423.3 294.8C418.6 286 413.8 277.2 408.8 268.6C403.9 260.1 398.8 251.7 393.5 243.4C409.6 245.4 425 248.1 439.4 251.4C434.8 266.2 429.4 280.6 423.3 294.8zM320.2 182.3C330.7 193.7 340.6 205.7 349.8 218.1C330 217.2 310.1 217.2 290.3 218.1C300.1 205.2 310.2 193.2 320.2 182.3zM204.2 121C221 111.2 258.3 125.2 297.6 160C300.1 162.2 302.6 164.6 305.2 167C289.7 183.7 275.4 201.5 262.3 220.1C239.7 222.1 217.3 225.6 195.1 230.5C193.8 225.4 192.7 220.2 191.6 215C182.2 166.6 188.4 130.1 204.2 121zM179.7 384.6C175.5 383.4 171.4 382.1 167.3 380.7C146 374 121.8 363.4 104.3 349.5C94.2 342.5 87.4 331.7 85.5 319.6C85.5 301.3 117.1 277.9 162.7 262C168.4 260 174.2 258.2 180 256.5C186.8 278.2 195 299.5 204.5 320.1C194.9 341 186.6 362.6 179.7 384.6zM296.3 482.6C279.8 497.7 260.7 509.7 239.9 517.9C228.8 523.2 216 523.7 204.6 519.2C188.7 510 182.1 474.7 191.1 427.2C192.2 421.6 193.4 416 194.8 410.5C217.2 415.3 239.8 418.6 262.7 420.3C275.9 439 290.4 456.9 305.9 473.7C302.7 476.8 299.5 479.8 296.3 482.6zM320.8 458.3C310.6 447.3 300.4 435.1 290.5 422C300.1 422.4 310 422.6 320 422.6C330.3 422.6 340.4 422.4 350.4 421.9C341.2 434.6 331.3 446.7 320.8 458.3zM451.5 488.3C450.6 500.5 444.6 511.9 435 519.6C419.1 528.8 385.2 516.8 348.6 485.4C344.4 481.8 340.2 477.9 335.9 473.9C351.2 457 365.3 439.1 378.1 420.3C401 418.4 423.8 414.9 446.3 409.8C447.3 413.9 448.2 418 449 422C453.9 443.6 454.7 466.1 451.5 488.3zM469.7 380.8C466.9 381.7 464.1 382.6 461.2 383.4C454.2 361.6 445.6 340.3 435.7 319.6C445.3 299.2 453.4 278.2 460.2 256.7C465.4 258.2 470.4 259.8 475.2 261.4C521.8 277.4 554.5 301.2 554.5 319.4C554.5 339 519.6 364.3 469.7 380.8zM320 365.8C345.3 365.8 365.8 345.3 365.8 320C365.8 294.7 345.3 274.2 320 274.2C294.7 274.2 274.2 294.7 274.2 320C274.2 345.3 294.7 365.8 320 365.8z"
+                  />
+                </svg>
+                <span>React JS</span>
+              </div>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-item"
+            data-reveal="slide-up"
+            data-reveal-delay="200"
+          >
+            <div class="skill-info-row">
+              <div class="skill-label">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  class="bi bi-javascript"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M14 0a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2zM9.053 7.596v3.127l-.007 1.752q0 .498-.186.752t-.556.263q-.342 0-.528-.234-.185-.234-.185-.684v-.175H6.37v.185q0 .665.253 1.113.255.45.703.674.44.225 1.016.225.88 0 1.406-.498.527-.498.527-1.485l.007-1.752V7.596zm3.808-.108q-.585 0-1.006.244a1.67 1.67 0 0 0-.634.674 2.1 2.1 0 0 0-.225.996q0 .753.293 1.182.303.42.967.732l.469.215q.438.186.625.43.185.244.185.635 0 .478-.166.703-.156.224-.527.224-.361.001-.547-.244-.186-.243-.205-.752h-1.162q.02.996.498 1.524.479.527 1.386.527.909 0 1.417-.518.507-.517.507-1.484 0-.81-.332-1.289t-1.045-.79l-.449-.196q-.39-.166-.556-.381-.166-.214-.166-.576 0-.4.165-.596.177-.195.508-.195.361 0 .508.234.156.234.176.703z"
+                  />
+                </svg>
+                <span>JavaScript</span>
+              </div>
+              <span class="skill-percentage">90%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill" style="width: 90%"></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-item"
+            data-reveal="slide-up"
+            data-reveal-delay="300"
+          >
+            <div class="skill-info-row">
+              <div class="skill-label">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm17.09 4.413L5.41 4.41l.213 2.622 10.125.002-.255 2.716h-9.64l.213 2.622h9.195l-.396 4.426-2.975.834-2.974-.833-.195-2.187H6.13l.386 4.54 5.46 1.533 5.44-1.533.785-8.826.298-3.374-.158-1.765-.18-1.975z"
+                  />
+                </svg>
+                <span>CSS</span>
+              </div>
+              <span class="skill-percentage">100%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill" style="width: 100%"></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-item"
+            data-reveal="slide-up"
+            data-reveal-delay="400"
+          >
+            <div class="skill-info-row">
+              <div class="skill-label">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M1.5 0h21l-1.91 21.563L11.977 24l-8.565-2.438L1.5 0zm15.65 13.062l.256-2.735H8.22l-.193-2.15h8.064l.257-2.736H5.213l.58 6.45h8.132l-.29 3.096-2.02.558-2.015-.557-.13-1.436H6.76l.247 2.76 4.59 1.293 4.58-1.293.974-11.025z"
+                  />
+                </svg>
+                <span>HTML</span>
+              </div>
+              <span class="skill-percentage">100%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill" style="width: 100%"></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-item"
+            data-reveal="slide-up"
+            data-reveal-delay="500"
+          >
+            <div class="skill-info-row">
+              <div class="skill-label">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+                  />
+                </svg>
+                <span>GitHub</span>
+              </div>
+              <span class="skill-percentage">85%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill" style="width: 85%"></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-item"
+            data-reveal="slide-up"
+            data-reveal-delay="500"
+          >
+            <div class="skill-info-row">
+              <div class="skill-label">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 640"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M365.5 265.4c0-22.1-15.6-34.3-43-34.3l-50.4 0l0 71.2l42.5 0c32.8-.1 50.9-13.3 50.9-36.9zM549 252.6c-9.5-30.9-10.9-68.8-9.8-98.1c1.1-30.5-22.7-58.5-54.7-58.5L155.7 96c-32.1 0-55.8 28.1-54.7 58.5c1.1 29.3-.2 67.2-9.7 98.1c-9.6 31-25.7 50.6-52.2 53.1l0 28.5c26.4 2.5 42.6 22.1 52.2 53.1c9.5 30.9 10.9 68.8 9.8 98.1c-1.1 30.5 22.7 58.5 54.7 58.5l328.7 0c32.1 0 55.8-28.1 54.7-58.5c-1.1-29.3 .2-67.2 9.8-98.1c9.6-31 25.7-50.6 52.1-53.1l0-28.5c-26.3-2.5-42.5-22.1-52-53.1zM332.2 439.1L234.3 439.1L234.3 200.8L331.7 200.8c43.3 0 71.7 23.4 71.7 59.4c0 25.3-19.1 47.9-43.5 51.8l0 1.3c33.2 3.6 55.5 26.6 55.5 58.3c0 42.1-31.3 67.5-83.2 67.5zM322.2 330.4L272.1 330.4l0 78.4l52.3 0c34.2 0 52.3-13.7 52.3-39.5c0-25.7-18.6-38.9-54.5-38.9z"
+                  />
+                </svg>
+                <span>Bootstrap</span>
+              </div>
+              <span class="skill-percentage">75%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill" style="width: 75%"></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-item"
+            data-reveal="slide-up"
+            data-reveal-delay="600"
+          >
+            <div class="skill-info-row">
+              <div class="skill-label">
+                <svg
+                  stroke="currentColor"
+                  fill="currentColor"
+                  stroke-width="0"
+                  viewBox="0 0 24 24"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path fill="none" d="M0 0h24v24H0z"></path>
+                  <path
+                    d="M20.97 7.27a.996.996 0 0 0 0-1.41l-2.83-2.83a.996.996 0 0 0-1.41 0l-4.49 4.49-3.89-3.89c-.78-.78-2.05-.78-2.83 0l-1.9 1.9c-.78.78-.78 2.05 0 2.83l3.89 3.89L3 16.76V21h4.24l4.52-4.52 3.89 3.89c.95.95 2.23.6 2.83 0l1.9-1.9c.78-.78.78-2.05 0-2.83l-3.89-3.89 4.48-4.48zM5.04 6.94l1.89-1.9L8.2 6.31 7.02 7.5l1.41 1.41 1.19-1.19 1.2 1.2-1.9 1.9-3.88-3.88zm11.23 7.44-1.19 1.19 1.41 1.41 1.19-1.19 1.27 1.27-1.9 1.9-3.89-3.89 1.9-1.9 1.21 1.21zM6.41 19H5v-1.41l9.61-9.61 1.3 1.3.11.11L6.41 19zm9.61-12.44 1.41-1.41 1.41 1.41-1.41 1.41-1.41-1.41z"
+                  ></path>
+                </svg>
+                <span>UI/UX</span>
+              </div>
+              <span class="skill-percentage">80%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill" style="width: 80%"></div>
+            </div>
+          </div>
+
+          <div
+            class="skill-item"
+            data-reveal="slide-up"
+            data-reveal-delay="700"
+          >
+            <div class="skill-info-row">
+              <div class="skill-label">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 640 512"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M184 120c0-30.9 25.1-56 56-56h24c17.7 0 32 14.3 32 32v448c0 17.7-14.3 32-32 32h-32c-29.8 0-54.9-20.4-62-48-0.7 0-1.3 0-2 0-44.2 0-80-35.8-80-80 0-18 6-34.6 16-48-19.4-14.6-32-37.8-32-64 0-30.9 17.6-57.8 43.2-71.1-7.1-12-11.2-26-11.2-40.9 0-44.2 35.8-80 80-80V120zM456 120v24c44.2 0 80 35.8 80 80 0 15-4.1 29-11.2 40.9C550.4 278.2 568 305 568 336c0 26.2-12.6 49.4-32 64 10 13.4 16 30 16 48 0 44.2-35.8 80-80 80-0.7 0-1.3 0-2 0-7.1 27.6-32.2 48-62 48h-32c-17.7 0-32-14.3-32-32V96c0-17.7 14.3-32 32-32h24c30.9 0 56 25.1 56 56z"
+                  />
+                </svg>
+                <span>AI</span>
+              </div>
+              <span class="skill-percentage">75%</span>
+            </div>
+            <div class="progress-bar-container">
+              <div class="progress-fill" style="width: 75%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="projects-section" class="projects-section">
+        <div class="title" data-reveal="fade">Projects</div>
+
+        <div class="card-container">
+          <div class="card" data-reveal="zoom-in" data-reveal-delay="100">
+            <div class="card-image">
+              <a href="https://next-circuit.vercel.app/" target="_blank">
+                <img
+                  src="assets/images/next-circuit.webp"
+                  alt="next-circuit"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-icons">
+                <a
+                  href="https://next-circuit.vercel.app/"
+                  target="_blank"
+                  class="icon-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path
+                      d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/sharkawy89/Next-circuit"
+                  target="_blank"
+                  class="icon-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-category">modern e-commerce</div>
+              <div class="card-title">Next Circuit</div>
+              <p class="card-text">
+                e-commerce application that specializes in selling technology
+                devices, with user authentication, product catalog, shopping
+                cart, and order management. Backend runs on Vercel serverless
+                functions.
+              </p>
+              <div class="card-footer">
+                <div class="card-tags">
+                  <span class="tag">Nodejs</span>
+                  <span class="tag">Express</span>
+                  <span class="tag">Firestore</span>
+                  <span class="tag">tailwind</span>
+                </div>
+                <a
+                  href="https://next-circuit.vercel.app/"
+                  target="_blank"
+                  class="live-link"
+                >
+                  Live
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-reveal="zoom-in" data-reveal-delay="200">
+            <div class="card-image">
+              <a href="https://el3eyada-ucr2.vercel.app/" target="_blank">
+                <img
+                  src="assets/images/el3eyada.webp"
+                  alt="el3eyada"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-icons">
+                <a
+                  href="https://el3eyada-ucr2.vercel.app/"
+                  target="_blank"
+                  class="icon-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path
+                      d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/sharkawy89/health-dashboard"
+                  target="_blank"
+                  class="icon-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-category">Healthcare Management</div>
+              <div class="card-title">EL3eyada</div>
+              <p class="card-text">
+                A modern, responsive clinic management system built with React,
+                designed to streamline healthcare operations and patient
+                management.
+              </p>
+              <div class="card-footer">
+                <div class="card-tags">
+                  <span class="tag">React</span>
+                  <span class="tag">Firestore</span>
+                  <span class="tag">Tailwind CSS</span>
+                </div>
+                <a
+                  href="https://el3eyada-ucr2.vercel.app/"
+                  target="_blank"
+                  class="live-link"
+                >
+                  Live
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="card" data-reveal="zoom-in" data-reveal-delay="300">
+            <div class="card-image">
+              <a href="https://sharkawy-store.vercel.app/" target="_blank">
+                <img
+                  src="assets/images/sharkawy-store.webp"
+                  alt="sharkawy_store"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-icons">
+                <a
+                  href="https://sharkawy-store.vercel.app/"
+                  target="_blank"
+                  class="icon-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path
+                      d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    ></path>
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/sharkawy89/sharkawy_store"
+                  target="_blank"
+                  class="icon-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-category">E-Commerce Platform</div>
+              <div class="card-title">Sharkawy Store</div>
+              <p class="card-text">
+                A front-end e-commerce web application that showcases a product
+                catalog and allows users to browse items, view detailed product
+                information, manage a shopping cart, and complete a checkout
+                flow.
+              </p>
+              <div class="card-footer">
+                <div class="card-tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                </div>
+                <a
+                  href="https://sharkawy-store.vercel.app/"
+                  target="_blank"
+                  class="live-link"
+                >
+                  Live
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-reveal="zoom-in" data-reveal-delay="300">
+            <div class="card-image">
+              <a
+                href="https://sharkawy89.github.io/landing-page-2/"
+                target="_blank"
+              >
+                <img
+                  src="assets/images/landing-page.webp"
+                  alt="sharkawy_store"
+                  loading="lazy"
+                />
+              </a>
+              <div class="card-icons">
+                <a
+                  href="https://sharkawy89.github.io/landing-page-2/"
+                  target="_blank"
+                  class="icon-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path
+                      d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/sharkawy89/landing-page-2"
+                  target="_blank"
+                  class="icon-btn"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="card-category">landing-page</div>
+              <div class="card-title">The Clinical Sanctuary</div>
+              <p class="card-text">
+                This page is a polished healthcare landing page for “The
+                Clinical Sanctuary.” It presents a warm, modern medical brand
+                with a hero section, service cards, an about/why-choose-us
+                section, doctor profiles, testimonials, location details, and a
+                footer. The overall feel is clean and professional, aimed at
+                building trust and encouraging appointment bookings
+              </p>
+              <div class="card-footer">
+                <div class="card-tags">
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">HTML</span>
+                  <span class="tag">tailwind</span>
+                </div>
+                <a
+                  href="https://sharkawy89.github.io/landing-page-2/"
+                  target="_blank"
+                  class="live-link"
+                >
+                  Live
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 640 640"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M384 64C366.3 64 352 78.3 352 96C352 113.7 366.3 128 384 128L466.7 128L265.3 329.4C252.8 341.9 252.8 362.2 265.3 374.7C277.8 387.2 298.1 387.2 310.6 374.7L512 173.3L512 256C512 273.7 526.3 288 544 288C561.7 288 576 273.7 576 256L576 96C576 78.3 561.7 64 544 64L384 64zM144 160C99.8 160 64 195.8 64 240L64 496C64 540.2 99.8 576 144 576L400 576C444.2 576 480 540.2 480 496L480 416C480 398.3 465.7 384 448 384C430.3 384 416 398.3 416 416L416 496C416 504.8 408.8 512 400 512L144 512C135.2 512 128 504.8 128 496L128 240C128 231.2 135.2 224 144 224L224 224C241.7 224 256 209.7 256 192C256 174.3 241.7 160 224 160L144 160z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="education" class="education-section">
+        <div class="education-section-title" data-reveal="fade">Education</div>
+        <div class="education-split">
+          <div class="education-intro" data-reveal="slide-right">
+            <div class="education-main-title">
+              Academic Journey & Certifications
+            </div>
+          </div>
+
+          <div class="education-content" data-reveal="slide-up">
+            <div class="education-timeline">
+              <div
+                class="education-entry"
+                data-reveal="slide-up"
+                data-reveal-delay="100"
+              >
+                <div class="education-entry-title">
+                  Bachelor's Degree in Computer Science
+                </div>
+                <div class="education-entry-meta">
+                  Faculty of Computers and Artificial Intelligence, Thebes
+                  Academy
+                </div>
+                <div class="education-entry-date">2023 - 2027</div>
+              </div>
+
+              <div
+                class="education-entry"
+                data-reveal="slide-up"
+                data-reveal-delay="200"
+              >
+                <div class="education-entry-title">
+                  React Frontend Development
+                </div>
+                <div class="education-entry-meta">
+                  Digital Egypt Pioneers Initiative - DEPI
+                </div>
+                <div class="education-entry-date">Dec 2025 - Jul 2026</div>
+              </div>
+            </div>
+
+            <div
+              class="certificate-links"
+              data-reveal="slide-up"
+              data-reveal-delay="300"
+            >
+              <a
+                class="certificate-chip"
+                href="assets/images/html&css.webp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="certificate-chip-icon">↗</span>
+                HTML & CSS Certificate
+              </a>
+              <a
+                class="certificate-chip"
+                href="assets/images/python-basics.webp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="certificate-chip-icon">↗</span>
+                Python Basics Certificate
+              </a>
+              <a
+                class="certificate-chip"
+                href="assets/images/js_page-0001.webp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="certificate-chip-icon">↗</span>
+                JavaScript Certificate
+              </a>
+              <a
+                class="certificate-chip"
+                href="assets/images/freelance.webp"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span class="certificate-chip-icon">↗</span>
+                Freelance Certificate
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="contact" class="section contact-section">
+        <div class="contact-split">
+          <div class="contact-copy" data-reveal="slide-right">
+            <p class="contact-kicker">Get In Touch</p>
+            <div class="contact-heading">Let's Work Together</div>
+            <p class="contact-description">
+              Have a project in mind or just want to say hi? Feel free to reach
+              out.
+            </p>
+
+            <div class="contact-details">
+              <a
+                class="contact-item"
+                href="mailto:mahmoudromediv0@gmail.com"
+                aria-label="Email Mahmoud Romeh"
+              >
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path
+                      d="M112 128C85.5 128 64 149.5 64 176C64 191.1 71.1 205.3 83.2 214.4L291.2 370.4C308.3 383.2 331.7 383.2 348.8 370.4L556.8 214.4C568.9 205.3 576 191.1 576 176C576 149.5 554.5 128 528 128L112 128zM64 260L64 448C64 483.3 92.7 512 128 512L512 512C547.3 512 576 483.3 576 448L576 260L377.6 408.8C343.5 434.4 296.5 434.4 262.4 408.8L64 260z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-item-text">
+                  <span class="contact-item-value"
+                    >adhamsharkawy185@gmail.com</span
+                  >
+                </span>
+              </a>
+
+              <a
+                class="contact-item"
+                href="tel:01125046782"
+                aria-label="Call Mahmoud Romeh"
+              >
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path
+                      d="M477.1 417.7C429.8 370.4 371.6 338.6 309.5 323.2C304.1 321.9 298.5 323.6 294.8 327.3L256.6 365.5C197.2 334.1 146 282.9 114.6 223.4L152.8 185.2C156.5 181.5 158.2 176 156.9 170.5C141.5 108.4 109.7 50.2 62.4 2.9C56.2 -3.3 46.2 -3.3 40 2.9L8.6 34.3C-9.9 52.8 -18.8 78.8 -14.4 104.5C23.1 321.2 191.8 489.9 408.5 527.4C434.2 531.8 460.2 522.9 478.7 504.4L510.1 473C516.3 466.8 516.3 456.8 510.1 450.6L477.1 417.7z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-item-text">
+                  <span class="contact-item-value">01151921862</span>
+                </span>
+              </a>
+
+              <div class="contact-item">
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path
+                      d="M320 32C230.8 32 160 102.8 160 192C160 315.2 320 608 320 608C320 608 480 315.2 480 192C480 102.8 409.2 32 320 32zM320 256C284.7 256 256 227.3 256 192C256 156.7 284.7 128 320 128C355.3 128 384 156.7 384 192C384 227.3 355.3 256 320 256z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-item-text">
+                  <span class="contact-item-value">Helwan, Cairo, Egypt</span>
+                </span>
+              </div>
+
+              <a
+                class="contact-item"
+                href="https://www.linkedin.com/in/adham-sharkawy-25985333b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit LinkedIn profile"
+              >
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path
+                      d="M160 96C124.7 96 96 124.7 96 160L96 480C96 515.3 124.7 544 160 544L480 544C515.3 544 544 515.3 544 480L544 160C544 124.7 515.3 96 480 96L160 96zM165 266.2L231.5 266.2L231.5 480L165 480L165 266.2zM236.7 198.5C236.7 219.8 219.5 237 198.2 237C176.9 237 159.7 219.8 159.7 198.5C159.7 177.2 176.9 160 198.2 160C219.5 160 236.7 177.2 236.7 198.5zM413.9 480L413.9 376C413.9 351.2 413.4 319.3 379.4 319.3C344.8 319.3 339.5 346.3 339.5 374.2L339.5 480L273.1 480L273.1 266.2L336.8 266.2L336.8 295.4L337.7 295.4C346.6 278.6 368.3 260.9 400.6 260.9C467.8 260.9 480.3 305.2 480.3 362.8L480.3 480L413.9 480z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-item-text">
+                  <span class="contact-item-value">Adham sharkawy</span>
+                </span>
+              </a>
+
+              <a
+                class="contact-item"
+                href="https://github.com/sharkawy89"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit GitHub profile"
+              >
+                <span class="contact-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                    <path
+                      d="M316.8 72C178.1 72 72 177.3 72 316C72 426.9 141.8 521.8 241.5 555.2C254.3 557.5 258.8 549.6 258.8 543.1C258.8 536.9 258.5 502.7 258.5 481.7C258.5 481.7 188.5 496.7 173.8 451.9C173.8 451.9 162.4 422.8 146 415.3C146 415.3 123.1 399.6 147.6 399.9C147.6 399.9 172.5 401.9 186.2 425.7C208.1 464.3 244.8 453.2 259.1 446.6C261.4 430.6 267.9 419.5 275.1 412.9C219.2 406.7 162.8 398.6 162.8 302.4C162.8 274.9 170.4 261.1 186.4 243.5C183.8 237 175.3 210.2 189 175.6C209.9 169.1 258 202.6 258 202.6C278 197 299.5 194.1 320.8 194.1C342.1 194.1 363.6 197 383.6 202.6C383.6 202.6 431.7 169 452.6 175.6C466.3 210.3 457.8 237 455.2 243.5C471.2 261.2 481 275 481 302.4C481 398.9 422.1 406.6 366.2 412.9C375.4 420.8 383.2 435.8 383.2 459.3C383.2 493 382.9 534.7 382.9 542.9C382.9 549.4 387.5 557.3 400.2 555C500.2 521.8 568 426.9 568 316C568 177.3 455.5 72 316.8 72z"
+                    />
+                  </svg>
+                </span>
+                <span class="contact-item-text">
+                  <span class="contact-item-value">sharkawy89</span>
+                </span>
+              </a>
+            </div>
+          </div>
+
+          <div
+            class="contact-form-shell"
+            data-reveal="slide-up"
+            data-reveal-delay="100"
+          >
+            <div id="form-message" class="form-message"></div>
+
+            <form
+              action="https://formspree.io/f/mpqjdzpd"
+              method="POST"
+              class="contact-form"
+              id="contactForm"
+            >
+              <div class="form-group">
+                <label for="name" class="sr-only">full Name</label>
+                <input type="text" name="name" id="name" placeholder="Name" />
+              </div>
+              <div class="form-group">
+                <label for="email" class="sr-only">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="phone" class="sr-only">Phone</label>
+                <input type="tel" name="phone" id="phone" placeholder="Phone" />
+              </div>
+              <div class="form-group">
+                <label for="subject" class="sr-only">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  id="subject"
+                  placeholder="Subject"
+                />
+              </div>
+              <div class="form-group">
+                <label for="message" class="sr-only">Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  placeholder="Message"
+                ></textarea>
+              </div>
+              <button type="submit" class="contact-submit">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>Designed & Built by Eng.Adham sharkawy</p>
+      </footer>
     </div>
 
     <!-- Theme Toggle Button -->
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg xmlns="http://www.w3.org/2000/svg" class="fa-moon theme-icon" id="themeicon" viewBox="0 0 640 640">
-            <path
-                d="M320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576C388.8 576 451.3 548.8 497.3 504.6C504.6 497.6 506.7 486.7 502.6 477.5C498.5 468.3 488.9 462.6 478.8 463.4C473.9 463.8 469 464 464 464C362.4 464 280 381.6 280 280C280 207.9 321.5 145.4 382.1 115.2C391.2 110.7 396.4 100.9 395.2 90.8C394 80.7 386.6 72.5 376.7 70.3C358.4 66.2 339.4 64 320 64z" />
-        </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="fa-moon theme-icon"
+        id="themeicon"
+        viewBox="0 0 640 640"
+      >
+        <path
+          d="M320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576C388.8 576 451.3 548.8 497.3 504.6C504.6 497.6 506.7 486.7 502.6 477.5C498.5 468.3 488.9 462.6 478.8 463.4C473.9 463.8 469 464 464 464C362.4 464 280 381.6 280 280C280 207.9 321.5 145.4 382.1 115.2C391.2 110.7 396.4 100.9 395.2 90.8C394 80.7 386.6 72.5 376.7 70.3C358.4 66.2 339.4 64 320 64z"
+        />
+      </svg>
     </button>
 
     <script src="assets/js/script.js" defer></script>
-</body>
-
+  </body>
 </html>
