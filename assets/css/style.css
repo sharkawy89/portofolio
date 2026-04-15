@@ -1059,7 +1059,8 @@ html {
   flex: 0 1 calc(50% - 20px);
   width: calc(50% - 20px);
   min-width: 0;
-  height: 520px;
+  height: auto;
+  min-height: 520px;
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -1114,6 +1115,8 @@ html {
     width: 100%;
     max-width: 100%;
     min-width: 0;
+    height: 500px;
+    overflow: hidden;
   }
 }
 
@@ -1230,6 +1233,7 @@ html {
   flex: 1;
   padding: 24px;
   background: rgba(15, 23, 42, 0.5);
+  justify-content: flex-start;
 }
 
 .light-theme .card-content {
@@ -1258,16 +1262,17 @@ html {
   font-size: 0.9rem;
   line-height: 1.6;
   color: var(--text-secondary);
-  margin-bottom: auto;
-  flex-grow: 1;
+  margin-bottom: 0;
+  flex-grow: 0;
 }
 
 .card-footer {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 20px;
+  margin-top: auto;
   gap: 15px;
+  flex-shrink: 0;
 }
 
 .card-tags {
@@ -1557,36 +1562,6 @@ html {
   transition: transform 0.3s ease;
 }
 
-@media (max-width: 900px) {
-  .nav-bar {
-    padding: 14px 18px;
-  }
-
-  .nav-items {
-    gap: 8px;
-  }
-
-  .nav-items a {
-    font-size: 14px;
-    padding: 8px;
-  }
-
-  .social-icons a {
-    padding: 9px;
-    margin-left: 12px;
-  }
-
-  .main-content {
-    padding: 110px 35px 55px;
-    gap: 45px;
-  }
-
-  .image-wrapper {
-    width: 340px;
-    height: 340px;
-  }
-}
-
 @media (max-width: 1024px) {
   .nav-bar {
     padding: 14px 20px;
@@ -1612,8 +1587,8 @@ html {
   }
 
   .main-content {
-    padding: 100px 30px 50px;
-    gap: 50px;
+    padding: 92px 24px 44px;
+    gap: 36px;
   }
 
   .main-title {
@@ -1625,13 +1600,13 @@ html {
   }
 
   .image-wrapper {
-    width: 320px;
-    height: 320px;
+    width: min(280px, 44vw);
+    height: min(280px, 44vw);
   }
 
   .skills {
-    margin-top: 180px;
-    padding: 0 24px;
+    margin-top: 160px;
+    padding: 0 20px;
   }
 
   .skills .skill-header {
@@ -1659,9 +1634,9 @@ html {
   }
 
   .about-me {
-    padding: 40px 24px;
-    margin: 150px 20px 30px;
-    max-width: 90%;
+    padding: 32px 20px;
+    margin: 130px 16px 26px;
+    max-width: 100%;
   }
 
   .about-header {
@@ -1684,6 +1659,8 @@ html {
     width: calc(50% - 20px);
     max-width: none;
     min-width: 0;
+    height: auto;
+    min-height: 500px;
   }
 
   .card-title {
@@ -1843,8 +1820,8 @@ html {
   }
 
   .projects-section {
-    margin-top: 120px;
-    padding: 0 16px;
+    margin-top: 130px;
+    padding: 0 12px;
   }
 
   .title {
@@ -1855,20 +1832,26 @@ html {
   .card-container {
     gap: 15px;
     flex-wrap: wrap;
+    width: 100%;
   }
 
   .card {
-    width: calc(33.333% - 11px);
-    min-width: 280px;
+    flex: 0 1 calc(50% - 7.5px);
+    width: calc(50% - 7.5px);
+    min-width: 0;
     max-width: 100%;
+    height: auto;
+    min-height: 500px;
+    overflow: visible;
   }
 
   .card-title {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
+    margin-bottom: 12px;
   }
 
   .card-image {
-    height: 180px;
+    height: 130px;
   }
 
   .live-link {
@@ -1876,12 +1859,19 @@ html {
   }
 
   .card-content {
-    padding: 20px;
+    padding: 14px 14px 12px;
+    flex: 1;
+  }
+
+  .card-text {
+    margin-bottom: 0;
   }
 
   .card-footer {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
+    margin-top: auto;
   }
 
   .live-link {
@@ -1978,6 +1968,16 @@ html {
   .certificate-chip {
     width: 100%;
     justify-content: center;
+  }
+
+  .card {
+    flex: 0 1 100%;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
+    min-height: 500px;
+    overflow: visible;
   }
 }
 
@@ -2142,8 +2142,8 @@ html {
   }
 
   .projects-section {
-    margin-top: 100px;
-    padding: 0 16px;
+    margin-top: 96px;
+    padding: 0 8px;
   }
 
   .title {
@@ -2158,15 +2158,17 @@ html {
   .card {
     width: 100%;
     max-width: 100%;
-    min-width: 280px;
+    min-width: 0;
+    height: auto;
   }
 
   .card-title {
-    font-size: 1.4rem;
+    font-size: 1.05rem;
+    margin-bottom: 8px;
   }
 
   .card-image {
-    height: 160px;
+    height: 110px;
   }
 
   .live-link {
@@ -2174,7 +2176,28 @@ html {
   }
 
   .card-content {
-    padding: 16px;
+    padding: 10px 10px 10px;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+    line-height: 1.45;
+    flex-grow: 0;
+    margin-bottom: 6px;
+  }
+
+  .card-footer {
+    margin-top: 6px;
+    gap: 8px;
+  }
+
+  .card-tags {
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.64rem;
+    padding: 5px 8px;
   }
 
   .contact-form-shell {
