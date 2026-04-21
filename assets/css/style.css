@@ -1384,7 +1384,7 @@ html {
 
 .contact-item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 14px;
   text-decoration: none;
   color: inherit;
@@ -1401,7 +1401,6 @@ html {
   height: 22px;
   color: var(--contact-accent);
   flex-shrink: 0;
-  margin-top: 2px;
 }
 
 .contact-item-icon svg {
@@ -1414,12 +1413,14 @@ html {
   display: flex;
   flex-direction: column;
   gap: 3px;
+  align-items: flex-start;
 }
 
 .contact-item-value {
   color: var(--text-tertiary);
   font-size: 0.96rem;
   line-height: 1.5;
+  font-weight: 500;
 }
 
 .contact-form-shell {
@@ -1470,11 +1471,45 @@ html {
 .form-group textarea {
   width: 100%;
   background-color: rgba(7, 9, 13, 0.95);
-  border: 1px solid rgba(37, 99, 235, 0.28);
+  border: 1px solid #1e293b;
   padding: 15px 16px;
   border-radius: 14px;
   color: white;
   font-size: 0.98rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(203, 213, 225, 0.92);
+  opacity: 1;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+}
+
+.form-group input:focus-visible,
+.form-group textarea:focus-visible {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+}
+
+.form-group input.is-error,
+.form-group textarea.is-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.14);
+}
+
+.form-group input.is-success,
+.form-group textarea.is-success {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.14);
 }
 
 .form-group textarea {
@@ -1500,14 +1535,90 @@ html {
 }
 
 .contact-submit:hover {
-  background: var(--border-hover);
-  transform: translateY(-2px);
+  background: #3b82f6;
   box-shadow: 0 16px 30px rgba(37, 99, 235, 0.18);
 }
 
 .contact-submit:focus-visible {
   outline: 2px solid #fff;
   outline-offset: 2px;
+}
+
+.light-theme .contact-section {
+  --contact-accent: #1a479d;
+}
+
+.light-theme .contact-kicker {
+  color: #1a479d;
+}
+
+.light-theme .contact-heading {
+  color: #1f2937;
+  font-weight: 800;
+}
+
+.light-theme .contact-description {
+  color: #475569;
+  font-weight: 400;
+}
+
+.light-theme .contact-item-value {
+  color: #334155;
+  font-weight: 500;
+}
+
+.light-theme .contact-form-shell {
+  background: #e6f0ea;
+  border: 1px solid rgba(26, 71, 157, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 16px 40px rgba(31, 41, 55, 0.08);
+}
+
+.light-theme .form-group input,
+.light-theme .form-group textarea {
+  background-color: #f1f7f9;
+  border: 1px solid rgba(26, 71, 157, 0.16);
+  border-radius: 8px;
+  color: #1f2937;
+}
+
+.light-theme .form-group input::placeholder,
+.light-theme .form-group textarea::placeholder {
+  color: #64748b;
+}
+
+.light-theme .form-group input:focus-visible,
+.light-theme .form-group textarea:focus-visible {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.16);
+}
+
+.light-theme .form-group input.is-error,
+.light-theme .form-group textarea.is-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
+}
+
+.light-theme .form-group input.is-success,
+.light-theme .form-group textarea.is-success {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
+}
+
+.light-theme .contact-submit {
+  background: #1a479d;
+  border-radius: 12px;
+  box-shadow: 0 14px 26px rgba(26, 71, 157, 0.18);
+}
+
+.light-theme .contact-submit:hover {
+  background: #2256b9;
+  box-shadow: 0 18px 32px rgba(26, 71, 157, 0.22);
+}
+
+.light-theme .contact-submit:focus-visible {
+  outline: 2px solid #1a479d;
+  outline-offset: 3px;
 }
 
 .site-footer {

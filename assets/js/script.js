@@ -169,6 +169,26 @@ navLinks.forEach((link) => {
 const contactForm = document.querySelector(".contact-form");
 const formMessage = document.getElementById("form-message");
 
+function setFieldState(field, state) {
+  if (!field) return;
+
+  field.classList.remove("is-error", "is-success");
+
+  if (state === "error") {
+    field.classList.add("is-error");
+  }
+
+  if (state === "success") {
+    field.classList.add("is-success");
+  }
+}
+
+function clearFieldState(field) {
+  if (!field) return;
+
+  field.classList.remove("is-error", "is-success");
+}
+
 if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -188,18 +208,18 @@ if (contactForm) {
     if (!nameRegex.test(nameInput.value.trim())) {
       isValid = false;
       errors.push("Name must be your fullname (each name 3-15 letters)");
-      nameInput.style.borderColor = "#ef4444";
+      setFieldState(nameInput, "error");
     } else {
-      nameInput.style.borderColor = "#22c55e";
+      setFieldState(nameInput, "success");
     }
 
     // Validate email
     if (!emailRegex.test(emailInput.value.trim())) {
       isValid = false;
       errors.push("Please enter a valid email");
-      emailInput.style.borderColor = "#ef4444";
+      setFieldState(emailInput, "error");
     } else {
-      emailInput.style.borderColor = "#22c55e";
+      setFieldState(emailInput, "success");
     }
 
     // Validate phone when provided
@@ -210,28 +230,31 @@ if (contactForm) {
     ) {
       isValid = false;
       errors.push("Please enter a valid phone number");
-      phoneInput.style.borderColor = "#ef4444";
+      setFieldState(phoneInput, "error");
     } else if (phoneInput) {
-      phoneInput.style.borderColor =
-        phoneInput.value.trim() !== "" ? "#22c55e" : "";
+      if (phoneInput.value.trim() !== "") {
+        setFieldState(phoneInput, "success");
+      } else {
+        clearFieldState(phoneInput);
+      }
     }
 
     // Validate subject
     if (!subjectRegex.test(subjectInput.value.trim())) {
       isValid = false;
       errors.push("Subject must be at least 4 characters (no digits allowed)");
-      subjectInput.style.borderColor = "#ef4444";
+      setFieldState(subjectInput, "error");
     } else {
-      subjectInput.style.borderColor = "#22c55e";
+      setFieldState(subjectInput, "success");
     }
 
     // Validate message
     if (!messageRegex.test(messageInput.value.trim())) {
       isValid = false;
       errors.push("Message must be at least 10 characters");
-      messageInput.style.borderColor = "#ef4444";
+      setFieldState(messageInput, "error");
     } else {
-      messageInput.style.borderColor = "#22c55e";
+      setFieldState(messageInput, "success");
     }
 
     // If validation passes, submit the form
@@ -242,10 +265,10 @@ if (contactForm) {
       }
 
       // Reset border colors to success
-      nameInput.style.borderColor = "#22c55e";
-      emailInput.style.borderColor = "#22c55e";
-      subjectInput.style.borderColor = "#22c55e";
-      messageInput.style.borderColor = "#22c55e";
+      setFieldState(nameInput, "success");
+      setFieldState(emailInput, "success");
+      setFieldState(subjectInput, "success");
+      setFieldState(messageInput, "success");
 
       // Submit form to Formspree
       this.submit();
@@ -274,11 +297,11 @@ if (contactForm) {
   if (nameInput) {
     nameInput.addEventListener("input", function () {
       if (nameRegex.test(this.value.trim())) {
-        this.style.borderColor = "#22c55e";
+        setFieldState(this, "success");
       } else if (this.value.trim() !== "") {
-        this.style.borderColor = "#ef4444";
+        setFieldState(this, "error");
       } else {
-        this.style.borderColor = "";
+        clearFieldState(this);
       }
     });
   }
@@ -286,11 +309,11 @@ if (contactForm) {
   if (emailInput) {
     emailInput.addEventListener("input", function () {
       if (emailRegex.test(this.value.trim())) {
-        this.style.borderColor = "#22c55e";
+        setFieldState(this, "success");
       } else if (this.value.trim() !== "") {
-        this.style.borderColor = "#ef4444";
+        setFieldState(this, "error");
       } else {
-        this.style.borderColor = "";
+        clearFieldState(this);
       }
     });
   }
@@ -298,9 +321,11 @@ if (contactForm) {
   if (phoneInput) {
     phoneInput.addEventListener("input", function () {
       if (this.value.trim() === "") {
-        this.style.borderColor = "#ef4444";
+        clearFieldState(this);
       } else if (phoneRegex.test(this.value.trim())) {
-        this.style.borderColor = "#22c55e";
+        setFieldState(this, "success");
+      } else {
+        setFieldState(this, "error");
       }
     });
   }
@@ -308,11 +333,11 @@ if (contactForm) {
   if (subjectInput) {
     subjectInput.addEventListener("input", function () {
       if (subjectRegex.test(this.value.trim())) {
-        this.style.borderColor = "#22c55e";
+        setFieldState(this, "success");
       } else if (this.value.trim() !== "") {
-        this.style.borderColor = "#ef4444";
+        setFieldState(this, "error");
       } else {
-        this.style.borderColor = "";
+        clearFieldState(this);
       }
     });
   }
@@ -320,11 +345,11 @@ if (contactForm) {
   if (messageInput) {
     messageInput.addEventListener("input", function () {
       if (messageRegex.test(this.value.trim())) {
-        this.style.borderColor = "#22c55e";
+        setFieldState(this, "success");
       } else if (this.value.trim() !== "") {
-        this.style.borderColor = "#ef4444";
+        setFieldState(this, "error");
       } else {
-        this.style.borderColor = "";
+        clearFieldState(this);
       }
     });
   }
