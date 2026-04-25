@@ -218,54 +218,47 @@ html {
   color: var(--text-muted);
 }
 
-.nav-toggle {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-.nav-toggle-label {
+.nav-toggle-button {
+  position: relative;
   display: none;
   width: 40px;
   height: 40px;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 5px;
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.04);
+  color: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  padding: 0;
 }
 
-.nav-toggle-label span {
-  position: relative;
-  width: 22px;
-  height: 2px;
-  background: var(--text-primary);
+.nav-toggle-line {
   display: block;
-}
-
-.nav-toggle-label span::after,
-.nav-toggle-label span::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 22px;
+  width: 20px;
   height: 2px;
   background: var(--text-primary);
-  transition: transform 0.2s ease;
+  border-radius: 999px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
 }
 
-.nav-toggle-label span::before {
-  transform: translateY(-7px);
+.nav-toggle-button.is-open .nav-toggle-line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
 }
 
-.nav-toggle-label span::after {
-  transform: translateY(7px);
+.nav-toggle-button.is-open .nav-toggle-line:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle-button.is-open .nav-toggle-line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 .social-icons,
@@ -1798,7 +1791,7 @@ html {
     font-size: 18px;
   }
 
-  .nav-toggle-label {
+  .nav-toggle-button {
     order: 2;
     display: flex;
   }
@@ -1840,8 +1833,8 @@ html {
     font-size: 18px;
   }
 
-  .nav-toggle:checked ~ .nav-items,
-  .nav-toggle:checked ~ .social-icons {
+  .nav-bar.nav-open .nav-items,
+  .nav-bar.nav-open .social-icons {
     display: flex;
   }
 
@@ -2155,14 +2148,14 @@ html {
     padding: 8px;
   }
 
-  .nav-toggle-label {
+  .nav-toggle-button {
     width: 36px;
     height: 36px;
   }
 
-  .nav-toggle-label span,
-  .nav-toggle-label span::after,
-  .nav-toggle-label span::before {
+  .nav-toggle-button span,
+  .nav-toggle-button span::after,
+  .nav-toggle-button span::before {
     width: 20px;
   }
 

@@ -19,17 +19,19 @@
         <div class="nav-header">
           <a href="#home" class="nav-header">Adham</a>
         </div>
-        <label for="nav-toggle" class="sr-only">navbar toggle</label>
-        <input
-          type="checkbox"
-          name="nav-toggle"
-          id="nav-toggle"
-          class="nav-toggle"
-        />
-        <label for="nav-toggle" class="nav-toggle-label">
-          <span></span>
-        </label>
-        <div class="nav-items">
+        <button
+          type="button"
+          class="nav-toggle-button"
+          aria-label="Toggle navigation menu"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="nav-toggle-line"></span>
+          <span class="sr-only">Toggle navigation menu</span>
+        </button>
+        <div class="nav-items" id="primary-nav">
           <a href="#about-me">about</a>
           <a href="#skills">skills</a>
           <a href="#projects-section">projects</a>
