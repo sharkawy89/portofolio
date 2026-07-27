@@ -1,0 +1,43 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  ::selection {
+    background-color: #38bdf8;
+    color: #020617;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+}
+
+@layer utilities {
+  .star-bg {
+    background-image:
+      radial-gradient(1px 1px at 20px 30px, #fff, transparent),
+      radial-gradient(1.5px 1.5px at 100px 150px, #fff, transparent),
+      radial-gradient(1px 1px at 200px 50px, #fff, transparent);
+    background-size: 300px 300px;
+  }
+
+  .dark .star-bg {
+    will-change: background-position;
+    animation: moveStars 100s linear infinite;
+  }
+
+  @keyframes moveStars {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 1000px; }
+  }
+}

@@ -1,0 +1,226 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - link "Adham" [ref=e5] [cursor=pointer]:
+      - /url: "#home"
+    - generic [ref=e6]:
+      - link "about" [ref=e7] [cursor=pointer]:
+        - /url: "#about-me"
+      - link "skills" [ref=e8] [cursor=pointer]:
+        - /url: "#skills"
+      - link "projects" [ref=e9] [cursor=pointer]:
+        - /url: "#projects-section"
+      - link "education" [ref=e10] [cursor=pointer]:
+        - /url: "#education"
+      - link "contact" [ref=e11] [cursor=pointer]:
+        - /url: "#contact"
+    - generic [ref=e12]:
+      - link "WhatsApp" [ref=e13] [cursor=pointer]:
+        - /url: https://wa.me/01151921862
+      - link "LinkedIn" [ref=e17] [cursor=pointer]:
+        - /url: https://www.linkedin.com/in/adham-sharkawy-25985333b/
+      - link "GitHub" [ref=e23] [cursor=pointer]:
+        - /url: https://github.com/sharkawy89
+      - link "Email" [ref=e28] [cursor=pointer]:
+        - /url: mailto:adhamsharkawy185@gmail.com
+  - main [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - paragraph [ref=e38]: 👋 Hello, I'm Adham Sharkawy
+          - heading "Turning Complex Logic into Seamless User Experiences." [level=1] [ref=e40]
+          - paragraph [ref=e42]: A talented Front-End Developer with a 3-year edge in Advertising. I engineer high-performance, AI-powered React applications by merging technical mastery with strategic communication. I don't just build pixel-perfect interfaces; I create responsive digital experiences designed to engage and convert.
+        - generic [ref=e44]:
+          - link "View My Work →" [ref=e45] [cursor=pointer]:
+            - /url: "#projects-section"
+          - link "Download Resume" [ref=e46] [cursor=pointer]:
+            - /url: /assets/Adham_Sharkawy_Front_end_Developer.pdf
+      - img "Adham Sharkawy" [ref=e50]
+    - generic [ref=e51]:
+      - paragraph [ref=e53]: About me
+      - generic [ref=e54]:
+        - img "Workspace with code on a monitor and notebook" [ref=e57]
+        - generic [ref=e58]:
+          - heading "Building Interfaces That Speak, Not Just Function." [level=2] [ref=e60]
+          - paragraph [ref=e63]: As a Front-End Developer, I specialize in transforming complex logic into intuitive digital experiences. I leverage modern AI tools to streamline my coding process, allowing me to focus on high-level architecture and pixel-perfect responsiveness. With additional expertise in technical troubleshooting and multimedia editing, I build resilient, cross-platform applications where clean code meets professional design.
+          - generic [ref=e65]:
+            - generic [ref=e74]:
+              - generic [ref=e75]: Design
+              - paragraph [ref=e76]: UI/UX Design, Prototyping, AI-assisted Design.
+            - generic [ref=e83]:
+              - generic [ref=e84]: Development
+              - paragraph [ref=e85]: React.js, Tailwind CSS, TypeScript
+    - generic [ref=e86]:
+      - heading "My Skills" [level=2] [ref=e88]
+      - generic [ref=e89]:
+        - generic [ref=e92] [cursor=pointer]:
+          - generic [ref=e93]: React JS
+          - generic [ref=e97]: 85%
+        - generic [ref=e102] [cursor=pointer]:
+          - generic [ref=e103]: JavaScript
+          - generic [ref=e107]: 90%
+        - generic [ref=e112] [cursor=pointer]:
+          - generic [ref=e113]: CSS
+          - generic [ref=e117]: 100%
+        - generic [ref=e122] [cursor=pointer]:
+          - generic [ref=e123]: HTML
+          - generic [ref=e127]: 100%
+        - generic [ref=e132] [cursor=pointer]:
+          - generic [ref=e133]: GitHub
+          - generic [ref=e137]: 85%
+        - generic [ref=e142] [cursor=pointer]:
+          - generic [ref=e143]: Bootstrap
+          - generic [ref=e147]: 75%
+        - generic [ref=e152] [cursor=pointer]:
+          - generic [ref=e153]: UI/UX
+          - generic [ref=e158]: 80%
+        - generic [ref=e163] [cursor=pointer]:
+          - generic [ref=e164]: AI
+          - generic [ref=e168]: 75%
+    - generic [ref=e171]:
+      - heading "Projects" [level=2] [ref=e173]
+      - generic [ref=e174]:
+        - generic [ref=e176] [cursor=pointer]:
+          - generic:
+            - generic [ref=e177]:
+              - link "View Next Circuit live site" [ref=e178]:
+                - /url: https://next-circuit.vercel.app/
+              - link "View Next Circuit source code" [ref=e184]:
+                - /url: https://github.com/sharkawy89/Next-circuit
+            - link "Next Circuit":
+              - /url: https://next-circuit.vercel.app/
+              - img "Next Circuit"
+          - generic [ref=e190]:
+            - generic [ref=e191]: Modern E-Commerce
+            - heading "Next Circuit" [level=3] [ref=e192]
+            - paragraph [ref=e193]: E-commerce application specializing in technology devices, with user authentication, product catalog, shopping cart, and order management. Backend runs on Vercel serverless functions.
+            - generic [ref=e194]:
+              - generic [ref=e195]:
+                - generic [ref=e196]: Node.js
+                - generic [ref=e197]: Express
+                - generic [ref=e198]: Firestore
+                - generic [ref=e199]: Tailwind
+              - link "Live" [ref=e200]:
+                - /url: https://next-circuit.vercel.app/
+        - generic [ref=e206] [cursor=pointer]:
+          - generic:
+            - generic [ref=e207]:
+              - link "View EL3eyada live site" [ref=e208]:
+                - /url: https://el3eyada-ucr2.vercel.app/
+              - link "View EL3eyada source code" [ref=e214]:
+                - /url: https://github.com/sharkawy89/health-dashboard
+            - link "EL3eyada":
+              - /url: https://el3eyada-ucr2.vercel.app/
+              - img "EL3eyada"
+          - generic [ref=e220]:
+            - generic [ref=e221]: Healthcare Management
+            - heading "EL3eyada" [level=3] [ref=e222]
+            - paragraph [ref=e223]: A modern, responsive clinic management system built with React, designed to streamline healthcare operations and patient management.
+            - generic [ref=e224]:
+              - generic [ref=e225]:
+                - generic [ref=e226]: React
+                - generic [ref=e227]: Firestore
+                - generic [ref=e228]: Tailwind CSS
+              - link "Live" [ref=e229]:
+                - /url: https://el3eyada-ucr2.vercel.app/
+        - generic [ref=e235] [cursor=pointer]:
+          - generic:
+            - generic [ref=e236]:
+              - link "View Sharkawy Store live site" [ref=e237]:
+                - /url: https://sharkawy-store.vercel.app/
+              - link "View Sharkawy Store source code" [ref=e243]:
+                - /url: https://github.com/sharkawy89/sharkawy_store
+            - link "Sharkawy Store":
+              - /url: https://sharkawy-store.vercel.app/
+              - img "Sharkawy Store"
+          - generic [ref=e249]:
+            - generic [ref=e250]: E-Commerce Platform
+            - heading "Sharkawy Store" [level=3] [ref=e251]
+            - paragraph [ref=e252]: A front-end e-commerce web application that showcases a product catalog and allows users to browse items, view detailed product information, manage a shopping cart, and complete a checkout flow.
+            - generic [ref=e253]:
+              - generic [ref=e254]:
+                - generic [ref=e255]: JavaScript
+                - generic [ref=e256]: HTML
+                - generic [ref=e257]: CSS
+              - link "Live" [ref=e258]:
+                - /url: https://sharkawy-store.vercel.app/
+        - generic [ref=e264] [cursor=pointer]:
+          - generic:
+            - generic [ref=e265]:
+              - link "View The Clinical Sanctuary live site" [ref=e266]:
+                - /url: https://sharkawy89.github.io/landing-page-2/
+              - link "View The Clinical Sanctuary source code" [ref=e272]:
+                - /url: https://github.com/sharkawy89/landing-page-2
+            - link "The Clinical Sanctuary":
+              - /url: https://sharkawy89.github.io/landing-page-2/
+              - img "The Clinical Sanctuary"
+          - generic [ref=e278]:
+            - generic [ref=e279]: Landing Page
+            - heading "The Clinical Sanctuary" [level=3] [ref=e280]
+            - paragraph [ref=e281]: A polished healthcare landing page with a hero section, service cards, an about section, doctor profiles, testimonials, location details, and a footer. Clean and professional, aimed at building trust and encouraging appointment bookings.
+            - generic [ref=e282]:
+              - generic [ref=e283]:
+                - generic [ref=e284]: JavaScript
+                - generic [ref=e285]: HTML
+                - generic [ref=e286]: Tailwind
+              - link "Live" [ref=e287]:
+                - /url: https://sharkawy89.github.io/landing-page-2/
+    - generic [ref=e292]:
+      - heading "Education" [level=2] [ref=e294]
+      - generic [ref=e295]:
+        - heading "Academic Journey & Certifications" [level=3] [ref=e298]
+        - generic [ref=e299]:
+          - generic [ref=e300]:
+            - generic [ref=e302]:
+              - heading "Bachelor's Degree in Computer Science" [level=4] [ref=e303]
+              - paragraph [ref=e304]: Faculty of Computers and Artificial Intelligence, Thebes Academy
+              - paragraph [ref=e305]: 2023 - 2027
+            - generic [ref=e307]:
+              - heading "React Frontend Development" [level=4] [ref=e308]
+              - paragraph [ref=e309]: Digital Egypt Pioneers Initiative - DEPI
+              - paragraph [ref=e310]: Dec 2025 - Jul 2026
+          - generic [ref=e312]:
+            - link [ref=e313] [cursor=pointer]:
+              - /url: /assets/images/html&css.webp
+            - link [ref=e318] [cursor=pointer]:
+              - /url: /assets/images/python-basics.webp
+            - link [ref=e323] [cursor=pointer]:
+              - /url: /assets/images/js_page-0001.webp
+            - link [ref=e328] [cursor=pointer]:
+              - /url: /assets/images/freelance.webp
+    - generic [ref=e334]:
+      - generic [ref=e335]:
+        - generic [ref=e336]:
+          - paragraph [ref=e337]: Get In Touch
+          - heading "Let's Work Together" [level=2] [ref=e338]
+          - paragraph [ref=e339]: Have a project in mind or just want to say hi? Feel free to reach out.
+        - generic [ref=e340]:
+          - link "adhamsharkawy185@gmail.com" [ref=e341] [cursor=pointer]:
+            - /url: mailto:adhamsharkawy185@gmail.com
+          - link "01151921862" [ref=e348] [cursor=pointer]:
+            - /url: tel:01151921862
+          - generic [ref=e354]: Helwan, Cairo, Egypt
+          - link "Adham sharkawy" [ref=e361] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/adham-sharkawy-25985333b/
+          - link "sharkawy89" [ref=e369] [cursor=pointer]:
+            - /url: https://github.com/sharkawy89
+      - generic [ref=e378]:
+        - generic [ref=e379]:
+          - generic [ref=e380]: Full Name
+          - textbox "Full Name" [ref=e381]:
+            - /placeholder: Name
+        - generic [ref=e382]:
+          - generic [ref=e383]: Email
+          - textbox "Email" [ref=e384]
+        - generic [ref=e385]:
+          - generic [ref=e386]: Phone
+          - textbox "Phone" [ref=e387]
+        - generic [ref=e388]:
+          - generic [ref=e389]: Subject
+          - textbox "Subject" [ref=e390]
+        - generic [ref=e391]:
+          - generic [ref=e392]: Message
+          - textbox "Message" [ref=e393]
+        - button "Send Message" [ref=e394] [cursor=pointer]
+  - contentinfo [ref=e395]:
+    - paragraph [ref=e396]: Designed & Built by Eng.Adham sharkawy
+  - button "Switch to dark mode" [ref=e397] [cursor=pointer]
