@@ -25,7 +25,7 @@ export default function Hero() {
         </div>
         <ScrollReveal direction="slide-up" delay={0.3}>
           <div className="flex gap-5 flex-wrap max-md:justify-center max-md:gap-4">
-            <a href="#projects-section" className="inline-block px-6 py-3 rounded-lg font-semibold bg-accent text-white shadow-accent hover:bg-accent-dark hover:shadow-[0_6px_20px_rgba(56,189,248,0.4)] transition-all duration-300 no-underline">
+            <a href="#projects" className="inline-block px-6 py-3 rounded-lg font-semibold bg-accent text-white shadow-accent hover:bg-accent-dark hover:shadow-[0_6px_20px_rgba(56,189,248,0.4)] transition-all duration-300 no-underline">
               View My Work &rarr;
             </a>
             <a
