@@ -36,10 +36,10 @@ export default function TechStack() {
         />
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto max-sm:gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto max-sm:gap-4">
         {techData.map(({ category, title, Icon, iconColor, glowColor }, index) => (
           <ScrollReveal key={title} direction="slide-up" delay={0.1 * (index + 1)}>
-            <div className="group bg-surface border border-slate-800 rounded-3xl p-8 flex flex-col items-center justify-center relative overflow-hidden cursor-pointer hover:-translate-y-2 hover:border-accent/50 hover:bg-surface-elevated/50 transition-all duration-500 h-full max-sm:p-5">
+            <div className="group bg-surface border border-slate-800 rounded-3xl p-8 flex flex-col items-center justify-center relative overflow-hidden cursor-pointer hover:-translate-y-2 hover:border-accent/50 hover:bg-surface-elevated/50 transition-[border-color,background-color,transform] duration-500 will-change-transform h-full max-sm:p-5">
               <span className="text-[10px] uppercase tracking-[0.25em] text-slate-500 font-semibold mb-6">
                 {category}
               </span>
@@ -55,7 +55,7 @@ export default function TechStack() {
                 <span className="text-text-primary font-bold text-lg transition-colors duration-300 group-hover:text-accent">
                   {title}
                 </span>
-                <span className="h-[2px] bg-accent mt-2 rounded-full mx-auto w-0 opacity-0 group-hover:w-8 group-hover:opacity-100 transition-all duration-300" />
+                <span className="h-[2px] w-8 bg-accent mt-2 rounded-full mx-auto scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-300" />
               </div>
 
               <div className="w-2 h-2 bg-accent rounded-full ring-4 ring-accent/20 opacity-0 group-hover:opacity-100 absolute bottom-4 left-4 transition-opacity duration-500" />

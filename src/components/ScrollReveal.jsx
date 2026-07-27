@@ -22,6 +22,7 @@ export default function ScrollReveal({
       viewport={{ once: true, margin: '-80px 0px -80px 0px' }}
       transition={{ duration, delay, ease: 'easeOut' }}
       className={className}
+      style={{ willChange: 'transform, opacity' }}
       {...props}
     >
       {children}

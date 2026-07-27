@@ -15,7 +15,7 @@ export default function About() {
               loading="lazy"
               width={1600}
               height={1600}
-              className="block w-full h-full object-cover object-center transition-transform duration-600 hover:scale-105"
+              className="block w-full h-full object-cover object-center transition-transform duration-[600ms] hover:scale-105"
             />
           </div>
         </ScrollReveal>
@@ -41,7 +41,7 @@ export default function About() {
           <ScrollReveal direction="slide-up" delay={0.1}>
             <div className="grid grid-cols-2 gap-4 mt-3 max-md:grid-cols-1 max-md:gap-3">
               {skillPoints.map((sp) => (
-                <div key={sp.label} className="group bg-surface border border-slate-800 rounded-3xl p-3 flex items-start gap-2 relative overflow-hidden cursor-pointer hover:border-accent/50 hover:bg-surface-elevated/50 transition-all duration-500">
+                <div key={sp.label} className="group bg-surface border border-slate-800 rounded-3xl p-3 flex items-start gap-2 relative overflow-hidden cursor-pointer hover:border-accent/50 hover:bg-surface-elevated/50 transition-[border-color,background-color,transform] duration-500 will-change-transform">
                   <div className="w-10 h-10 rounded-2xl bg-surface-elevated border border-slate-700/50 flex items-center justify-center flex-shrink-0 text-accent">
                     <sp.icon size={18} />
                   </div>
@@ -49,7 +49,7 @@ export default function About() {
                     <span className="block text-text-primary font-bold text-base transition-colors duration-300 group-hover:text-accent">
                       {sp.label}
                     </span>
-                    <span className="h-[2px] bg-accent  rounded-full block w-0 group-hover:w-8 transition-all duration-300" />
+                    <span className="h-[2px] w-8 bg-accent rounded-full block scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300" />
                     <p className="  mb-1 text-text-tertiary text-xs leading-relaxed">
                       {sp.text}
                     </p>

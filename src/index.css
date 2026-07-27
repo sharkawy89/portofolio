@@ -31,13 +31,5 @@
     background-size: 300px 300px;
   }
 
-  .dark .star-bg {
-    will-change: background-position;
-    animation: moveStars 100s linear infinite;
-  }
 
-  @keyframes moveStars {
-    0% { background-position: 0 0; }
-    100% { background-position: 0 1000px; }
-  }
 }

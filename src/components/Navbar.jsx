@@ -1,50 +1,21 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { Menu, X, Rocket } from 'lucide-react'
-import { navSocials } from '../data/social'
 
 const navItems = [
-  { href: '#about-me', label: 'about' },
-  { href: '#skills', label: 'skills' },
-  { href: '#projects', label: 'projects' },
-  { href: '#education', label: 'education' },
-  { href: '#contact', label: 'contact' },
-]
-
-const mobileNavItems = [
-  { href: '#home', label: 'Home', number: '/01' },
-  { href: '#about-me', label: 'About', number: '/02' },
-  { href: '#skills', label: 'Skills', number: '/03' },
-  { href: '#projects', label: 'Projects', number: '/04' },
-  { href: '#education', label: 'Education', number: '/05' },
-  { href: '#contact', label: 'Contact', number: '/06' },
+  { href: '#home', label: 'Home' },
+  { href: '#about-me', label: 'About' },
+  { href: '#skills', label: 'Skills' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
 ]
 
 export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [activeSection, setActiveSection] = useState('')
-  const [navHeight, setNavHeight] = useState(80)
-  const navRef = useRef(null)
-
-  const closeNav = useCallback(() => setIsOpen(false), [])
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-      const sections = navItems
-        .map((item) => document.querySelector(item.href))
-        .filter(Boolean)
-      const offset = 98
-      let current = ''
-      for (const section of sections) {
-        if (section.offsetTop <= window.scrollY + offset) {
-          current = section.id
-        }
-      }
-      if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
-        current = sections[sections.length - 1]?.id || current
-      }
-      setActiveSection(current)
+      setIsScrolled(window.scrollY > 50)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     handleScroll()
@@ -52,107 +23,90 @@ export default function Navbar() {
   }, [])
 
   useEffect(() => {
-    const handleResize = () => { if (window.innerWidth > 768) closeNav() }
+    const handleResize = () => { if (window.innerWidth > 768) setIsOpen(false) }
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
-  }, [closeNav])
+  }, [])
 
   useEffect(() => {
-    const handleKey = (e) => { if (e.key === 'Escape') closeNav() }
+    const handleKey = (e) => { if (e.key === 'Escape') setIsOpen(false) }
     document.addEventListener('keydown', handleKey)
     return () => document.removeEventListener('keydown', handleKey)
-  }, [closeNav])
-
-  useEffect(() => {
-    const measure = () => {
-      if (navRef.current) setNavHeight(navRef.current.offsetHeight)
-    }
-    measure()
-    window.addEventListener('resize', measure)
-    return () => window.removeEventListener('resize', measure)
   }, [])
 
   const scrollTo = (e, href) => {
     e.preventDefault()
     const target = document.querySelector(href)
     if (target) {
-      window.scrollTo({ top: target.offsetTop - 98, behavior: 'smooth' })
-      closeNav()
+      window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' })
+      setIsOpen(false)
     }
   }
 
   return (
     <>
-      <nav
-        ref={navRef}
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between gap-4 px-5 py-[18px] transition-all duration-300 border-b ${
-          scrolled
-            ? 'bg-bg-primary/95 backdrop-blur-xl shadow-md'
-            : 'bg-bg-primary/80 backdrop-blur-md'
-        } border-border-primary max-sm:px-4 max-sm:py-3`}
+      <header
+        className={`fixed left-0 w-full z-50 flex justify-center transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+          isScrolled ? 'top-4' : 'top-0'
+        }`}
       >
-        <a
-          href="#home"
-          onClick={(e) => scrollTo(e, '#home')}
-          className="text-accent font-bold text-lg md:text-xl tracking-tight uppercase no-underline cursor-pointer"
-        >
-          Adham
-        </a>
-
-        <div className="hidden md:flex flex-row items-center gap-3">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              onClick={(e) => scrollTo(e, item.href)}
-              className={`text-sm uppercase px-2.5 py-2.5 no-underline transition-colors duration-300 ${
-                activeSection === item.href.slice(1)
-                  ? 'text-accent font-semibold'
-                  : 'text-text-secondary hover:text-text-primary'
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        <div className="hidden md:flex items-center gap-3">
-          {navSocials.map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              className="flex items-center justify-center w-9 h-9 rounded-full bg-white/5 text-text-primary transition-all duration-300 no-underline hover:brightness-110"
-              style={{ '--hover-color': s.hoverColor }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = s.hoverColor; e.currentTarget.style.color = '#fff' }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = ''; e.currentTarget.style.color = '' }}
-            >
-              <s.icon size={18} />
-              <span className="sr-only">{s.label}</span>
-            </a>
-          ))}
-        </div>
-
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`md:hidden flex items-center justify-center w-11 h-11 rounded-full border transition-all duration-300 max-sm:w-10 max-sm:h-10 ${
-            isOpen
-              ? 'bg-slate-900/80 border-slate-700 text-slate-200 hover:border-sky-400 hover:text-sky-400'
-              : 'bg-white/5 border-white/20 text-text-primary'
+        <nav
+          className={`transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex items-center justify-between border ${
+            isScrolled
+              ? 'w-[95%] max-w-5xl bg-[#0a0f1c]/80 backdrop-blur-md border-slate-700 rounded-full py-3 px-6 shadow-2xl'
+              : 'w-full bg-transparent border-transparent rounded-none py-6 px-8 lg:px-16'
           }`}
-          aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
-          aria-expanded={isOpen}
         >
-          {isOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </nav>
+          <a
+            href="#home"
+            onClick={(e) => scrollTo(e, '#home')}
+            className="text-white font-bold tracking-wider text-xl no-underline cursor-pointer shrink-0"
+          >
+            <span className="text-[#38bdf8]">A</span>DHAM
+          </a>
+
+          <div className="hidden md:flex items-center gap-1">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => scrollTo(e, item.href)}
+                className="text-sm font-medium text-slate-300 hover:text-white px-4 py-1 rounded-full bg-slate-800 transition-colors duration-300 no-underline"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-3 shrink-0">
+            <a
+              href="#contact"
+              onClick={(e) => scrollTo(e, '#contact')}
+              className="hidden md:inline-flex items-center gap-2 px-6 py-2 rounded-full bg-[#38bdf8] text-slate-900 font-bold text-sm hover:bg-[#0ea5e9] transition-colors duration-300 no-underline"
+            >
+              <Rocket size={16} />
+              HIRE ME
+            </a>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={`md:hidden flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-300 ${
+                isOpen
+                  ? 'bg-slate-900/80 border-slate-700 text-slate-200'
+                  : 'bg-white/5 border-white/20 text-text-primary'
+              }`}
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X size={18} /> : <Menu size={18} />}
+            </button>
+          </div>
+        </nav>
+      </header>
 
       {isOpen && (
         <div
           className="fixed inset-0 z-40 bg-black/40 md:hidden"
-          onClick={closeNav}
+          onClick={() => setIsOpen(false)}
           aria-hidden="true"
         />
       )}
@@ -163,42 +117,24 @@ export default function Navbar() {
             ? 'opacity-100 translate-y-0 pointer-events-auto'
             : 'opacity-0 -translate-y-3 pointer-events-none'
         }`}
-        style={{ top: navHeight }}
+        style={{ top: 80 }}
       >
-        <div className="mx-4 bg-[#020617] border border-slate-800/70 rounded-b-[2.5rem] shadow-xl overflow-hidden max-sm:mx-3">
-          <div className="px-6 pt-8 pb-8 overflow-y-auto overflow-x-hidden max-h-[calc(100dvh-100px)] max-sm:px-4 max-sm:pt-6 max-sm:pb-6">
+        <div className="mx-4 bg-[#020617] border border-slate-800/70 rounded-b-[2.5rem] shadow-xl overflow-hidden">
+          <div className="px-6 pt-8 pb-8 overflow-y-auto overflow-x-hidden max-h-[calc(100dvh-100px)]">
             <nav className="flex flex-col gap-1">
-              {mobileNavItems.map((item, index) => {
-                const isActive = activeSection === item.href.slice(1)
-                return (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    onClick={(e) => scrollTo(e, item.href)}
-                    className={`group flex items-center justify-between px-4 py-4 rounded-xl text-xl font-semibold no-underline transition-all duration-300 max-sm:text-lg max-sm:px-3 max-sm:py-3 ${
-                      isActive
-                        ? 'text-sky-400 bg-slate-900/70'
-                        : 'text-slate-300 hover:text-sky-400 hover:bg-slate-900/70'
-                    }`}
-                    style={{
-                      animation: isOpen ? `navItemIn 0.35s ease-out ${index * 0.06}s both` : 'none',
-                    }}
-                  >
-                    <span>{item.label}</span>
-                    {item.number && (
-                      <span
-                        className={`text-sm font-mono transition-colors duration-300 ${
-                          isActive
-                            ? 'text-sky-400'
-                            : 'text-slate-500 group-hover:text-sky-400'
-                        }`}
-                      >
-                        {item.number}
-                      </span>
-                    )}
-                  </a>
-                )
-              })}
+              {navItems.map((item, index) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  onClick={(e) => scrollTo(e, item.href)}
+                  className="group flex items-center justify-between px-4 py-4 rounded-xl text-xl font-semibold text-slate-300 hover:text-sky-400 hover:bg-slate-900/70 no-underline transition-all duration-300"
+                  style={{
+                    animation: isOpen ? `navItemIn 0.35s ease-out ${index * 0.06}s both` : 'none',
+                  }}
+                >
+                  <span>{item.label}</span>
+                </a>
+              ))}
             </nav>
 
             <div className="mt-8 pt-6 border-t border-slate-800/50">

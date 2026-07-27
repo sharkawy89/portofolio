@@ -144,7 +144,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
                   <span
-                    className="h-[2px] mt-2 block rounded-full transition-all duration-300 w-0 group-hover:w-12"
+                    className="h-[2px] w-12 mt-2 block rounded-full scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
                     style={{ backgroundColor: project.hexColor }}
                   />
                 </div>

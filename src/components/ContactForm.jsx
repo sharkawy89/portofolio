@@ -56,7 +56,7 @@ export default function ContactForm() {
   }
 
   const fieldClass = (field) =>
-    `w-full bg-surface border border-border-primary border-[rgba(26,71,157,0.16)] px-4 py-[15px] rounded-[14px] text-text-primary text-sm transition-all duration-200 focus:outline-none focus-visible:border-accent focus-visible:shadow-[0_0_0_3px_rgba(56,189,248,0.18)] placeholder:text-text-secondary placeholder:text-muted ${
+    `w-full bg-surface border border-border-primary border-[rgba(26,71,157,0.16)] px-4 py-[15px] rounded-[14px] text-text-primary text-sm transition-[border-color,box-shadow] duration-200 focus:outline-none focus-visible:border-accent focus-visible:shadow-[0_0_0_3px_rgba(56,189,248,0.18)] placeholder:text-text-secondary placeholder:text-muted ${
       errors[field] ? '!border-red-500 !shadow-[0_0_0_3px_rgba(239,68,68,0.14)]' : ''
     }`
 
@@ -102,7 +102,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={submitState === 'sending'}
-          className="w-full border-0 bg-accent text-bg-primary text-base font-bold px-5 py-4 rounded-[14px] cursor-pointer transition-all duration-250 hover:bg-accent-dark hover:shadow-[0_16px_30px_rgba(56,189,248,0.18)] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed max-sm:rounded-xl"
+          className="w-full border-0 bg-accent text-bg-primary text-base font-bold px-5 py-4 rounded-[14px] cursor-pointer transition-[color,background-color,box-shadow] duration-[250ms] hover:bg-accent-dark hover:shadow-[0_16px_30px_rgba(56,189,248,0.18)] focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2 disabled:opacity-60 disabled:cursor-not-allowed max-sm:rounded-xl"
         >
           {submitState === 'sending' ? 'Sending...' : 'Send Message'}
         </button>

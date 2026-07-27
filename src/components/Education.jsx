@@ -51,7 +51,7 @@ export default function Education() {
                   href={cert.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-3.5 py-2.5 border border-border-secondary rounded-full bg-accent/6 text-text-primary text-sm font-semibold no-underline transition-all duration-250 hover:-translate-y-0.5 hover:border-accent hover:bg-accent/12 hover:text-accent max-sm:w-full max-sm:justify-center"
+                  className="inline-flex items-center gap-2.5 px-3.5 py-2.5 border border-border-secondary rounded-full bg-accent/6 text-text-primary text-sm font-semibold no-underline transition-[color,background-color,border-color,transform] duration-[250ms] hover:-translate-y-0.5 hover:border-accent hover:bg-accent/12 hover:text-accent max-sm:w-full max-sm:justify-center"
                 >
                   <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-accent/14 text-accent text-xs flex-shrink-0">
                     <ArrowUpRight size={14} />

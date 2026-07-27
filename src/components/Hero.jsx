@@ -1,4 +1,12 @@
+import { MessageSquare, Linkedin, Github, Mail } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
+
+const socialLinks = [
+  { href: 'https://wa.me/01151921862', label: 'WhatsApp', icon: MessageSquare },
+  { href: 'https://www.linkedin.com/in/adham-sharkawy-25985333b/', label: 'LinkedIn', icon: Linkedin },
+  { href: 'https://github.com/sharkawy89', label: 'GitHub', icon: Github },
+  { href: 'mailto:adhamsharkawy185@gmail.com', label: 'Email', icon: Mail },
+]
 
 export default function Hero() {
   return (
@@ -25,23 +33,40 @@ export default function Hero() {
         </div>
         <ScrollReveal direction="slide-up" delay={0.3}>
           <div className="flex gap-5 flex-wrap max-md:justify-center max-md:gap-4">
-            <a href="#projects" className="inline-block px-6 py-3 rounded-lg font-semibold bg-accent text-white shadow-accent hover:bg-accent-dark hover:shadow-[0_6px_20px_rgba(56,189,248,0.4)] transition-all duration-300 no-underline">
+            <a href="#projects" className="inline-block px-6 py-3 rounded-lg font-semibold bg-accent text-black  hover:bg-accent-dark hover:shadow-[0_6px_20px_rgba(56,189,248,0.4)] transition-[color,background-color,box-shadow] duration-300 no-underline">
               View My Work &rarr;
             </a>
             <a
               href="assets/Adham_Sharkawy_Front_end_Developer.pdf"
               download="Adham-Sharkawy-Resume.pdf"
-              className="inline-block px-6 py-3 rounded-lg font-semibold bg-transparent text-text-primary border-2 border-border-secondary shadow-[0_4px_15px_rgba(30,41,59,0.3)] hover:bg-surface-elevated hover:border-accent hover:shadow-accent transition-all duration-300 no-underline"
+              className="inline-block px-6 py-3 rounded-lg font-semibold bg-transparent text-text-primary border-2 border-border-secondary shadow-[0_4px_15px_rgba(30,41,59,0.3)] hover:bg-surface-elevated hover:border-accent hover:shadow-accent transition-[color,background-color,border-color,box-shadow] duration-300 no-underline"
             >
               Download Resume
             </a>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="slide-up" delay={0.4}>
+          <div className="flex items-center gap-4 pt-4 mt-8 border-t border-slate-800/50 w-full max-w-md max-md:justify-center">
+            {socialLinks.map((s) => (
+              <a
+                key={s.label}
+                href={s.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+                className="w-10 h-10 rounded-full  flex items-center justify-center text-slate-300 transition-[color,background-color,border-color,transform] duration-300 hover:bg-[#38bdf8] hover:text-slate-900 hover:border-[#38bdf8] hover:-translate-y-1 no-underline"
+              >
+                <s.icon size={18} />
+              </a>
+            ))}
           </div>
         </ScrollReveal>
       </div>
 
       <ScrollReveal direction="slide-left" delay={0.2}>
         <div className="flex-shrink-0">
-          <div className="w-[380px] h-[380px] border-[3px] border-accent rounded-full p-3 overflow-hidden flex justify-center items-center shadow-accent transition-all duration-300 hover:scale-105 hover:shadow-accent-lg max-md:w-[280px] max-md:h-[280px] max-sm:w-[220px] max-sm:h-[220px]">
+          <div className="w-[380px] h-[380px] border-[3px] border-accent rounded-full p-3 overflow-hidden flex justify-center items-center shadow-accent transition-[transform,box-shadow] duration-300 hover:scale-105 hover:shadow-accent-lg max-md:w-[280px] max-md:h-[280px] max-sm:w-[220px] max-sm:h-[220px]">
             <img
               src="assets/images/photo.webp"
               alt="Adham Sharkawy"

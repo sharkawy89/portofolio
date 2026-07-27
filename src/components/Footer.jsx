@@ -21,9 +21,8 @@ export default function Footer() {
             <span className="text-accent font-bold text-xl md:text-2xl uppercase tracking-tight leading-none">
               Adham
             </span>
-         
             <span className="text-[9px] uppercase tracking-[0.35em] text-slate-600 mt-2 max-sm:text-[10px]">
-              Front-End Developer
+              Web Developer
             </span>
           </div>
 
@@ -51,7 +50,7 @@ export default function Footer() {
             <button
               onClick={scrollToTop}
               aria-label="Back to top"
-              className="w-10 h-10 rounded-full border border-slate-700 bg-transparent text-slate-300 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-accent/10 transition-all duration-300 cursor-pointer flex-shrink-0"
+              className="w-10 h-10 rounded-full border border-slate-700 bg-transparent text-slate-300 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-accent/10 transition-[color,background-color,border-color] duration-300 cursor-pointer flex-shrink-0"
             >
               <ArrowUp size={18} />
             </button>
