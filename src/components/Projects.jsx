@@ -77,14 +77,14 @@ const projectsData = [
     repoLink: 'https://github.com/sharkawy89/depi-projectt'
   },
   {
-    id: 6,
+    id: 7,
     category: 'marketing agency',
     title: 'touch-media',
     description:
       ' A high-performance corporate website built for TouchMedia, a Cairo-based marketing and production agency. Features immersive GSAP-powered animations',
     image: 'assets/images/touchmedia.webp',
     tags: '#react #framer #Vite #Tailwind',
-    hexColor: '#0b2545',
+    hexColor: '#10b981',
     liveLink: 'https://touch-media.vercel.app/',
     repoLink: 'https://touch-media.vercel.app/'
   }
