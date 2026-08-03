@@ -85,8 +85,8 @@ const projectsData = [
     image: 'assets/images/touchmedia.webp',
     tags: '#react #framer #Vite #Tailwind',
     hexColor: '#10b981',
-    liveLink: 'https://touch-media.vercel.app/',
-    repoLink: 'https://touch-media.vercel.app/'
+    liveLink: 'https://touchmediaint.vercel.app/',
+    repoLink: 'https://touchmediaint.vercel.app/'
   }
 
 ]
