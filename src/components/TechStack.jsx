@@ -2,11 +2,11 @@ import ScrollReveal from './ScrollReveal'
 import SectionHeader from './SectionHeader'
 import {
   SiReact,
-  SiNextdotjs,
+  SiBootstrap,
   SiTypescript,
   SiJavascript,
   SiTailwindcss,
-  SiFramer,
+  SiGit,
   SiHtml5,
 SiCss,
   SiGithub,
@@ -14,11 +14,11 @@ SiCss,
 
 const techData = [
   { category: 'FRONTEND', title: 'React', Icon: SiReact, iconColor: 'text-accent', glowColor: 'bg-accent' },
-  { category: 'FRAMEWORK', title: 'Next.js', Icon: SiNextdotjs, iconColor: 'text-white', glowColor: 'bg-white' },
+  { category: 'FRAMEWORK', title: 'Bootstrap 5', Icon: SiBootstrap, iconColor: 'text-purple-500', glowColor: 'bg-purple-500' },
   { category: 'LANGUAGE', title: 'TypeScript', Icon: SiTypescript, iconColor: 'text-blue-500', glowColor: 'bg-blue-500' },
   { category: 'LANGUAGE', title: 'JavaScript', Icon: SiJavascript, iconColor: 'text-yellow-400', glowColor: 'bg-yellow-400' },
   { category: 'FRAMEWORK', title: 'Tailwind CSS', Icon: SiTailwindcss, iconColor: 'text-teal-400', glowColor: 'bg-teal-400' },
-  { category: 'ANIMATION', title: 'Framer Motion', Icon: SiFramer, iconColor: 'text-purple-400', glowColor: 'bg-purple-400' },
+  { category: 'TOOLS', title: 'Git', Icon: SiGit, iconColor: 'text-red-500', glowColor: 'bg-red-500' },
   { category: 'FUNDAMENTALS', title: 'HTML5', Icon: SiHtml5, iconColor: 'text-orange-500', glowColor: 'bg-orange-500' },
   { category: 'FUNDAMENTALS', title: 'CSS3', Icon: SiCss, iconColor: 'text-blue-400', glowColor: 'bg-blue-400' },
   { category: 'TOOLS', title: 'GitHub', Icon: SiGithub, iconColor: 'text-white', glowColor: 'bg-white' },

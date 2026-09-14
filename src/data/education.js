@@ -13,7 +13,6 @@ export const educationEntries = [
 
 export const certificates = [
   { label: 'HTML & CSS Certificate', url: 'assets/images/html&css.webp' },
-  { label: 'Python Basics Certificate', url: 'assets/images/python-basics.webp' },
   { label: 'JavaScript Certificate', url: 'assets/images/js_page-0001.webp' },
   { label: 'Freelance Certificate', url: 'assets/images/freelance.webp' },
 ]

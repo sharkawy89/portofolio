@@ -6,15 +6,15 @@ import SectionHeader from './SectionHeader'
 const projectsData = [
   {
     id: 1,
-    category: 'MODERN E-COMMERCE',
-    title: 'Next Circuit',
+    category: 'Electron-app',
+    title: 'telephony-system',
     description:
-      'An e-commerce application specializing in technology devices, featuring user authentication, product catalog, shopping cart, and order management. The backend runs on Vercel serverless functions.',
-    image: 'assets/images/next-circuit.webp',
-    tags: '#Node.js #Express #Firestore #Tailwind',
-    hexColor: '#3b82f6',
-    liveLink: 'https://next-circuit.vercel.app/',
-    repoLink: 'https://github.com/sharkawy89/Next-circuit'
+      'A full-featured desktop POS and inventory management system built with Electron and React, designed for mobile phone retailers. It combines barcode-based checkout, IMEI-tracked device inventory, repair ticket management, expense tracking, and financial reporting into one secure application.',
+    image: 'assets/images/telephony.webp',
+    tags: '#react #electronjs #Realm DB #Tailwind',
+    hexColor: '#388DF8',
+    liveLink: 'https://www.mediafire.com/file/sxfcg1drdgvnuhd/%25D8%25AA%25D9%258A%25D9%2584%25D9%258A%25D9%2581%25D9%2588%25D9%2586%25D9%258A_%25D8%25B1%25D9%2586_Setup_1.0.0.exe/file',
+    repoLink: 'https://github.com/sharkawy89'
   },
   {
     id: 2,
@@ -54,15 +54,15 @@ const projectsData = [
   },
   {
     id: 5,
-    category: 'Electron-app',
-    title: 'telephony-system',
+    category: 'MODERN E-COMMERCE',
+    title: 'Next Circuit',
     description:
-      'A full-featured desktop POS and inventory management system built with Electron and React, designed for mobile phone retailers. It combines barcode-based checkout, IMEI-tracked device inventory, repair ticket management, expense tracking, and financial reporting into one secure application.',
-    image: 'assets/images/telephony.webp',
-    tags: '#react #electronjs #Realm DB #Tailwind',
-    hexColor: '#388DF8',
-    liveLink: 'https://www.mediafire.com/file/sxfcg1drdgvnuhd/%25D8%25AA%25D9%258A%25D9%2584%25D9%258A%25D9%2581%25D9%2588%25D9%2586%25D9%258A_%25D8%25B1%25D9%2586_Setup_1.0.0.exe/file',
-    repoLink: 'https://github.com/sharkawy89'
+      'An e-commerce application specializing in technology devices, featuring user authentication, product catalog, shopping cart, and order management. The backend runs on Vercel serverless functions.',
+    image: 'assets/images/next-circuit.webp',
+    tags: '#Node.js #Express #Firestore #Tailwind',
+    hexColor: '#3b82f6',
+    liveLink: 'https://next-circuit.vercel.app/',
+    repoLink: 'https://github.com/sharkawy89/Next-circuit'
   },
   {
     id: 6,
@@ -82,11 +82,36 @@ const projectsData = [
     title: 'touch-media',
     description:
       ' A high-performance corporate website built for TouchMedia, a Cairo-based marketing and production agency. Features immersive GSAP-powered animations',
-    image: 'assets/images/touchmedia.webp',
+    image: 'assets/images/touchmedia.webp.png',
     tags: '#react #framer #Vite #Tailwind',
     hexColor: '#10b981',
     liveLink: 'https://touchmediaint.vercel.app/',
     repoLink: 'https://touchmediaint.vercel.app/'
+  },
+  {
+    id: 8,
+    category: 'todo list app ',
+    title: 'todolist',
+    description:
+      'A minimal and efficient to-do list app built to manage personal tasks effortlessly. It features task categorization, quick filtering, and real-time up',
+    image: 'assets/images/todo list.png',
+    tags: '#Html #Css #Javascript',
+    hexColor: '#388DF8',
+    liveLink: 'https://sharkawy89.github.io/todo-app/',
+    repoLink: 'https://github.com/sharkawy89/todo-app'
+  },
+
+  {
+    id: 9,
+    category: 'PORTFOLIO TEMPLATE',
+    title: 'omar portfoliio',
+    description:
+      ' A clean and responsive portfolio template ideal for freelancers to display their services. It includes a modern layout for skills, work experience entries, and a pr...',
+    image: 'assets/images/omar sallam.png',
+    tags: '#Html #Css #Javascript',
+    hexColor: '#f59e0b',
+    liveLink: 'https://sharkawy89.github.io/omar_sallam_portfolio/',
+    repoLink: 'https://github.com/sharkawy89/omar_sallam_portfolio'
   }
 
 ]
