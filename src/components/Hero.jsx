@@ -27,7 +27,7 @@ export default function Hero() {
           </ScrollReveal>
           <ScrollReveal direction="slide-up" delay={0.2}>
             <p className="text-text-secondary text-base leading-relaxed mb-10 max-md:text-sm max-md:mb-8">
-              A talented Front-End Developer with a 3-year edge in Advertising. I engineer high-performance, AI-powered React applications by merging technical mastery with strategic communication. I don&apos;t just build pixel-perfect interfaces; I create responsive digital experiences designed to engage and convert.
+              A talented Front-End Developer. I engineer high-performance, AI-powered React applications by merging technical mastery with strategic communication. I don&apos;t just build pixel-perfect interfaces; I create responsive digital experiences designed to engage and convert.
             </p>
           </ScrollReveal>
         </div>
