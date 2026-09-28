@@ -1,124 +1,38 @@
-import { useState } from 'react'
-import { Globe, Github, ExternalLink } from 'lucide-react'
+import { useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
+import { Globe, Github, ArrowRight, ArrowUpRight } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 import SectionHeader from './SectionHeader'
+import SpotlightCard from './SpotlightCard'
+import { ProjectTags, ProjectLinks } from './ProjectParts'
+import { projects } from '../data/projects'
 
-const projectsData = [
-  {
-    id: 1,
-    category: 'Electron-app',
-    title: 'telephony-system',
-    description:
-      'A full-featured desktop POS and inventory management system built with Electron and React, designed for mobile phone retailers. It combines barcode-based checkout, IMEI-tracked device inventory, repair ticket management, expense tracking, and financial reporting into one secure application.',
-    image: 'assets/images/telephony.webp',
-    tags: '#react #electronjs #Realm DB #Tailwind',
-    hexColor: '#388DF8',
-    liveLink: 'https://www.mediafire.com/file/sxfcg1drdgvnuhd/%25D8%25AA%25D9%258A%25D9%2584%25D9%258A%25D9%2581%25D9%2588%25D9%2586%25D9%258A_%25D8%25B1%25D9%2586_Setup_1.0.0.exe/file',
-    repoLink: 'https://github.com/sharkawy89'
-  },
-  {
-    id: 2,
-    category: 'HEALTHCARE MANAGEMENT',
-    title: 'EL3eyada',
-    description:
-      'A modern, responsive clinic management system built with React, designed to streamline healthcare operations and simplify patient management with an intuitive user experience.',
-    image: 'assets/images/el3eyada.webp',
-    tags: '#React #Firestore #Tailwind',
-    hexColor: '#10b981',
-    liveLink: 'https://el3eyada-ucr2.vercel.app/',
-    repoLink: 'https://github.com/sharkawy89/health-dashboard'
-  },
-  {
-    id: 3,
-    category: 'E-COMMERCE PLATFORM',
-    title: 'Sharkawy Store',
-    description:
-      'A front-end e-commerce web application featuring a product catalog, detailed product pages, shopping cart management, and a complete checkout flow.',
-    image: 'assets/images/sharkawy-store.webp',
-    tags: '#JavaScript #HTML #CSS',
-    hexColor: '#ec4899',
-    liveLink: 'https://sharkawy-store.vercel.app/',
-    repoLink: 'https://github.com/sharkawy89/sharkawy_store'
-  },
-  {
-    id: 4,
-    category: 'LANDING PAGE',
-    title: 'The Clinical Sanctuary',
-    description:
-      'A polished healthcare landing page presenting a warm and modern medical brand with a hero section, services, about section, doctor profiles, testimonials, location details, and a professional footer.',
-    image: 'assets/images/landing-page.webp',
-    tags: '#JavaScript #HTML #Tailwind',
-    hexColor: '#f59e0b',
-    liveLink: 'https://sharkawy89.github.io/landing-page-2/',
-    repoLink: 'https://github.com/sharkawy89/landing-page-2'
-  },
-  {
-    id: 5,
-    category: 'MODERN E-COMMERCE',
-    title: 'Next Circuit',
-    description:
-      'An e-commerce application specializing in technology devices, featuring user authentication, product catalog, shopping cart, and order management. The backend runs on Vercel serverless functions.',
-    image: 'assets/images/next-circuit.webp',
-    tags: '#Node.js #Express #Firestore #Tailwind',
-    hexColor: '#3b82f6',
-    liveLink: 'https://next-circuit.vercel.app/',
-    repoLink: 'https://github.com/sharkawy89/Next-circuit'
-  },
-  {
-    id: 6,
-    category: 'Education-platform',
-    title: 'EduMange',
-    description:
-      'A full-featured student and teacher management dashboard built with React. It includes role-based authentication, course and attendance tracking, interactive data visualizations, and CRUD operations for students and teachers, all wrapped in a responsive sidebar layout with search, filter, and pagination.',
-    image: 'assets/images/studentdb.webp',
-    tags: '#react #Recharts #Vite #Bootstrap',
-    hexColor: '#ec4899',
-    liveLink: 'https://depi-projectt.vercel.app/dashboard',
-    repoLink: 'https://github.com/sharkawy89/depi-projectt'
-  },
-  {
-    id: 7,
-    category: 'marketing agency',
-    title: 'touch-media',
-    description:
-      ' A high-performance corporate website built for TouchMedia, a Cairo-based marketing and production agency. Features immersive GSAP-powered animations',
-    image: 'assets/images/touchmedia.webp.png',
-    tags: '#react #framer #Vite #Tailwind',
-    hexColor: '#10b981',
-    liveLink: 'https://touchmediaint.vercel.app/',
-    repoLink: 'https://touchmediaint.vercel.app/'
-  },
-  {
-    id: 8,
-    category: 'todo list app ',
-    title: 'todolist',
-    description:
-      'A minimal and efficient to-do list app built to manage personal tasks effortlessly. It features task categorization, quick filtering, and real-time up',
-    image: 'assets/images/todo list.png',
-    tags: '#Html #Css #Javascript',
-    hexColor: '#388DF8',
-    liveLink: 'https://sharkawy89.github.io/todo-app/',
-    repoLink: 'https://github.com/sharkawy89/todo-app'
-  },
+const featured = projects.filter((p) => p.home === 'featured')
+const archive = projects.filter((p) => p.home === 'archive')
 
-  {
-    id: 9,
-    category: 'PORTFOLIO TEMPLATE',
-    title: 'omar portfoliio',
-    description:
-      ' A clean and responsive portfolio template ideal for freelancers to display their services. It includes a modern layout for skills, work experience entries, and a pr...',
-    image: 'assets/images/omar sallam.png',
-    tags: '#Html #Css #Javascript',
-    hexColor: '#f59e0b',
-    liveLink: 'https://sharkawy89.github.io/omar_sallam_portfolio/',
-    repoLink: 'https://github.com/sharkawy89/omar_sallam_portfolio'
-  }
+// The image drifts slightly as you scroll past it (parallax).
+// The wrapper handles the hover zoom so the two effects don't fight.
+function ParallaxImage({ src, alt }) {
+  const ref = useRef(null)
+  const reduceMotion = useReducedMotion()
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
+  const y = useTransform(scrollYProgress, [0, 1], ['-7%', '7%'])
 
-]
+  return (
+    <div ref={ref} className="absolute inset-0 transition-transform duration-700 ease-out motion-safe:group-hover:scale-105">
+      <motion.img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        style={reduceMotion ? undefined : { y, scale: 1.16 }}
+        className="w-full h-full object-cover"
+      />
+    </div>
+  )
+}
 
 export default function Projects() {
-  const [visibleProjects, setVisibleProjects] = useState(3)
-
   return (
     <section id="projects" className="py-20 px-5 bg-bg-secondary max-md:py-16 max-md:px-5">
       <ScrollReveal direction="fade">
@@ -126,105 +40,145 @@ export default function Projects() {
           eyebrow="PORTFOLIO SHOWCASE"
           title="Creative"
           highlight="Showcase"
-          className="items-center text-center mb-12"
+          className="items-center text-center mb-16"
         />
       </ScrollReveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto max-sm:gap-6">
-        {projectsData.slice(0, visibleProjects).map((project, index) => (
+      <div className="max-w-6xl mx-auto flex flex-col gap-20 max-md:gap-14">
+        {featured.map((project, index) => (
           <ScrollReveal key={project.id} direction="slide-up" delay={0.1 * (index + 1)}>
             <div
-              className="group bg-surface-secondary rounded-3xl border border-slate-800/50 relative overflow-hidden flex flex-col hover:-translate-y-2 transition-transform duration-500"
-              style={{ '--project-color': project.hexColor }}
+              className="group grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+              style={{ '--c': project.hexColor }}
             >
-              <div className="h-64 w-full relative overflow-hidden rounded-t-3xl max-sm:h-48">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  loading="lazy"
-                  className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
+              <div
+                className={`relative rounded-2xl overflow-hidden aspect-[4/3] border border-slate-800/60 transition-[border-color,box-shadow] duration-500 group-hover:border-[color:var(--c)] group-hover:shadow-[0_30px_70px_-30px_var(--c)] ${
+                  index % 2 === 1 ? 'md:order-2' : ''
+                }`}
+              >
+                <ParallaxImage src={project.image} alt={project.title} />
+
+                <div
+                  aria-hidden="true"
+                  className="pointer-events-none absolute inset-0 z-[1] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                  style={{ background: `linear-gradient(to top, ${project.hexColor}66, transparent 55%)` }}
                 />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 flex items-center justify-center gap-4 transition-opacity duration-300 z-10">
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full bg-black/80 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer"
-                  >
-                    <Globe size={20} />
-                  </a>
-                  <a
-                    href={project.repoLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-12 h-12 rounded-full bg-black/80 text-white flex items-center justify-center hover:bg-white hover:text-black transition-colors cursor-pointer"
-                  >
-                    <Github size={20} />
-                  </a>
-                </div>
+
+                <a
+                  href={project.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={-1}
+                  aria-hidden="true"
+                  className="absolute bottom-4 left-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/85 backdrop-blur-md text-white text-sm font-semibold no-underline opacity-0 translate-y-3 transition-[transform,opacity] duration-500 group-hover:opacity-100 group-hover:translate-y-0"
+                >
+                  {project.liveLabel || 'View live'} <ArrowUpRight size={14} />
+                </a>
               </div>
 
-              <div className="p-8 flex flex-col flex-grow bg-surface-secondary relative z-20 rounded-b-3xl max-sm:p-5">
-                <div
-                  className="absolute bottom-0 left-0 w-full h-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+              <div>
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ backgroundColor: project.hexColor }} />
+                  <span className="text-sm text-slate-400">{project.category}</span>
+                </div>
+
+                <h3 className="text-white text-3xl font-bold mb-3 max-sm:text-2xl transition-colors duration-300 group-hover:text-[color:var(--c)]">
+                  {project.title}
+                </h3>
+
+                <span
+                  aria-hidden="true"
+                  className="block h-[3px] w-10 rounded-full mb-5 transition-[width] duration-500 group-hover:w-24"
                   style={{ backgroundColor: project.hexColor }}
                 />
 
-                <span
-                  className="text-[11px] font-bold tracking-[0.2em] uppercase mb-2"
-                  style={{ color: project.hexColor }}
-                >
-                  {project.category}
-                </span>
+                <p className="text-slate-400 leading-relaxed mb-6 max-w-[52ch]">{project.description}</p>
 
-                <div>
-                  <h3 className="text-white text-2xl font-bold transition-colors duration-300 group-hover:text-[var(--project-color)]">
-                    {project.title}
-                  </h3>
-                  <span
-                    className="h-[2px] w-12 mt-2 block rounded-full scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300"
-                    style={{ backgroundColor: project.hexColor }}
-                  />
+                <div className="mb-6">
+                  <ProjectTags tags={project.tags} color={project.hexColor} />
                 </div>
 
-                <p className="text-slate-400 text-sm mt-4 leading-relaxed line-clamp-3 mb-6">
-                  {project.description}
-                </p>
-
-                <div className="mt-auto flex justify-between items-end border-t border-slate-800/50 pt-4">
-                  <span className="text-slate-500 text-xs font-mono">{project.tags}</span>
-                  <a
-                    href={project.liveLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-400 text-sm font-semibold flex items-center gap-1 hover:text-blue-300 transition-colors"
-                  >
-                    Live <ExternalLink size={14} />
-                  </a>
-                </div>
+                <ProjectLinks project={project} />
               </div>
             </div>
           </ScrollReveal>
         ))}
       </div>
 
-      {projectsData.length > visibleProjects && (
-        <button
-          onClick={() => setVisibleProjects(projectsData.length)}
-          className="px-6 py-3 rounded-full border border-slate-700 bg-surface-secondary text-white text-sm font-semibold hover:bg-surface-elevated transition-colors flex items-center gap-2 mx-auto mt-12"
-        >
-          Explore All Projects
-        </button>
+      {archive.length > 0 && (
+        <div className="max-w-4xl mx-auto mt-24 max-md:mt-16">
+          <ScrollReveal direction="fade">
+            <h4 className="text-slate-500 text-sm font-semibold mb-3 px-2">More projects</h4>
+          </ScrollReveal>
+
+          <div className="flex flex-col divide-y divide-slate-800/60 border-t border-b border-slate-800/60">
+            {archive.map((project, index) => (
+              <ScrollReveal key={project.id} direction="fade" delay={index * 0.06}>
+                <SpotlightCard
+                  color={project.hexColor}
+                  className="flex items-center gap-4 py-4 px-4 transition-colors duration-300 hover:bg-surface-secondary/50"
+                >
+                  {/* accent bar that grows in on hover */}
+                  <span
+                    aria-hidden="true"
+                    className="absolute left-0 top-0 h-full w-[3px] origin-center scale-y-0 transition-transform duration-300 group-hover:scale-y-100"
+                    style={{ backgroundColor: project.hexColor }}
+                  />
+                  <span
+                    className="w-2 h-2 rounded-full flex-shrink-0 transition-[transform,box-shadow] duration-300 group-hover:scale-150 group-hover:shadow-[0_0_10px_var(--c)]"
+                    style={{ backgroundColor: project.hexColor }}
+                  />
+                  <div className="flex-1 min-w-0 transition-transform duration-300 motion-safe:group-hover:translate-x-1">
+                    <div className="flex items-baseline gap-3 flex-wrap">
+                      <span className="text-white font-semibold transition-colors duration-300 group-hover:text-[color:var(--c)]">
+                        {project.title}
+                      </span>
+                      <span className="text-slate-500 text-xs">{project.category}</span>
+                    </div>
+                    <span className="text-slate-600 text-xs font-mono hidden sm:inline transition-colors duration-300 group-hover:text-slate-400">
+                      {project.tags}
+                    </span>
+                  </div>
+                  <div className="relative z-10 flex items-center gap-1 flex-shrink-0">
+                    <a
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${project.title}: view live`}
+                      className="p-2 rounded-full text-slate-500 transition-[color,background-color,transform] duration-300 hover:bg-slate-800 hover:text-[color:var(--c)] hover:scale-110"
+                    >
+                      <Globe size={16} />
+                    </a>
+                    {project.repoLink && (
+                      <a
+                        href={project.repoLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`${project.title}: view code`}
+                        className="p-2 rounded-full text-slate-500 transition-[color,background-color,transform] duration-300 hover:bg-slate-800 hover:text-[color:var(--c)] hover:scale-110"
+                      >
+                        <Github size={16} />
+                      </a>
+                    )}
+                  </div>
+                </SpotlightCard>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
       )}
 
-      {visibleProjects > 3 && (
-        <button
-          onClick={() => setVisibleProjects(3)}
-          className="px-6 py-3 rounded-full border border-slate-700 bg-surface-secondary text-white text-sm font-semibold hover:bg-surface-elevated transition-colors flex items-center gap-2 mx-auto mt-4"
-        >
-          Show Less
-        </button>
-      )}
+      <div className="max-w-6xl mx-auto mt-16 flex justify-center">
+        <ScrollReveal direction="fade">
+          <Link
+            to="/projects"
+            className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-text-primary border-2 border-border-secondary hover:bg-surface-elevated hover:border-accent transition-[color,background-color,border-color] duration-300 no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            View all {projects.length} projects
+            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+          </Link>
+        </ScrollReveal>
+      </div>
     </section>
   )
 }

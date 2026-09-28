@@ -1,7 +1,6 @@
-import { ArrowUpRight } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 import SectionHeader from './SectionHeader'
-import { educationEntries, certificates } from '../data/education'
+import { educationEntries } from '../data/education'
 
 export default function Education() {
   return (
@@ -42,25 +41,6 @@ export default function Education() {
               </ScrollReveal>
             ))}
           </div>
-
-          <ScrollReveal direction="slide-up" delay={0.3}>
-            <div className="flex flex-wrap gap-3 mt-2 max-sm:gap-2.5">
-              {certificates.map((cert) => (
-                <a
-                  key={cert.label}
-                  href={cert.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2.5 px-3.5 py-2.5 border border-border-secondary rounded-full bg-accent/6 text-text-primary text-sm font-semibold no-underline transition-[color,background-color,border-color,transform] duration-[250ms] hover:-translate-y-0.5 hover:border-accent hover:bg-accent/12 hover:text-accent max-sm:w-full max-sm:justify-center"
-                >
-                  <span className="inline-flex items-center justify-center w-5 h-5 rounded-full bg-accent/14 text-accent text-xs flex-shrink-0">
-                    <ArrowUpRight size={14} />
-                  </span>
-                  {cert.label}
-                </a>
-              ))}
-            </div>
-          </ScrollReveal>
         </div>
       </div>
     </section>

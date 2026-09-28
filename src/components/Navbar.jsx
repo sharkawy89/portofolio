@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { Menu, X, Rocket } from 'lucide-react'
 
 const navItems = [
@@ -12,6 +13,8 @@ const navItems = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+  const navigate = useNavigate()
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,10 +39,15 @@ export default function Navbar() {
 
   const scrollTo = (e, href) => {
     e.preventDefault()
+    setIsOpen(false)
+    // On another page (e.g. /projects): go home, ScrollManager scrolls to the section
+    if (pathname !== '/') {
+      navigate({ pathname: '/', hash: href })
+      return
+    }
     const target = document.querySelector(href)
     if (target) {
       window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' })
-      setIsOpen(false)
     }
   }
 

@@ -1,9 +1,12 @@
+import { Link } from 'react-router-dom'
 import { ArrowUp } from 'lucide-react'
 
 const footerNav = [
   { href: '#home', label: 'Home' },
+  { href: '#about-me', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
+  { href: '#contact', label: 'Contact' },
 ]
 
 export default function Footer() {
@@ -38,13 +41,13 @@ export default function Footer() {
           <div className="flex items-center gap-5">
             <nav className="flex items-center gap-4 md:gap-5">
               {footerNav.map((item) => (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
+                  to={{ pathname: '/', hash: item.href }}
                   className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-500 hover:text-accent transition-colors duration-300 no-underline max-sm:text-[11px]"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
             <button

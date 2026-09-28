@@ -4,11 +4,15 @@ import { z } from 'zod'
 import { useState } from 'react'
 
 const schema = z.object({
-  name: z.string().min(1, 'Full name is required').regex(/^[a-zA-Z]{3,20}\s+[a-zA-Z]{3,20}$/i, 'Enter your full name (first & last, each 3-20 letters)'),
-  email: z.string().min(1, 'Email is required').regex(/^[a-zA-Z0-9.-_]+@(gmail)+\.(com|org|eg|edu)$/, 'Enter a valid Gmail address (e.g. name@gmail.com)'),
-  phone: z.string().min(1, 'Phone number is required').regex(/^(0)?1[0125][0-9]{8}$/, 'Enter a valid Egyptian number (e.g. 010XXXXXXXX)'),
-  subject: z.string().min(1, 'Subject is required').regex(/^[a-zA-Z\s.,!?'-]{4,}$/, 'Subject must be at least 4 letters (no numbers)'),
-  message: z.string().min(1, 'Message is required').min(10, 'Message must be at least 10 characters'),
+  name: z.string().trim().min(2, 'Please enter your name').max(60, 'Name is too long'),
+  email: z.string().trim().min(1, 'Email is required').email('Enter a valid email address'),
+  // Optional, and international numbers are welcome
+  phone: z
+    .string()
+    .trim()
+    .refine((v) => v === '' || /^\+?[0-9\s-]{8,16}$/.test(v), 'Enter a valid phone number, or leave it empty'),
+  subject: z.string().trim().min(3, 'Subject must be at least 3 characters').max(100, 'Subject is too long'),
+  message: z.string().trim().min(10, 'Message must be at least 10 characters').max(2000, 'Message is too long'),
 })
 
 export default function ContactForm() {
@@ -22,7 +26,7 @@ export default function ContactForm() {
     reset,
   } = useForm({
     resolver: zodResolver(schema),
-    mode: 'onChange',
+    mode: 'onTouched',
   })
 
   const onSubmit = async (data) => {
@@ -56,7 +60,7 @@ export default function ContactForm() {
   }
 
   const fieldClass = (field) =>
-    `w-full bg-surface border border-border-primary border-[rgba(26,71,157,0.16)] px-4 py-[15px] rounded-[14px] text-text-primary text-sm transition-[border-color,box-shadow] duration-200 focus:outline-none focus-visible:border-accent focus-visible:shadow-[0_0_0_3px_rgba(56,189,248,0.18)] placeholder:text-text-secondary placeholder:text-muted ${
+    `w-full bg-surface border border-[rgba(26,71,157,0.16)] px-4 py-[15px] rounded-[14px] text-text-primary text-sm transition-[border-color,box-shadow] duration-200 focus:outline-none focus-visible:border-accent focus-visible:shadow-[0_0_0_3px_rgba(56,189,248,0.18)] placeholder:text-text-secondary ${
       errors[field] ? '!border-red-500 !shadow-[0_0_0_3px_rgba(239,68,68,0.14)]' : ''
     }`
 
@@ -73,20 +77,20 @@ export default function ContactForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit(onSubmit)} className="grid gap-3.5 m-0 max-w-none text-left">
+      <form noValidate onSubmit={handleSubmit(onSubmit)} className="grid gap-3.5 m-0 max-w-none text-left">
         <div className="m-0">
           <label htmlFor="name" className="sr-only">Full Name</label>
-          <input id="name" type="text" placeholder="Full Name" {...register('name')} className={fieldClass('name')} />
+          <input id="name" type="text" placeholder="Full Name" autoComplete="name" {...register('name')} className={fieldClass('name')} />
           {errors.name && <p className="mt-1 text-xs text-red-500 ml-1">{errors.name.message}</p>}
         </div>
         <div className="m-0">
           <label htmlFor="email" className="sr-only">Email</label>
-          <input id="email" type="email" placeholder="Email" {...register('email')} className={fieldClass('email')} />
+          <input id="email" type="email" placeholder="Email" autoComplete="email" {...register('email')} className={fieldClass('email')} />
           {errors.email && <p className="mt-1 text-xs text-red-500 ml-1">{errors.email.message}</p>}
         </div>
         <div className="m-0">
           <label htmlFor="phone" className="sr-only">Phone</label>
-          <input id="phone" type="tel" placeholder="Phone" {...register('phone')} className={fieldClass('phone')} />
+          <input id="phone" type="tel" placeholder="Phone (optional)" autoComplete="tel" {...register('phone')} className={fieldClass('phone')} />
           {errors.phone && <p className="mt-1 text-xs text-red-500 ml-1">{errors.phone.message}</p>}
         </div>
         <div className="m-0">

@@ -1,8 +1,9 @@
-import { MessageSquare, Linkedin, Github, Mail } from 'lucide-react'
+import { MessageCircle, Linkedin, Github, Mail, Download } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 
 const socialLinks = [
-  { href: 'https://wa.me/01151921862', label: 'WhatsApp', icon: MessageSquare },
+  // wa.me needs the international format: country code, no leading 0
+  { href: 'https://wa.me/201151921862', label: 'WhatsApp', icon: MessageCircle },
   { href: 'https://www.linkedin.com/in/adham-sharkawy-25985333b/', label: 'LinkedIn', icon: Linkedin },
   { href: 'https://github.com/sharkawy89', label: 'GitHub', icon: Github },
   { href: 'mailto:adhamsharkawy185@gmail.com', label: 'Email', icon: Mail },
@@ -10,44 +11,60 @@ const socialLinks = [
 
 export default function Hero() {
   return (
-    <section id="home" className="flex justify-between items-center px-10 pb-14 pt-28 gap-16 max-w-[1400px] mx-auto min-h-[calc(100vh-90px)] max-md:flex-col max-md:px-6 max-md:pt-24 max-md:pb-10 max-md:gap-10 max-md:text-center max-sm:px-4 max-sm:pt-20 max-sm:gap-6 max-sm:pb-8">
+    <section
+      id="home"
+      className="flex justify-between items-center px-10 pb-14 pt-28 gap-16 max-w-[1400px] mx-auto min-h-[calc(100vh-90px)] max-md:flex-col max-md:px-6 max-md:pt-24 max-md:pb-10 max-md:gap-10 max-md:text-center max-sm:px-4 max-sm:pt-20 max-sm:gap-6 max-sm:pb-8"
+    >
       <div className="flex-1 max-w-[650px] max-md:max-w-full">
-        <div>
-          <ScrollReveal direction="fade" duration={0.4}>
-            <p className="text-accent-light font-semibold text-lg mb-5 max-md:text-base">
-              👋 Hello, I&apos;m Adham Sharkawy
-            </p>
-          </ScrollReveal>
-          <ScrollReveal direction="slide-up" delay={0.1}>
-            <h1 className="text-[clamp(2rem,5vw,3.2rem)] leading-tight text-text-primary mb-6 font-bold max-md:text-[2rem] max-sm:text-[1.6rem]">
-              Turning Complex <br />
-              <span className="text-accent">Logic into Seamless</span> <br />
-              User Experiences.
-            </h1>
-          </ScrollReveal>
-          <ScrollReveal direction="slide-up" delay={0.2}>
-            <p className="text-text-secondary text-base leading-relaxed mb-10 max-md:text-sm max-md:mb-8">
-              A talented Front-End Developer with a 3-year edge in Advertising. I engineer high-performance, AI-powered React applications by merging technical mastery with strategic communication. I don&apos;t just build pixel-perfect interfaces; I create responsive digital experiences designed to engage and convert.
-            </p>
-          </ScrollReveal>
-        </div>
+        <ScrollReveal direction="fade" duration={0.4}>
+          <div className="inline-flex items-center gap-2.5 mb-6 px-4 py-1.5 rounded-full border border-slate-700 bg-surface/60 text-sm text-slate-300">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-60 motion-safe:animate-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+            </span>
+            Available for new projects
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal direction="slide-up" delay={0.1}>
+          <p className="text-accent-light font-semibold text-lg mb-3 max-md:text-base">
+            Hi, I&apos;m Adham Sharkawy
+          </p>
+          <h1 className="text-[clamp(2rem,5vw,3.2rem)] leading-tight text-text-primary mb-6 font-bold max-md:text-[2rem] max-sm:text-[1.6rem]">
+            Turning Complex <br />
+            <span className="text-accent">Logic into Seamless</span> <br />
+            User Experiences.
+          </h1>
+        </ScrollReveal>
+
+        <ScrollReveal direction="slide-up" delay={0.2}>
+          <p className="text-text-secondary text-base leading-relaxed mb-10 max-w-[56ch] max-md:text-sm max-md:mb-8 max-md:mx-auto">
+            Front-end developer with three years of advertising experience. I build fast, responsive React apps,
+            including AI-powered ones, and I design every screen around one question: what should the visitor do next?
+          </p>
+        </ScrollReveal>
+
         <ScrollReveal direction="slide-up" delay={0.3}>
-          <div className="flex gap-5 flex-wrap max-md:justify-center max-md:gap-4">
-            <a href="#projects" className="inline-block px-6 py-3 rounded-lg font-semibold bg-accent text-black  hover:bg-accent-dark hover:shadow-[0_6px_20px_rgba(56,189,248,0.4)] transition-[color,background-color,box-shadow] duration-300 no-underline">
-              View My Work &rarr;
+          <div className="flex gap-4 flex-wrap max-md:justify-center">
+            <a
+              href="#projects"
+              className="inline-flex items-center px-6 py-3 rounded-lg font-semibold bg-accent text-black hover:bg-accent-dark hover:shadow-[0_6px_20px_rgba(56,189,248,0.4)] transition-[color,background-color,box-shadow] duration-300 no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+            >
+              View my work
             </a>
             <a
-              href="assets/Adham_Sharkawy_Front_end_Developer.pdf"
+              href="/assets/Adham_Sharkawy_Front_end_Developer.pdf"
               download="Adham-Sharkawy-Resume.pdf"
-              className="inline-block px-6 py-3 rounded-lg font-semibold bg-transparent text-text-primary border-2 border-border-secondary shadow-[0_4px_15px_rgba(30,41,59,0.3)] hover:bg-surface-elevated hover:border-accent hover:shadow-accent transition-[color,background-color,border-color,box-shadow] duration-300 no-underline"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold bg-transparent text-text-primary border-2 border-border-secondary hover:bg-surface-elevated hover:border-accent transition-[color,background-color,border-color] duration-300 no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Download Resume
+              <Download size={18} />
+              Download resume
             </a>
           </div>
         </ScrollReveal>
 
         <ScrollReveal direction="slide-up" delay={0.4}>
-          <div className="flex items-center gap-4 pt-4 mt-8 border-t border-slate-800/50 w-full max-w-md max-md:justify-center">
+          <div className="flex items-center gap-3 pt-6 mt-8 border-t border-slate-800/50 w-full max-w-md max-md:justify-center max-md:mx-auto">
             {socialLinks.map((s) => (
               <a
                 key={s.label}
@@ -55,7 +72,7 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="w-10 h-10 rounded-full  flex items-center justify-center text-slate-300 transition-[color,background-color,border-color,transform] duration-300 hover:bg-[#38bdf8] hover:text-slate-900 hover:border-[#38bdf8] hover:-translate-y-1 no-underline"
+                className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-300 transition-[color,background-color,border-color,transform] duration-300 hover:bg-[#38bdf8] hover:text-slate-900 hover:border-[#38bdf8] hover:-translate-y-1 no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 <s.icon size={18} />
               </a>
@@ -65,16 +82,23 @@ export default function Hero() {
       </div>
 
       <ScrollReveal direction="slide-left" delay={0.2}>
-        <div className="flex-shrink-0">
-          <div className="w-[380px] h-[380px] border-[3px] border-accent rounded-full p-3 overflow-hidden flex justify-center items-center shadow-accent transition-[transform,box-shadow] duration-300 hover:scale-105 hover:shadow-accent-lg max-md:w-[280px] max-md:h-[280px] max-sm:w-[220px] max-sm:h-[220px]">
+        <div className="relative flex-shrink-0">
+          {/* soft glow behind the photo */}
+          <div className="absolute inset-0 rounded-full bg-accent/20 blur-3xl" aria-hidden="true" />
+
+          <div className="relative w-[380px] h-[380px] border-[3px] border-accent rounded-full p-3 overflow-hidden flex justify-center items-center shadow-accent transition-[transform,box-shadow] duration-300 hover:scale-105 hover:shadow-accent-lg max-md:w-[280px] max-md:h-[280px] max-sm:w-[220px] max-sm:h-[220px]">
             <img
-              src="assets/images/photo.webp"
+              src="/assets/images/photo.webp"
               alt="Adham Sharkawy"
               width={1540}
               height={1540}
-              fetchpriority="high"
+              fetchPriority="high"
               className="w-full h-full object-contain rounded-full"
             />
+          </div>
+
+          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/85 backdrop-blur-md text-sm font-semibold text-white shadow-xl max-sm:text-xs max-sm:px-3">
+            <span className="text-accent">Web</span> developer in Cairo
           </div>
         </div>
       </ScrollReveal>

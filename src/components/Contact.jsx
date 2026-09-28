@@ -1,13 +1,13 @@
-import { Mail, MessageCircle, MapPin, Linkedin, Github } from 'lucide-react'
+import { Mail, Phone, MapPin, Linkedin, Github } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 import SectionHeader from './SectionHeader'
 import ContactForm from './ContactForm'
 
-const iconMap = { Mail, MessageCircle, MapPin, Linkedin, Github }
+const iconMap = { Mail, Phone, MapPin, Linkedin, Github }
 
 const contactItems = [
   { value: 'adhamsharkawy185@gmail.com', href: 'mailto:adhamsharkawy185@gmail.com', icon: 'Mail' },
-  { value: '01151921862', href: 'tel:01151921862', icon: 'MessageCircle' },
+  { value: '01151921862', href: 'tel:01151921862', icon: 'Phone' },
   { value: 'Helwan, Cairo, Egypt', icon: 'MapPin' },
   { value: 'Adham sharkawy', href: 'https://www.linkedin.com/in/adham-sharkawy-25985333b/', icon: 'Linkedin', external: true },
   { value: 'sharkawy89', href: 'https://github.com/sharkawy89', icon: 'Github', external: true },
