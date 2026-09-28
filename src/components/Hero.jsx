@@ -92,7 +92,7 @@ export default function Hero() {
               alt="Adham Sharkawy"
               width={1540}
               height={1540}
-              fetchPriority="high"
+              fetchpriority="high"
               className="w-full h-full object-contain rounded-full"
             />
           </div>
