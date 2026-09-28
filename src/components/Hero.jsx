@@ -1,5 +1,6 @@
 import { MessageCircle, Linkedin, Github, Mail, Download } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
+import { Link } from 'react-router-dom';
 
 const socialLinks = [
   // wa.me needs the international format: country code, no leading 0
@@ -46,15 +47,15 @@ export default function Hero() {
 
         <ScrollReveal direction="slide-up" delay={0.3}>
           <div className="flex gap-4 flex-wrap max-md:justify-center">
-            <a
-              href="#projects"
+            <Link
+              to={'/projects'}
               className="inline-flex items-center px-6 py-3 rounded-lg font-semibold bg-accent text-black hover:bg-accent-dark hover:shadow-[0_6px_20px_rgba(56,189,248,0.4)] transition-[color,background-color,box-shadow] duration-300 no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               View my work
-            </a>
+            </Link>
             <a
-              href="/assets/Adham_Sharkawy_Front_end_Developer.pdf"
-              download="Adham-Sharkawy-Resume.pdf"
+              href="/assets/Adham_sharkawy_Resume.pdf"
+              download="Adham_sharkawy_Resume.pdf"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold bg-transparent text-text-primary border-2 border-border-secondary hover:bg-surface-elevated hover:border-accent transition-[color,background-color,border-color] duration-300 no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <Download size={18} />
