@@ -65,7 +65,7 @@ export default function ContactForm() {
     }`
 
   return (
-    <div className="p-[18px] rounded-[28px] bg-surface/60 border border-slate-700 shadow-[0_24px_60px_rgba(56,189,248,0.18)] backdrop-blur-lg max-sm:p-3 max-sm:rounded-[22px]">
+    <div className="p-[18px] rounded-[28px] bg-surface/80 border border-slate-700 shadow-[0_24px_60px_rgba(56,189,248,0.18)] max-sm:p-3 max-sm:rounded-[22px]">
       {submitState === 'success' && (
         <div className="mb-4 p-3.5 rounded-xl text-sm font-medium bg-green-500/10 border border-green-500 text-green-500">
           Message sent successfully! I&apos;ll get back to you soon.

@@ -11,28 +11,57 @@ import { projects } from '../data/projects'
 const featured = projects.filter((p) => p.home === 'featured')
 const archive = projects.filter((p) => p.home === 'archive')
 
+// Single shared observer for the whole archive list: one whileInView on the
+// parent, rows orchestrate via staggerChildren. Opacity-only rows (no x/y
+// offset) so text never re-rasterizes mid-scroll.
+const archiveListVariants = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.05, delayChildren: 0.05 } },
+}
+const archiveRowVariants = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { duration: 0.45, ease: 'easeOut' } },
+}
+
 // The image drifts slightly as you scroll past it (parallax).
-// The wrapper handles the hover zoom so the two effects don't fight.
+// Three isolated layers so measurement, hover zoom, and scroll drift never
+// fight on the same element (that feedback loop was the scroll flicker):
+//   outer (ref target, never transforms) > hover-zoom div > motion.img (y only).
+// Reads Framer's useScroll, which composes cleanly with Lenis: Lenis writes
+// real native scroll positions, so target measurement needs no Lenis wiring.
 function ParallaxImage({ src, alt }) {
   const ref = useRef(null)
   const reduceMotion = useReducedMotion()
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], ['-7%', '7%'])
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'end start'],
+    // Don't force a synchronous layout read on every scroll frame; measure
+    // inside rAF instead. This is the main layout-thrashing fix.
+    layoutEffect: false,
+  })
+  // Pixel range (not %) so the compositor doesn't need the box size each frame.
+  const y = useTransform(scrollYProgress, [0, 1], [-14, 14])
 
   return (
-    <div ref={ref} className="absolute inset-0 transition-transform duration-700 ease-out motion-safe:group-hover:scale-105">
-      <motion.img
-        src={src}
-        alt={alt}
-        loading="lazy"
-        style={reduceMotion ? undefined : { y, scale: 1.16 }}
-        className="w-full h-full object-cover"
-      />
+    <div ref={ref} className="absolute inset-0 overflow-hidden isolate">
+      <div className="absolute -inset-[7%] transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04] transform-gpu">
+        <motion.img
+          src={src}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          width={800}
+          height={600}
+          style={reduceMotion ? undefined : { y }}
+          className="w-full h-full object-cover will-change-transform [backface-visibility:hidden] transform-gpu"
+        />
+      </div>
     </div>
   )
 }
 
 export default function Projects() {
+  const reduceMotion = useReducedMotion()
   return (
     <section id="projects" className="py-20 px-5 bg-bg-secondary max-md:py-16 max-md:px-5">
       <ScrollReveal direction="fade">
@@ -70,7 +99,7 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   tabIndex={-1}
                   aria-hidden="true"
-                  className="absolute bottom-4 left-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/85 backdrop-blur-md text-white text-sm font-semibold no-underline opacity-0 translate-y-3 transition-[transform,opacity] duration-500 group-hover:opacity-100 group-hover:translate-y-0"
+                  className="absolute bottom-4 left-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/90 text-white text-sm font-semibold no-underline opacity-0 translate-y-3 transition-[transform,opacity] duration-500 group-hover:opacity-100 group-hover:translate-y-0"
                 >
                   {project.liveLabel || 'View live'} <ArrowUpRight size={14} />
                 </a>
@@ -88,7 +117,7 @@ export default function Projects() {
 
                 <span
                   aria-hidden="true"
-                  className="block h-[3px] w-10 rounded-full mb-5 transition-[width] duration-500 group-hover:w-24"
+                  className="block h-[3px] w-24 rounded-full mb-5 origin-left scale-x-[0.42] transition-transform duration-500 group-hover:scale-x-100 transform-gpu"
                   style={{ backgroundColor: project.hexColor }}
                 />
 
@@ -111,9 +140,15 @@ export default function Projects() {
             <h4 className="text-slate-500 text-sm font-semibold mb-3 px-2">More projects</h4>
           </ScrollReveal>
 
-          <div className="flex flex-col divide-y divide-slate-800/60 border-t border-b border-slate-800/60">
-            {archive.map((project, index) => (
-              <ScrollReveal key={project.id} direction="fade" delay={index * 0.06}>
+          <motion.div
+            variants={archiveListVariants}
+            initial={reduceMotion ? false : 'hidden'}
+            whileInView="show"
+            viewport={{ once: true, margin: '0px 0px 160px 0px', amount: 0.1 }}
+            className="flex flex-col divide-y divide-slate-800/60 border-t border-b border-slate-800/60"
+          >
+            {archive.map((project) => (
+              <motion.div key={project.id} variants={archiveRowVariants}>
                 <SpotlightCard
                   color={project.hexColor}
                   className="flex items-center gap-4 py-4 px-4 transition-colors duration-300 hover:bg-surface-secondary/50"
@@ -162,9 +197,9 @@ export default function Projects() {
                     )}
                   </div>
                 </SpotlightCard>
-              </ScrollReveal>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       )}
 

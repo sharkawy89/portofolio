@@ -10,6 +10,7 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 import AllProjects from './components/AllProjects'
 import ScrollManager from './components/ScrollManager'
+import SmoothScroll from './components/SmoothScroll'
 
 function Home() {
   return (
@@ -27,16 +28,18 @@ function Home() {
 
 export default function App() {
   return (
-    <div className="min-h-screen w-full flex flex-col bg-bg-primary star-bg overflow-x-hidden transition-colors duration-300">
-      <ScrollManager />
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        {/* AllProjects renders its own <main> */}
-        <Route path="/projects" element={<AllProjects />} />
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
-      <Footer />
-    </div>
+    <SmoothScroll>
+      <div className="min-h-screen w-full flex flex-col bg-bg-primary star-bg overflow-x-clip transition-colors duration-300">
+        <ScrollManager />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* AllProjects renders its own <main> */}
+          <Route path="/projects" element={<AllProjects />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+        <Footer />
+      </div>
+    </SmoothScroll>
   )
 }

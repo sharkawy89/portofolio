@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { Menu, X, Rocket } from 'lucide-react'
+import { useLenis } from './SmoothScroll'
 
 const navItems = [
   { href: '#home', label: 'Home' },
@@ -15,6 +16,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const navigate = useNavigate()
   const { pathname } = useLocation()
+  const lenis = useLenis()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +49,11 @@ export default function Navbar() {
     }
     const target = document.querySelector(href)
     if (target) {
-      window.scrollTo({ top: target.offsetTop - 100, behavior: 'smooth' })
+      if (lenis) lenis.scrollTo(target, { offset: -100 })
+      else {
+        const top = target.getBoundingClientRect().top + window.scrollY - 100
+        window.scrollTo({ top, behavior: 'auto' })
+      }
     }
   }
 
@@ -61,7 +67,7 @@ export default function Navbar() {
         <nav
           className={`transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] flex items-center justify-between border ${
             isScrolled
-              ? 'w-[95%] max-w-5xl bg-[#0a0f1c]/80 backdrop-blur-md border-slate-700 rounded-full py-3 px-6 shadow-2xl'
+              ? 'w-[95%] max-w-5xl bg-[#0a0f1c]/95 border-slate-700 rounded-full py-3 px-6 shadow-2xl'
               : 'w-full bg-transparent border-transparent rounded-none py-6 px-8 lg:px-16'
           }`}
         >

@@ -13,13 +13,30 @@
   }
 
   html {
-    scroll-behavior: smooth;
+    /* No scroll-behavior here: Lenis owns all smoothing via RAF. A CSS
+       smooth rule would double-interpolate every programmatic scroll. */
     overflow-x: hidden;
   }
-  
-  body {
-    overflow-x: hidden;
+
+  /* Lenis-recommended base styles */
+  html.lenis,
+  html.lenis body {
+    height: auto;
   }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  /* No overflow rule on <body>: with overflow-x set on both <html> and <body>,
+     the body becomes its own scroll container, which breaks position: sticky
+     and can make scrolling janky. Horizontal overflow from the full-bleed
+     marquees is clipped by the app's root wrapper (overflow-x-clip) instead. */
 }
 
 @layer utilities {

@@ -20,7 +20,7 @@ export default function AllProjects() {
     <main className="min-h-screen bg-bg-secondary px-5 pt-32 pb-24 max-md:pt-28 max-md:pb-16">
       <div className="max-w-6xl mx-auto">
         <Link
-          to={{ pathname: '/', hash: '#projects' }}
+          to={{ pathname: '/' }}
           className="group inline-flex items-center gap-2 mb-10 text-sm font-semibold text-slate-400 hover:text-accent transition-colors no-underline"
         >
           <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
@@ -47,6 +47,7 @@ export default function AllProjects() {
                     src={project.image}
                     alt={project.title}
                     loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-110"
                   />
                   <div
@@ -60,7 +61,7 @@ export default function AllProjects() {
                     rel="noopener noreferrer"
                     tabIndex={-1}
                     aria-hidden="true"
-                    className="absolute bottom-4 left-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/85 backdrop-blur-md text-white text-sm font-semibold no-underline opacity-0 translate-y-3 transition-[transform,opacity] duration-500 group-hover:opacity-100 group-hover:translate-y-0"
+                    className="absolute bottom-4 left-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/90 text-white text-sm font-semibold no-underline opacity-0 translate-y-3 transition-[transform,opacity] duration-500 group-hover:opacity-100 group-hover:translate-y-0"
                   >
                     {project.liveLabel || 'View live'} <ArrowUpRight size={14} />
                   </a>

@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react'
 import { X, ChevronLeft, ChevronRight } from 'lucide-react'
 import useMarqueeLoop from './useMarqueeLoop'
+import { useLenis } from './SmoothScroll'
+
+// Paths must start with "/" and must NOT include "public": Vite serves the
+// public/ folder from the site root. encodeURIComponent keeps names with
+// spaces or "&" working.
+const img = (file) => `/assets/images/${encodeURIComponent(file)}`
 
 // Swap these image paths for wherever the certificate files live in
 // /public (e.g. /assets/images/certificates/...), same convention as
@@ -10,13 +16,13 @@ const certificates = [
     title: 'Business English Track',
     issuer: 'Digital Egypt Pioneers · SYE English Community',
     date: 'Nov 2025 – Jul 2026',
-    image: 'public/assets/images/business english.webp',
+    image: img('business english.webp'),
   },
   {
     title: 'React Frontend Web Developer',
     issuer: 'Digital Egypt Pioneers Program',
     date: 'Nov 2025 – Jul 2026',
-    image: 'public/assets/images/certificate_depi.webp',
+    image: img('certificate_depi.webp'),
   },
   {
     title: 'Freelancing Basics',
@@ -24,7 +30,7 @@ const certificates = [
     date: 'Feb 11, 2026',
     duration: '3h 8m',
     verification: 'SmVjwVmBrv',
-    image: 'public/assets/images/freelance.webp',
+    image: img('freelance.webp'),
   },
   {
     title: 'Learn HTML & CSS',
@@ -32,7 +38,7 @@ const certificates = [
     date: 'Jul 14, 2025',
     duration: '7h 42m',
     verification: '8IDWm45HQa',
-    image: 'public/assets/images/html&css.webp',
+    image: img('html css.webp'),
   },
   {
     title: 'JavaScript',
@@ -40,7 +46,7 @@ const certificates = [
     date: 'Feb 11, 2026',
     duration: '7h',
     verification: 'JUNTcdCYHr',
-    image: 'public/assets/images/js_page-0001.webp',
+    image: img('js_page-0001.webp'),
   },
   {
     title: 'Python Programming Basics',
@@ -48,14 +54,17 @@ const certificates = [
     date: 'Oct 14, 2025',
     duration: '1h 38m',
     verification: 'WK13HaoRKW',
-    image: 'public/assets/images/python-basics.webp',
+    image: img('python-basics.webp'),
   },
 ]
-// Duplicated 3x so the strip still tiles seamlessly on very wide screens.
-const track = [...certificates, ...certificates, ...certificates, ...certificates, ...certificates, ...certificates]
+// The strip needs enough copies to always fill the screen. The hook must be
+// told the same number so it can measure one full lap.
+const COPIES = 6
+const track = Array.from({ length: COPIES }, () => certificates).flat()
 
 export default function CertificateStrip() {
-  const trackRef = useMarqueeLoop(3)
+  const trackRef = useMarqueeLoop(COPIES)
+  const lenis = useLenis()
   const [openIndex, setOpenIndex] = useState(null)
   const isOpen = openIndex !== null
   const current = isOpen ? certificates[openIndex] : null
@@ -67,6 +76,7 @@ export default function CertificateStrip() {
   useEffect(() => {
     if (!isOpen) return
     document.body.style.overflow = 'hidden'
+    lenis?.stop()
     const onKey = (e) => {
       if (e.key === 'Escape') close()
       if (e.key === 'ArrowLeft') prev()
@@ -75,9 +85,10 @@ export default function CertificateStrip() {
     window.addEventListener('keydown', onKey)
     return () => {
       document.body.style.overflow = ''
+      lenis?.start()
       window.removeEventListener('keydown', onKey)
     }
-  }, [isOpen])
+  }, [isOpen, lenis])
 
   return (
     <section className="mt-4 mb-24 max-md:mb-16">
@@ -94,6 +105,7 @@ export default function CertificateStrip() {
                 src={cert.image}
                 alt={cert.title}
                 loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-top"
               />
             </button>

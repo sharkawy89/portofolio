@@ -13,7 +13,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="flex justify-between items-center px-10 pb-14 pt-28 gap-16 max-w-[1400px] mx-auto min-h-[calc(100vh-90px)] max-md:flex-col max-md:px-6 max-md:pt-24 max-md:pb-10 max-md:gap-10 max-md:text-center max-sm:px-4 max-sm:pt-20 max-sm:gap-6 max-sm:pb-8"
+      className="flex justify-between items-center px-10 pb-14 pt-28 gap-16 max-w-[1400px] mx-auto min-h-[calc(100vh-90px)] max-md:flex-col max-md:justify-center max-md:min-h-0 max-md:px-6 max-md:pt-24 max-md:pb-10 max-md:gap-10 max-md:text-center max-sm:px-4 max-sm:pt-20 max-sm:gap-6 max-sm:pb-8"
     >
       <div className="flex-1 max-w-[650px] max-md:max-w-full">
         <ScrollReveal direction="fade" duration={0.4}>
@@ -97,7 +97,7 @@ export default function Hero() {
             />
           </div>
 
-          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/85 backdrop-blur-md text-sm font-semibold text-white shadow-xl max-sm:text-xs max-sm:px-3">
+          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 whitespace-nowrap max-w-[90vw] px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/90 text-sm font-semibold text-white shadow-xl max-sm:text-xs max-sm:px-3">
             <span className="text-accent">Web</span> developer in Cairo
           </div>
         </div>

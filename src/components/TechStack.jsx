@@ -25,11 +25,11 @@ const techData = [
   { title: 'GitHub', Icon: SiGithub, iconColor: 'text-white' },
 ]
 
-// Duplicated 3x so the strip still tiles seamlessly on very wide screens.
-const track = [...techData, ...techData, ...techData, ...techData, ...techData, ...techData]
+const COPIES = 6
+const track = Array.from({ length: COPIES }, () => techData).flat()
 
 export default function TechStack() {
-  const trackRef = useMarqueeLoop(3)
+  const trackRef = useMarqueeLoop(COPIES)
 
   return (
     <section id="skills" className="mt-[200px] mb-[100px] max-md:mt-[100px] max-sm:mt-[60px] max-sm:mb-[60px]">
