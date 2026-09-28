@@ -2,11 +2,9 @@ import { Link } from 'react-router-dom'
 import { ArrowUp } from 'lucide-react'
 
 const footerNav = [
-  { href: '#home', label: 'Home' },
   { href: '#about-me', label: 'About' },
   { href: '#skills', label: 'Skills' },
   { href: '#projects', label: 'Projects' },
-  { href: '#contact', label: 'Contact' },
 ]
 
 export default function Footer() {
