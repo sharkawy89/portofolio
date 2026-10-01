@@ -130,15 +130,16 @@ export const projects = [
   },
   {
     id: 10,
-    home: 'archive',
-    category: 'Portfolio template',
-    title: 'Freelancer Portfolio',
+    home: 'featured',
+    category: 'electron app',
+    title: 'Pharmacy management System',
     description:
-      'A clean and responsive portfolio template ideal for freelancers to display their services. It includes a modern layout for skills, work experience entries, and a project gallery.',
-    image: '/assets/images/omar sallam.webp',
-    tags: '#Html #Css #Javascript',
-    hexColor: '#14b8a6',
-    liveLink: 'https://sharkawy89.github.io/omar_sallam_portfolio/',
-    repoLink: 'https://github.com/sharkawy89/omar_sallam_portfolio'
+      'An offline-first desktop Point-of-Sale application engineered to manage comprehensive pharmacy operations securely and efficiently. Built on an Electron and React architecture, it leverages a robust local Realm database to guarantee zero-latency operations without relying on an active internet connection. The system is designed with a heavy emphasis on architectural security, strict data isolation, and enterprise-grade reliability.',
+    image: '/assets/images/pharmacy.webp',
+    liveLabel: 'Download app',
+    tags: '#React #Electron #JavaScript #RealmDB #Tailwind',
+    hexColor: '#800020',
+    liveLink: 'https://github.com/sharkawy89/',
+    repoLink: 'https://github.com/sharkawy89/'
   }
 ]
