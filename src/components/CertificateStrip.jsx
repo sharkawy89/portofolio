@@ -56,6 +56,47 @@ const certificates = [
     verification: 'WK13HaoRKW',
     image: img('python-basics.webp'),
   },
+  {
+    title: 'AI for Business Professionals',
+    issuer: 'hp LIFE',
+    date: 'Oct 3, 2026',
+    duration: '',
+    verification: ': 7f311b13-16c1-40bc-853e-4c1839b51072',
+    image: img('AI for Business Professionals.webp'),
+  },
+  {
+    title: 'Business Communications',
+    issuer: 'hp LIFE',
+    date: 'Oct 3, 2026',
+    duration: '',
+    verification: ': 833949f9-f034-4c9a-9ef7-e8f852144f06',
+    image: img('Business Communications.webp'),
+  },
+
+  {
+    title: 'Business Email',
+    issuer: 'hp LIFE',
+    date: 'Oct 3, 2026',
+    duration: '',
+    verification: ': b34b727e-4171-4c5c-b331-82fa04ff4ded',
+    image: img('Business Email.webp'),
+  },
+  {
+    title: 'gemini for SDLC',
+    issuer: 'Google Cloud',
+    date: 'Oct 2, 2026',
+    duration: '',
+    verification: ': https://www.skills.google/public_profiles/407d3c4b-749e-4830-b219-a7ac85079b39/badges/28619591',
+    image: img('gemini for SDLC.webp'),
+  },
+  {
+    title: 'Generative AI',
+    issuer: 'Google Cloud',
+    date: 'Oct 2, 2026',
+    duration: '',
+    verification: ': https://www.skills.google/public_profiles/407d3c4b-749e-4830-b219-a7ac85079b39/badges/28619502',
+    image: img('gen ai.webp'),
+  },
 ]
 // The strip needs enough copies to always fill the screen. The hook must be
 // told the same number so it can measure one full lap.
