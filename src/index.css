@@ -1,6 +1,6 @@
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/600.css';
-@import '@fontsource/inter/700.css';
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
 
 @tailwind base;
 @tailwind components;
@@ -47,6 +47,4 @@
       radial-gradient(1px 1px at 200px 50px, #fff, transparent);
     background-size: 300px 300px;
   }
-
-
 }
