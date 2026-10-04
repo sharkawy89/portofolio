@@ -12,7 +12,7 @@
 export const projects = [
   {
     id: 1,
-    home: "featured",
+    home: "archive",
     category: "Electron app",
     title: "Telephony POS",
     description:
@@ -148,11 +148,25 @@ export const projects = [
     home: "featured",
     category: "inspired E-commerce",
     title: "Aura",
-    description:"Aura Store – A modern e-commerce platform built with Next.js 16, React 19, Tailwind CSS, and TypeScript. Features include a dynamic product catalog, secure user authentication,Stripe-powered checkout  and a PostgreSQL database managed with Drizzle ORM. Designed for performance and scalability with server‑only modules, optimized data fetching, and type‑safe API routes.",
+    description:
+      "Aura Store – A modern e-commerce platform built with Next.js 16, React 19, Tailwind CSS, and TypeScript. Features include a dynamic product catalog, secure user authentication,Stripe-powered checkout  and a PostgreSQL database managed with Drizzle ORM. Designed for performance and scalability with server‑only modules, optimized data fetching, and type‑safe API routes.",
     image: "/assets/images/Aura.webp",
     tags: "#Next.js #TypeScript #React 19 #Tailwind CSS",
     hexColor: "rgb(255,255,255)",
     liveLink: "https://aura-smoky-tau.vercel.app/",
+    repoLink: "https://github.com/sharkawy89",
+  },
+  {
+    id: 12,
+    home: "featured",
+    category: "Ai - resume analyzer ",
+    title: "Selecta ",
+    description:
+      "Selecta is a web app that helps job seekers understand how their resume reads to an Applicant Tracking System. Users upload a PDF resume and paste a job description, and the app returns an overall ATS score, a breakdown across five categories (ATS compatibility, tone and style, content, structure, and skills), and practical tips to improve. It runs entirely in the browser with no custom backend: authentication, file storage, saved results, and AI analysis are handled through Puter.js.",
+    image: "/assets/images/selecta.webp",
+    tags: "#puter.js #TypeScript #React #Tailwind CSS",
+    hexColor: "#a38083",
+    liveLink: "https://selecta-pearl.vercel.app/",
     repoLink: "https://github.com/sharkawy89",
   },
 ];
