@@ -163,7 +163,7 @@ export const projects = [
     title: "Selecta ",
     description:
       "Selecta is a web app that helps job seekers understand how their resume reads to an Applicant Tracking System. Users upload a PDF resume and paste a job description, and the app returns an overall ATS score, a breakdown across five categories (ATS compatibility, tone and style, content, structure, and skills), and practical tips to improve. It runs entirely in the browser with no custom backend: authentication, file storage, saved results, and AI analysis are handled through Puter.js.",
-    image: "/assets/images/selecta.webp",
+    image: "/assets/images/selecta.png",
     tags: "#puter.js #TypeScript #React #Tailwind CSS",
     hexColor: "#a38083",
     liveLink: "https://selecta-pearl.vercel.app/",
