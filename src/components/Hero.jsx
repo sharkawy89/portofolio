@@ -40,8 +40,7 @@ export default function Hero() {
 
         <ScrollReveal direction="slide-up" delay={0.2}>
           <p className="text-text-secondary text-base leading-relaxed mb-10 max-w-[56ch] max-md:text-sm max-md:mb-6 max-md:mx-auto">
-            Front-end developer with three years of advertising experience. I build fast, responsive React apps,
-            including AI-powered ones, and I design every screen around one question: what should the visitor do next?
+           Web developer building fast, responsive React applications with a focus on clarity, performance, and real-world usability. I turn complex ideas into interfaces that feel simple to use and easy to navigate.
           </p>
         </ScrollReveal>
 

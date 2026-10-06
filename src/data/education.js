@@ -7,7 +7,7 @@ export const educationEntries = [
   {
     title: 'React Frontend Development',
     meta: 'Digital Egypt Pioneers Initiative - DEPI',
-    date: 'Dec 2025 - Jul 2026',
+    date: 'Nov 2025 - Jul 2026',
   },
 ]
 

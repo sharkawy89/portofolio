@@ -41,14 +41,18 @@ export default function About() {
           <ScrollReveal direction="slide-up">
             <div className="grid gap-4 max-w-[60ch] text-text-secondary text-[clamp(1rem,1.05vw,1.08rem)] leading-[1.8]">
               <p className="m-0">
-                I&apos;m a front-end developer based in Cairo. Three years in advertising taught me how to hold an
-                audience&apos;s attention, and I now apply that to interfaces that are clear, fast, and easy to act on.
+                I&apos;m a Web Developer based in Cairo, focused on building responsive, maintainable, and
+                user-friendly web applications with React.
               </p>
               <p className="m-0">
-                My recent work includes a clinic management system, an Electron POS for phone retailers, and a
-                corporate site for a Cairo marketing agency. I use AI tools for the repetitive parts so I can spend my
-                time on architecture, responsiveness, and the small details people notice. I also handle technical
-                troubleshooting and multimedia editing.
+                I enjoy turning complex requirements into clear interfaces and reliable frontend systems, with a strong
+                focus on responsiveness, performance, accessibility, and clean architecture.
+              </p>
+              <p className="m-0">
+                My recent work includes a pharmacy management system, an Electron-based POS for phone retailers, and a
+                website integrated with AI. I use modern development and AI tools to work more
+                efficiently, while keeping architecture, code quality, and the final user experience at the center of
+                my work.
               </p>
             </div>
           </ScrollReveal>
