@@ -63,7 +63,7 @@ export default function AllProjects() {
                     aria-hidden="true"
                     className="absolute bottom-4 left-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/90 text-white text-sm font-semibold no-underline opacity-0 translate-y-3 transition-[transform,opacity] duration-500 group-hover:opacity-100 group-hover:translate-y-0"
                   >
-                    {project.liveLabel || 'View live'} <ArrowUpRight size={14} />
+                    {project.liveLabel || 'View live'} <ArrowUpRight size={14} aria-hidden="true" />
                   </a>
                 </div>
 
