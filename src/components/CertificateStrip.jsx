@@ -168,7 +168,7 @@ export default function CertificateStrip() {
               aria-label="Close"
               className="absolute -top-11 right-0 w-9 h-9 rounded-full border border-slate-700 text-slate-300 hover:text-white hover:border-accent flex items-center justify-center transition-colors"
             >
-              <X size={18} />
+              <X size={18} aria-hidden="true" />
             </button>
 
             <img
@@ -186,7 +186,7 @@ export default function CertificateStrip() {
                 </p>
               </div>
               {current.verification && (
-                <span className="text-slate-500 text-xs font-mono mt-1">
+                <span className="text-slate-400 text-xs font-mono mt-1">
                   Verify: {current.verification}
                 </span>
               )}
@@ -197,16 +197,16 @@ export default function CertificateStrip() {
                 onClick={prev}
                 className="flex items-center gap-1.5 text-sm font-semibold text-slate-300 hover:text-accent transition-colors"
               >
-                <ChevronLeft size={18} /> Prev
+                <ChevronLeft size={18} aria-hidden="true" /> Prev
               </button>
-              <span className="text-slate-500 text-xs font-mono">
+              <span className="text-slate-400 text-xs font-mono">
                 {openIndex + 1} / {certificates.length}
               </span>
               <button
                 onClick={next}
                 className="flex items-center gap-1.5 text-sm font-semibold text-slate-300 hover:text-accent transition-colors"
               >
-                Next <ChevronRight size={18} />
+                Next <ChevronRight size={18} aria-hidden="true" />
               </button>
             </div>
           </div>

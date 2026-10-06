@@ -101,7 +101,7 @@ export default function Projects() {
                   aria-hidden="true"
                   className="absolute bottom-4 left-4 z-10 inline-flex items-center gap-1.5 px-4 py-2 rounded-full border border-slate-700 bg-[#0a0f1c]/90 text-white text-sm font-semibold no-underline opacity-0 translate-y-3 transition-[transform,opacity] duration-500 group-hover:opacity-100 group-hover:translate-y-0"
                 >
-                  {project.liveLabel || 'View live'} <ArrowUpRight size={14} />
+                  {project.liveLabel || 'View live'} <ArrowUpRight size={14} aria-hidden="true" />
                 </a>
               </div>
 
@@ -137,7 +137,7 @@ export default function Projects() {
       {archive.length > 0 && (
         <div className="max-w-4xl mx-auto mt-24 max-md:mt-16">
           <ScrollReveal direction="fade">
-            <h4 className="text-slate-500 text-sm font-semibold mb-3 px-2">More projects</h4>
+            <h4 className="text-slate-400 text-sm font-semibold mb-3 px-2">More projects</h4>
           </ScrollReveal>
 
           <motion.div
@@ -168,9 +168,9 @@ export default function Projects() {
                       <span className="text-white font-semibold transition-colors duration-300 group-hover:text-[color:var(--c)]">
                         {project.title}
                       </span>
-                      <span className="text-slate-500 text-xs">{project.category}</span>
+                      <span className="text-slate-400 text-xs">{project.category}</span>
                     </div>
-                    <span className="text-slate-600 text-xs font-mono hidden sm:inline transition-colors duration-300 group-hover:text-slate-400">
+                    <span className="text-slate-400 text-xs font-mono hidden sm:inline transition-colors duration-300 group-hover:text-slate-400">
                       {project.tags}
                     </span>
                   </div>
@@ -180,9 +180,9 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`${project.title}: view live`}
-                      className="p-2 rounded-full text-slate-500 transition-[color,background-color,transform] duration-300 hover:bg-slate-800 hover:text-[color:var(--c)] hover:scale-110"
+                      className="p-2 rounded-full text-slate-400 transition-[color,background-color,transform] duration-300 hover:bg-slate-800 hover:text-[color:var(--c)] hover:scale-110"
                     >
-                      <Globe size={16} />
+                      <Globe size={16} aria-hidden="true" />
                     </a>
                     {project.repoLink && (
                       <a
@@ -190,9 +190,9 @@ export default function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`${project.title}: view code`}
-                        className="p-2 rounded-full text-slate-500 transition-[color,background-color,transform] duration-300 hover:bg-slate-800 hover:text-[color:var(--c)] hover:scale-110"
+                        className="p-2 rounded-full text-slate-400 transition-[color,background-color,transform] duration-300 hover:bg-slate-800 hover:text-[color:var(--c)] hover:scale-110"
                       >
-                        <Github size={16} />
+                        <Github size={16} aria-hidden="true" />
                       </a>
                     )}
                   </div>
@@ -210,7 +210,7 @@ export default function Projects() {
             className="group inline-flex items-center gap-2 px-6 py-3 rounded-lg font-semibold text-text-primary border-2 border-border-secondary hover:bg-surface-elevated hover:border-accent transition-[color,background-color,border-color] duration-300 no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
           >
             View all {projects.length} projects
-            <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight size={18} aria-hidden="true" className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </ScrollReveal>
       </div>

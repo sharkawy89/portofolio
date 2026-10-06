@@ -23,7 +23,7 @@ export default function AllProjects() {
           to={{ pathname: '/' }}
           className="group inline-flex items-center gap-2 mb-10 text-sm font-semibold text-slate-400 hover:text-accent transition-colors no-underline"
         >
-          <ArrowLeft size={16} className="transition-transform duration-300 group-hover:-translate-x-1" />
+          <ArrowLeft size={16} aria-hidden="true" className="transition-transform duration-300 group-hover:-translate-x-1" />
           Back to portfolio
         </Link>
 

@@ -57,7 +57,7 @@ export default function Hero() {
               download="Adham_sharkawy_Resume.pdf"
               className="inline-flex items-center gap-2 max-md:flex-1 max-md:justify-center max-md:px-3 max-md:py-2.5 max-md:text-sm px-6 py-3 rounded-lg font-semibold bg-transparent text-text-primary border-2 border-border-secondary hover:bg-surface-elevated hover:border-accent transition-[color,background-color,border-color] duration-300 no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              <Download size={18} className="max-md:w-4 max-md:h-4" />
+              <Download size={18} aria-hidden="true" className="max-md:w-4 max-md:h-4" />
               <span className="md:hidden">Resume</span>
               <span className="max-md:hidden">Download resume</span>
             </a>
@@ -75,7 +75,7 @@ export default function Hero() {
                 aria-label={s.label}
                 className="w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-300 transition-[color,background-color,border-color,transform] duration-300 hover:bg-[#38bdf8] hover:text-slate-900 hover:border-[#38bdf8] hover:-translate-y-1 no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                <s.icon size={18} />
+                <s.icon size={18} aria-hidden="true" />
               </a>
             ))}
           </div>

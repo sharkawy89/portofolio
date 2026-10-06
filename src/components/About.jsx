@@ -63,7 +63,7 @@ export default function About() {
                 <div key={h.label}>
                   <dt className="sr-only">{h.label}</dt>
                   <dd className="m-0 text-accent text-3xl font-extrabold leading-none max-sm:text-2xl">{h.value}</dd>
-                  <p className="m-0 mt-1.5 text-text-tertiary text-xs">{h.label}</p>
+                  <dd className="m-0 mt-1.5 text-text-tertiary text-xs">{h.label}</dd>
                 </div>
               ))}
             </dl>
@@ -77,7 +77,7 @@ export default function About() {
                   className="group bg-surface border border-slate-800 rounded-3xl p-4 flex items-start gap-3 hover:border-accent/50 hover:bg-surface-elevated/50 hover:-translate-y-0.5 transition-[border-color,background-color,transform] duration-300"
                 >
                   <div className="w-10 h-10 rounded-2xl bg-surface-elevated border border-slate-700/50 flex items-center justify-center flex-shrink-0 text-accent">
-                    <sp.icon size={18} />
+                    <sp.icon size={18} aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <span className="block text-text-primary font-bold text-base group-hover:text-accent transition-colors duration-300">

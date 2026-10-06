@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://adhamsharkawy.vercel.app/sitemap.xml

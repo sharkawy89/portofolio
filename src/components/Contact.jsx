@@ -36,8 +36,8 @@ export default function Contact() {
               const content = (
                 <div className="flex items-center gap-3.5 text-inherit w-fit max-sm:gap-3">
                   {Icon && (
-                    <span className="w-[22px] h-[22px] text-accent flex-shrink-0">
-                      <Icon size={22} />
+                    <span className="w-[22px] h-[22px] text-accent flex-shrink-0" aria-hidden="true">
+                      <Icon size={22} aria-hidden="true" />
                     </span>
                   )}
                   <span className="text-text-tertiary text-sm font-medium leading-relaxed hover:text-text-primary transition-colors">

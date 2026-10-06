@@ -22,16 +22,16 @@ export default function Footer() {
             <span className="text-accent font-bold text-xl md:text-2xl uppercase tracking-tight leading-none">
               Adham
             </span>
-            <span className="text-[9px] uppercase tracking-[0.35em] text-slate-600 mt-2 max-sm:text-[10px]">
+            <span className="text-[9px] uppercase tracking-[0.35em] text-slate-400 mt-2 max-sm:text-[10px]">
               Web Developer
             </span>
           </div>
 
           <div className="text-slate-400 text-xs md:text-sm text-center leading-relaxed">
             &copy; {year} Crafted with{' '}
-            <span className="text-red-400 not-italic" aria-label="love">&hearts;</span>
+            <span className="text-red-400 not-italic" role="img" aria-label="love">&hearts;</span>
             {' '}and{' '}
-            <span className="text-amber-400 not-italic" aria-label="coffee">&#9749;</span>
+            <span className="text-amber-400 not-italic" role="img" aria-label="coffee">&#9749;</span>
             {' '}by{' '}
             <span className="text-white font-bold">Adham Sharkawy</span>
           </div>
@@ -42,7 +42,8 @@ export default function Footer() {
                 <Link
                   key={item.href}
                   to={{ pathname: '/', hash: item.href }}
-                  className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-500 hover:text-accent transition-colors duration-300 no-underline max-sm:text-[11px]"
+                  aria-label={`Footer: ${item.label}`}
+                  className="text-[10px] md:text-[11px] uppercase tracking-[0.15em] font-semibold text-slate-400 hover:text-accent transition-colors duration-300 no-underline max-sm:text-[11px]"
                 >
                   {item.label}
                 </Link>
@@ -53,13 +54,13 @@ export default function Footer() {
               aria-label="Back to top"
               className="w-10 h-10 rounded-full border border-slate-700 bg-transparent text-slate-300 flex items-center justify-center hover:border-accent hover:text-accent hover:bg-accent/10 transition-[color,background-color,border-color] duration-300 cursor-pointer flex-shrink-0"
             >
-              <ArrowUp size={18} />
+              <ArrowUp size={18} aria-hidden="true" />
             </button>
           </div>
         </div>
 
         <div className="relative mt-12 pt-8 border-t border-slate-800/20">
-          <p className="text-[9px] uppercase tracking-[0.4em] text-slate-700 text-center max-sm:text-[10px]">
+          <p className="text-[9px] uppercase tracking-[0.4em] text-slate-400 text-center max-sm:text-[10px]">
             Built With &bull; React &bull; Tailwind CSS &bull; Vite &bull; Framer Motion
           </p>
           <span className="absolute -top-[3px] left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-accent shadow-[0_0_6px_rgba(56,189,248,0.6)]" />

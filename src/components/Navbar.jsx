@@ -98,7 +98,7 @@ export default function Navbar() {
               onClick={(e) => scrollTo(e, '#contact')}
               className="hidden md:inline-flex items-center gap-2 px-6 py-2 rounded-full bg-[#38bdf8] text-slate-900 font-bold text-sm hover:bg-[#0ea5e9] transition-colors duration-300 no-underline"
             >
-              <Rocket size={16} />
+              <Rocket size={16} aria-hidden="true" />
               HIRE ME
             </a>
             <button
@@ -111,7 +111,7 @@ export default function Navbar() {
               aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={isOpen}
             >
-              {isOpen ? <X size={18} /> : <Menu size={18} />}
+              {isOpen ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
             </button>
           </div>
         </nav>
@@ -157,7 +157,7 @@ export default function Navbar() {
                 onClick={(e) => scrollTo(e, '#contact')}
                 className="flex items-center justify-center gap-3 w-full py-4 rounded-2xl bg-sky-400 text-slate-950 font-bold uppercase tracking-wider text-sm transition-colors duration-300 hover:bg-sky-300 no-underline"
               >
-                <Rocket size={18} />
+                <Rocket size={18} aria-hidden="true" />
                 START A PROJECT
               </a>
             </div>
