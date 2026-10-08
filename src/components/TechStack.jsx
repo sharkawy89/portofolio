@@ -47,8 +47,8 @@ export default function TechStack() {
       <div className="tech-marquee marquee-bleed relative overflow-hidden py-6">
         <div ref={trackRef} className="tech-marquee-track flex items-center gap-16 w-max">
           {track.map(({ title, Icon, iconColor }, index) => (
-            <div key={`${title}-${index}`} className="flex items-center gap-3 flex-shrink-0">
-              <Icon className={`text-3xl ${iconColor}`} />
+            <div key={`${title}-${index}`} className="flex items-center gap-3 flex-shrink-0" aria-hidden={index >= techData.length ? 'true' : undefined}>
+              <Icon className={`text-3xl ${iconColor}`} aria-hidden="true" focusable="false" />
               <span className="text-slate-300 font-semibold text-lg whitespace-nowrap">
                 {title}
               </span>
