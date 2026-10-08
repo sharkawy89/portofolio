@@ -17,12 +17,14 @@ export default function About() {
           <div className="relative overflow-hidden rounded-[28px] aspect-square max-h-[min(68vh,620px)] bg-gradient-to-b from-[rgba(8,17,33,0.75)] to-[rgba(8,17,33,0.95)] max-[960px]:aspect-[16/9] max-[960px]:max-h-[360px] max-md:aspect-[4/3] max-md:max-h-[280px] max-md:rounded-[22px] max-sm:max-h-none max-sm:rounded-[18px]">
             <div className="absolute inset-0 bg-gradient-to-b from-[rgba(3,8,18,0.14)] to-[rgba(3,8,18,0.34)] pointer-events-none z-[1]" />
             <img
-              src="/assets/images/about.webp"
+              src="/assets/images/about-400.webp"
+              srcSet="/assets/images/about-400.webp 400w, /assets/images/about-800.webp 800w, /assets/images/about.webp 1600w"
+              sizes="(max-width: 960px) 100vw, 620px"
               alt="Workspace with code on a monitor and notebook"
               loading="lazy"
               decoding="async"
-              width={1600}
-              height={1600}
+              width={800}
+              height={533}
               className="block w-full h-full object-cover object-center transition-transform duration-[600ms] hover:scale-105"
             />
           </div>

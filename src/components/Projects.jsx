@@ -1,6 +1,5 @@
-import { useRef } from 'react'
 import { Link } from 'react-router-dom'
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { Globe, Github, ArrowRight, ArrowUpRight } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 import SectionHeader from './SectionHeader'
@@ -23,37 +22,30 @@ const archiveRowVariants = {
   show: { opacity: 1, transition: { duration: 0.45, ease: 'easeOut' } },
 }
 
-// The image drifts slightly as you scroll past it (parallax).
-// Three isolated layers so measurement, hover zoom, and scroll drift never
-// fight on the same element (that feedback loop was the scroll flicker):
-//   outer (ref target, never transforms) > hover-zoom div > motion.img (y only).
-// Reads Framer's useScroll, which composes cleanly with Lenis: Lenis writes
-// real native scroll positions, so target measurement needs no Lenis wiring.
-function ParallaxImage({ src, alt }) {
-  const ref = useRef(null)
-  const reduceMotion = useReducedMotion()
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-    // Don't force a synchronous layout read on every scroll frame; measure
-    // inside rAF instead. This is the main layout-thrashing fix.
-    layoutEffect: false,
-  })
-  // Pixel range (not %) so the compositor doesn't need the box size each frame.
-  const y = useTransform(scrollYProgress, [0, 1], [-14, 14])
+// Static image: no scroll-linked transform. The previous useScroll +
+// useTransform measured layout on every scroll frame (forced reflow) for an
+// effect barely visible under the hover zoom. CSS-only hover keeps the GPU
+// cheap and Lighthouse's "forced reflow" quiet.
+function srcSetFor(src) {
+  const m = src.match(/^(.*)\.webp$/i)
+  if (!m) return undefined
+  return `${m[1]}-640.webp 640w, ${m[1]}-960.webp 960w`
+}
 
+function ParallaxImage({ src, alt }) {
   return (
-    <div ref={ref} className="absolute inset-0 overflow-hidden isolate">
+    <div className="absolute inset-0 overflow-hidden isolate">
       <div className="absolute -inset-[7%] transition-transform duration-700 ease-out motion-safe:group-hover:scale-[1.04] transform-gpu">
-        <motion.img
+        <img
           src={src}
+          srcSet={srcSetFor(src)}
+          sizes="(max-width: 768px) 100vw, 50vw"
           alt={alt}
           loading="lazy"
           decoding="async"
           width={800}
           height={600}
-          style={reduceMotion ? undefined : { y }}
-          className="w-full h-full object-cover will-change-transform [backface-visibility:hidden] transform-gpu"
+          className="w-full h-full object-cover"
         />
       </div>
     </div>

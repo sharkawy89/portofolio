@@ -90,11 +90,14 @@ export default function Hero() {
 
           <div className="relative w-[380px] h-[380px] border-[3px] border-accent rounded-full p-3 overflow-hidden flex justify-center items-center shadow-accent transition-[transform,box-shadow] duration-300 hover:scale-105 hover:shadow-accent-lg max-md:w-[150px] max-md:h-[150px] max-md:p-1.5 max-sm:w-[130px] max-sm:h-[130px]">
             <img
-              src="/assets/images/photo.webp"
+              src="/assets/images/photo-380.webp"
+              srcSet="/assets/images/photo-380.webp 380w, /assets/images/photo-760.webp 760w, /assets/images/photo.webp 1540w"
+              sizes="(max-width: 768px) 150px, 380px"
               alt="Adham Sharkawy"
-              width={1540}
-              height={1540}
+              width={380}
+              height={380}
               fetchpriority="high"
+              decoding="async"
               className="w-full h-full object-contain rounded-full"
             />
           </div>

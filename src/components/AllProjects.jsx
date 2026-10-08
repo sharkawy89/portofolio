@@ -45,9 +45,17 @@ export default function AllProjects() {
                 <div className="relative aspect-[16/10] overflow-hidden border-b border-slate-800/60">
                   <img
                     src={project.image}
+                    srcSet={
+                      /selecta|Aura|pharmacy|touchmedia/i.test(project.image)
+                        ? `${project.image.replace(/\.webp$/i, '-640.webp')} 640w, ${project.image.replace(/\.webp$/i, '-960.webp')} 960w`
+                        : undefined
+                    }
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     alt={project.title}
                     loading="lazy"
                     decoding="async"
+                    width={800}
+                    height={500}
                     className="w-full h-full object-cover transition-transform duration-700 ease-out motion-safe:group-hover:scale-110"
                   />
                   <div
